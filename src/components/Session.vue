@@ -22,6 +22,7 @@ const prop = defineProps({
 
     h1 {
         color: var(--color-heading-light);
+        transition: 0.2s ease-out;
     }
     .inner-container {
         .table {

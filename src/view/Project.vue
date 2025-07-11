@@ -2,10 +2,13 @@
 import Session from '@/components/Session.vue';
 import notesData from '@/assets/notesData.js';
 import latexClasses from '@/assets/latexTemplateClass.js';
+const props = defineProps({
+    isDark: Boolean
+});
 </script>
 <template>
     <main class="project-page">
-        <Session title="Notes" id="notes">
+        <Session title="Notes" id="notes" :isDark="isDark">
             <p>Here are some of the notes I have made. (In start date chronological order)</p>
             <table class="table table-bordered">
                 <thead>
@@ -24,7 +27,7 @@ import latexClasses from '@/assets/latexTemplateClass.js';
                 </tbody>
             </table>
         </Session>
-        <Session title="LaTeX Class">
+        <Session title="LaTeX Class" :isDark="isDark">
             <p>I have made some customized LaTeX class to make my notes. You can find them below:</p>
             <ul>
                 <li v-for="latexClass in latexClasses">

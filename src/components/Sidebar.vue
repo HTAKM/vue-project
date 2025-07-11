@@ -1,21 +1,19 @@
 <script setup>
 import { ref } from 'vue';
-import { useDark } from '@vueuse/core';
-
 const props = defineProps({
-    head: String
+    head: String,
+    isDark: Boolean
 })
+const emits = defineEmits(['toggleDark'])
 const expanded = ref(false)
 const ToggleExpanded = () => {
     expanded.value = !expanded.value;
 }
-const isDark = useDark();
-
 </script>
 <template>
     <aside :class="`${expanded ? 'expanded' : ''}`">
         <div class="logo">
-            <a href="#">{{ props.head }}</a>
+            <a href="#">{{ head }}</a>
         </div>
         <div class="menu-toggle-wrap">
             <button class="menu-toggle" @click="ToggleExpanded">
@@ -46,18 +44,18 @@ const isDark = useDark();
         <div class="flex"></div>
 
         <div class="menu">
-            <div class="visual-info" v-if="isDark">
+            <button class="button" @click="emits('toggleDark', false)" v-if="isDark">
                 <span class="material-symbols-outlined">brightness_3</span>
                 <span class="text">Dark mode</span>
-            </div>
-            <div class="visual-info" v-else>
+            </button>
+            <button class="button" @click="emits('toggleDark', true)" v-else>
                 <span class="material-symbols-outlined">brightness_5</span>
                 <span class="text">Light mode</span>
-            </div>
+            </button>
         </div>
     </aside>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
     aside {
         display: flex;
         flex-direction: column;
@@ -66,23 +64,54 @@ const isDark = useDark();
         overflow: hidden;
         padding: 1rem;
 
-        background-color: var(--vt-c-dark-purple-tab);
+        background-color: var(--color-sidebar-light);
+        .logo a, 
+        .menu-toggle-wrap .menu-toggle .material-symbols-outlined,
+        .menu .button .material-symbols-outlined,
+        .menu .button .text {
+            color: var(--color-text-light);
+        }
+        .menu .button {
+            &:hover, &.router-link-exact-active{
+                background-color: var(--color-sidebar-hover-light);
+            }
+        }
+        h3 {
+            color: var(--color-heading-light);
+        }
+
+        &.dark {
+            background-color: var(--color-sidebar-dark);
+            .logo a, 
+            .menu-toggle-wrap .menu-toggle .material-symbols-outlined,
+            .menu .button .material-symbols-outlined,
+            .menu .button .text {
+                color: var(--color-text-dark);
+            }
+            .menu .button {
+                &:hover, &.router-link-exact-active{
+                    background-color: var(--color-sidebar-hover-dark);
+                }
+            }
+            h3 {
+                color: var(--color-heading-dark);
+            }
+        }
+
         transition: 0.2s ease-out;
+
+        position: fixed;
+        z-index: 99;
 
         .flex {
             flex: 1 1 0;
         }
-        // @media (max-width: 768px){
-            position: fixed;
-            z-index: 99;
-        // }
         .logo {
             width: 2rem;
             margin: 0 auto;
             a {
                 font-size: 1rem;
                 font-weight: bolder;
-                color: var(--color-text);
                 white-space: nowrap;
                 display: flex;
                 justify-content: center;
@@ -102,16 +131,11 @@ const isDark = useDark();
                 padding: 0;
                 .material-symbols-outlined {
                     font-size: 2rem;
-                    color: var(--color-text);
                 }
             }
         }
 
-        h3 {
-            color: var(--color-heading);
-        }
-
-        h3, .button .text, .visual-info .text{
+        h3, .button .text{
             opacity: 0;
             transition: 0.3s ease-out;
             white-space: nowrap;
@@ -120,7 +144,7 @@ const isDark = useDark();
         .menu {
             margin: 0 -1rem;
 
-            .button, .visual-info {
+            .button {
                 display: flex;
                 align-items: center;
                 text-decoration: none;
@@ -129,22 +153,11 @@ const isDark = useDark();
 
                 .material-symbols-outlined {
                     font-size: 2rem;
-                    color: var(--color-text);
                     transition: 0.2s ease-out;
                 }
 
                 .text {
-                    color: var(--color-text);
                     transition: 0.2s ease-out;
-                }
-            }
-            .button {
-                &:hover, &.router-link-exact-active{
-                    background-color: var(--vt-c-light-purple-soft-tab);
-
-                    @media (prefers-color-scheme: dark) {
-                        background-color: var(--vt-c-dark-purple-soft-tab);
-                    }
                 }
             }
         }

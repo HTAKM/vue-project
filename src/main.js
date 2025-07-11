@@ -45,4 +45,4 @@ app.use(PrimeVue, {
     }
 });
 // app.directive('animateonscroll', AnimateOnScroll);
-app.mount('#app');
+app.mount('body');

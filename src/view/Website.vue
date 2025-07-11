@@ -1,10 +1,13 @@
 <script setup>
 import Session from '@/components/Session.vue';
 import lectureMaterialLinks from '@/assets/courseItemLinks';
+const props = defineProps({
+    isDark: Boolean
+});
 </script>
 <template>
     <main class="website-page">
-        <Session title="Links to some BGM that I listen to:">
+        <Session title="Links to some BGM that I listen to:" :isDark="isDark">
             <table class="table">
                 <tbody>
                     <tr>
@@ -14,7 +17,7 @@ import lectureMaterialLinks from '@/assets/courseItemLinks';
                 </tbody>
             </table>
         </Session>
-        <Session title="Links of lecture materials">
+        <Session title="Links of lecture materials" :isDark="isDark">
             <table class="table table-bordered">
                 <thead>
                     <tr>

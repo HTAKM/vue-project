@@ -1,9 +1,9 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --vt-c-light-purple: #ddb8ee;
-  --vt-c-light-purple-soft: #d6b1e7;
-  --vt-c-light-purple-mute: #d0abe1;
-  --vt-c-light-purple-tab: #b95fdd;
+  --vt-c-light-purple: #d0a1e6;
+  --vt-c-light-purple-soft: #c597db;
+  --vt-c-light-purple-mute: #b78bcc;
+  --vt-c-light-purple-tab: #be5ce6;
   --vt-c-light-purple-soft-tab: #c369e7;
   --vt-c-light-purple-mute-tab: #c96fed;
   --vt-c-dark-purple: #211b24;
@@ -14,16 +14,16 @@
   --vt-c-dark-purple-mute-tab: #2d1635;
   /* --vt-c-indigo: #2c3e50; */
 
-  --vt-c-divider-light-1: rgba(204, 167, 221, 0.6);
-  --vt-c-divider-light-2: rgba(204, 167, 221, 0.4);
-  --vt-c-divider-light-3: rgba(204, 167, 221, 0.1);
+  --vt-c-divider-light-1: rgba(184, 147, 201, 1);
+  --vt-c-divider-light-2: rgba(184, 147, 201, 0.8);
+  --vt-c-divider-light-3: rgba(184, 147, 201, 0.6);
   --vt-c-divider-dark-1: rgba(63, 55, 66, 0.6);
   --vt-c-divider-dark-2: rgba(63, 55, 66, 0.4);
   --vt-c-divider-dark-3: rgba(63, 55, 66, 0.1);
 
-  --vt-c-text-light-1: rgba(28, 22, 31, 0.75);
-  --vt-c-text-light-2: rgba(33, 27, 36, 0.5);
-  --vt-c-link-light: rgba(133, 27, 36, 0.5);
+  --vt-c-text-light-1: rgba(28, 22, 31, 1);
+  --vt-c-text-light-2: rgba(50, 44, 53, 0.9);
+  --vt-c-link-light: rgba(133, 27, 36, 0.8);
   --vt-c-text-dark-1: rgba(226, 189, 243, 0.75);
   --vt-c-text-dark-2: rgba(221, 184, 238, 0.5);
   --vt-c-link-dark: rgba(121, 184, 238, 0.5);
@@ -33,20 +33,43 @@
   --color-background: var(--vt-c-light-purple);
   --color-background-soft: var(--vt-c-light-purple-soft);
   --color-background-mute: var(--vt-c-light-purple-mute);
+  --color-background-light: var(--vt-c-light-purple);
+  --color-background-soft-light: var(--vt-c-light-purple-soft);
+  --color-background-mute-light: var(--vt-c-light-purple-mute);
+  --color-background-dark: var(--vt-c-dark-purple);
+  --color-background-soft-dark: var(--vt-c-dark-purple-soft);
+  --color-background-mute-dark: var(--vt-c-dark-purple-mute);
 
   --color-border: var(--vt-c-divider-light-2);
   --color-border-heading: var(--vt-c-divider-light-1);
   --color-border-hover: var(--vt-c-divider-light-3);
+  --color-border-light: var(--vt-c-divider-light-2);
+  --color-border-heading-light: var(--vt-c-divider-light-1);
+  --color-border-hover-light: var(--vt-c-divider-light-3);
+  --color-border-dark: var(--vt-c-divider-dark-2);
+  --color-border-heading-dark: var(--vt-c-divider-dark-1);
+  --color-border-hover-dark: var(--vt-c-divider-dark-3);
 
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-2);
   --color-link-text: var(--vt-c-link-light);
+  --color-sidebar: var(--vt-c-light-purple-tab);
+  --color-sidebar-hover: var(--vt-c-light-purple-soft-tab);
+  --color-heading-light: var(--vt-c-text-light-1);
+  --color-text-light: var(--vt-c-text-light-2);
+  --color-link-text-light: var(--vt-c-link-light);
+  --color-sidebar-light: var(--vt-c-light-purple-tab);
+  --color-sidebar-hover-light: var(--vt-c-light-purple-soft-tab);
+  --color-heading-dark: var(--vt-c-text-dark-1);
+  --color-text-dark: var(--vt-c-text-dark-2);
+  --color-link-text-dark: var(--vt-c-link-dark);
+  --color-sidebar-dark: var(--vt-c-dark-purple-tab);
+  --color-sidebar-hover-dark: var(--vt-c-dark-purple-soft-tab);
 
   --section-gap: 160px;
   --sidebar-width: calc(4rem);
   --sidebar-extended-width: calc(2rem + 300px);
   --navbar-height: calc(4rem);
-  /* --navbar-expanded-height: calc(4rem + 32px); */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -62,6 +85,8 @@
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
     --color-link-text: var(--vt-c-link-dark);
+    --color-sidebar: var(--vt-c-dark-purple-tab);
+    --color-sidebar-hover: var(--vt-c-dark-purple-soft-tab);
   }
 }
 
@@ -75,8 +100,6 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -99,4 +122,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: scroll;
+  color: var(--color-text-light);
+  background: var(--color-background-light);
+}
+body.dark {
+  color: var(--color-text-dark);
+  background: var(--color-background-dark);
 }

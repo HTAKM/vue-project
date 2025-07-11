@@ -1,0 +1,175 @@
+<script setup>
+import { ref } from 'vue';
+import { useDark } from '@vueuse/core';
+
+const props = defineProps({
+    head: String
+})
+const expanded = ref(false)
+const ToggleExpanded = () => {
+    expanded.value = !expanded.value;
+}
+const isDark = useDark();
+
+</script>
+<template>
+    <aside :class="`${expanded ? 'expanded' : ''}`">
+        <div class="logo">
+            <a href="#">{{ props.head }}</a>
+        </div>
+        <div class="menu-toggle-wrap">
+            <button class="menu-toggle" @click="ToggleExpanded">
+                <span class="material-symbols-outlined">keyboard_double_arrow_right</span>
+            </button>
+        </div>
+
+        <h3>Menu</h3>
+        <div class="menu">
+            <router-link class="button" to="/">
+                <span class="material-symbols-outlined">home</span>
+                <span class="text">Home</span>
+            </router-link>
+            <router-link class="button" to="/about">
+                <span class="material-symbols-outlined">info</span>
+                <span class="text">About me</span>
+            </router-link>
+            <router-link class="button" to="/project">
+                <span class="material-symbols-outlined">work</span>
+                <span class="text">Projects</span>
+            </router-link>
+            <router-link class="button" to="/link">
+                <span class="material-symbols-outlined">captive_portal</span>
+                <span class="text">Links</span>
+            </router-link>
+        </div>
+        
+        <div class="flex"></div>
+
+        <div class="menu">
+            <div class="visual-info" v-if="isDark">
+                <span class="material-symbols-outlined">brightness_3</span>
+                <span class="text">Dark mode</span>
+            </div>
+            <div class="visual-info" v-else>
+                <span class="material-symbols-outlined">brightness_5</span>
+                <span class="text">Light mode</span>
+            </div>
+        </div>
+    </aside>
+</template>
+<style lang="scss" scoped>
+    aside {
+        display: flex;
+        flex-direction: column;
+        width: var(--sidebar-width);
+        min-height: 100vh;
+        overflow: hidden;
+        padding: 1rem;
+
+        background-color: var(--vt-c-dark-purple-tab);
+        transition: 0.2s ease-out;
+
+        .flex {
+            flex: 1 1 0;
+        }
+        // @media (max-width: 768px){
+            position: fixed;
+            z-index: 99;
+        // }
+        .logo {
+            width: 2rem;
+            margin: 0 auto;
+            a {
+                font-size: 1rem;
+                font-weight: bolder;
+                color: var(--color-text);
+                white-space: nowrap;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        .menu-toggle-wrap {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 1rem;
+            position: relative;
+            top: 0;
+            transition: 0.2s ease-out;
+
+            .menu-toggle {
+                transition: 0.2s ease-out;
+                padding: 0;
+                .material-symbols-outlined {
+                    font-size: 2rem;
+                    color: var(--color-text);
+                }
+            }
+        }
+
+        h3 {
+            color: var(--color-heading);
+        }
+
+        h3, .button .text, .visual-info .text{
+            opacity: 0;
+            transition: 0.3s ease-out;
+            white-space: nowrap;
+        }
+
+        .menu {
+            margin: 0 -1rem;
+
+            .button, .visual-info {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                transition: 0.2s ease-out;
+
+                .material-symbols-outlined {
+                    font-size: 2rem;
+                    color: var(--color-text);
+                    transition: 0.2s ease-out;
+                }
+
+                .text {
+                    color: var(--color-text);
+                    transition: 0.2s ease-out;
+                }
+            }
+            .button {
+                &:hover, &.router-link-exact-active{
+                    background-color: var(--vt-c-light-purple-soft-tab);
+
+                    @media (prefers-color-scheme: dark) {
+                        background-color: var(--vt-c-dark-purple-soft-tab);
+                    }
+                }
+            }
+        }
+
+        &.expanded {
+            width: var(--sidebar-extended-width);
+
+            .menu-toggle-wrap {
+                top: -2rem;
+
+                .material-symbols-outlined {
+                    transition: 0.2s ease-out;
+                    transform: rotate(180deg);
+                }
+            }
+
+            h3, .button .text, .visual-info .text {
+                opacity: 1;
+            }
+
+            .button, .visual-info{
+                .material-symbols-outlined {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+</style>

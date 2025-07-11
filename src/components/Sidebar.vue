@@ -25,19 +25,19 @@ const isDark = useDark();
 
         <h3>Menu</h3>
         <div class="menu">
-            <router-link class="button" to="/">
+            <router-link class="button" to="/vue-project/">
                 <span class="material-symbols-outlined">home</span>
                 <span class="text">Home</span>
             </router-link>
-            <router-link class="button" to="/about">
+            <router-link class="button" to="/vue-project/about">
                 <span class="material-symbols-outlined">info</span>
                 <span class="text">About me</span>
             </router-link>
-            <router-link class="button" to="/project">
+            <router-link class="button" to="/vue-project/project">
                 <span class="material-symbols-outlined">work</span>
                 <span class="text">Projects</span>
             </router-link>
-            <router-link class="button" to="/link">
+            <router-link class="button" to="/vue-project/link">
                 <span class="material-symbols-outlined">captive_portal</span>
                 <span class="text">Links</span>
             </router-link>

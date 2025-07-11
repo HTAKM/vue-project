@@ -17,22 +17,22 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path: '/',
+            path: '/vue-project/',
             name: 'Index',
             component: Home
         },
         {
-            path: '/about',
+            path: '/vue-project/about',
             name: 'About',
             component: About
         },
         {
-            path: '/project',
+            path: '/vue-project/project',
             name: 'Project',
             component: Project
         },
         {
-            path: '/link',
+            path: '/vue-project/link',
             name: 'Related Websites',
             component: Website
         }

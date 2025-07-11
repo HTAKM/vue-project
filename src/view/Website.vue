@@ -7,8 +7,10 @@ import lectureMaterialLinks from '@/assets/courseItemLinks';
         <Session title="Links to some BGM that I listen to:">
             <table class="table">
                 <tbody>
-                    <th>Emil Chronicle Online</th>
-                    <td><a href="https://www.youtube.com/playlist?list=PLDooSxhH10QvG9iVwQoTt5IiGi1_wpn9p">BGM</a> (Not complete list)</td>
+                    <tr>
+                        <th>Emil Chronicle Online</th>
+                        <td><a href="https://www.youtube.com/playlist?list=PLDooSxhH10QvG9iVwQoTt5IiGi1_wpn9p">BGM</a> (Not complete list)</td>
+                    </tr>
                 </tbody>
             </table>
         </Session>

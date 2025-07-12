@@ -47,11 +47,26 @@ main {
     align-items: center;
     max-width: 1000px;
     margin: 0 auto;
+    transition: 0.2s ease-out;
+
+    // @media (max-width: 768px) {
+    //     padding: 1.5rem;
+    // }
+    // @media (max-width: 576px) {
+    //     padding: 1rem;
+    // }
 }
 
 .main {
     padding: calc(var(--navbar-height) + 2rem) 4rem 2rem calc(var(--sidebar-width) + 4rem);
     font-weight: normal;
     display: flex;
+    transition: 0.2s ease-out;
+    // @media (max-width: 768px) {
+    //     padding: calc(var(--navbar-height) + 1.5rem) 3rem 1.5rem calc(var(--sidebar-width) + 3rem);
+    // }
+    // @media (max-width: 576px) {
+    //     padding: calc(var(--navbar-height) + 1rem) 2rem 1rem calc(var(--sidebar-width) + 2rem);
+    // }
 }
 </style>

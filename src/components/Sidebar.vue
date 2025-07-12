@@ -69,7 +69,10 @@ const ToggleExpanded = () => {
         z-index: 99;
         background-color: var(--color-sidebar);
         -webkit-backface-visibility: hidden;
-
+        
+        @media (max-width: 768px) {
+            padding: 0.75rem;
+        }
         @media (max-width: 576px) {
             padding: 0.5rem;
         }
@@ -137,6 +140,12 @@ const ToggleExpanded = () => {
                 display: flex;
                 justify-content: center;
             }
+            @media (max-width: 768px) {
+                width: 1.5rem;
+                a {
+                    font-size: 0.75rem;
+                }
+            }
             @media (max-width: 576px) {
                 width: 1rem;
                 a {
@@ -158,6 +167,12 @@ const ToggleExpanded = () => {
                 
                 .material-symbols-outlined {
                     font-size: 2rem;
+                }
+            }
+            @media (max-width: 768px) {
+                margin-bottom: 0.75rem;
+                .menu-toggle .material-symbols-outlined {
+                    font-size: 1.5rem;
                 }
             }
             @media (max-width: 576px) {
@@ -188,6 +203,15 @@ const ToggleExpanded = () => {
                     transition: 0.2s ease-out;
                 }
             }
+            @media (max-width: 768px) {
+                margin: 0 -0.75rem;
+                .button {
+                    padding: 0.75rem 0.75rem;
+                    .material-symbols-outlined {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
             @media (max-width: 576px) {
                 margin: 0 -0.5rem;
                 .button {
@@ -212,6 +236,14 @@ const ToggleExpanded = () => {
             }
             .button .material-symbols-outlined {
                 margin-right: 1rem;
+            }
+            @media (max-width: 768px) {
+                .menu-toggle-wrap {
+                    top: -1.5rem;
+                }
+                .button .material-symbols-outlined {
+                    margin-right: 0.75rem;
+                }
             }
             @media (max-width: 576px) {
                 .menu-toggle-wrap {

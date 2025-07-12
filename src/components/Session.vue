@@ -48,7 +48,6 @@ const prop = defineProps({
             color: var(--color-link-text);
         }
     }
-
     &.dark {
         h1 {
             color: var(--color-heading-dark);
@@ -79,7 +78,6 @@ const prop = defineProps({
             }
         }
     }
-
     &:not(.dark) {
         h1 {
             color: var(--color-heading-light);
@@ -110,7 +108,6 @@ const prop = defineProps({
             }
         }
     }
-
     .inner-container {
         justify-content: center;
         .table {
@@ -147,10 +144,28 @@ const prop = defineProps({
                 font-size:x-large;
             }
         }
-
         a {
             display: inline-block;
             padding: 0;
+        }
+        @media (max-width: 768px) {
+            .table {
+                th, td {
+                    padding: 0.7px 3.75px;
+                }
+            }
+            .table-bordered {
+                th, td {
+                    border-width: 0.75px;
+                }
+            }
+            .button-inline button {
+                border-width: 0.75px;
+                border-radius: 0.75rem;
+                padding: 0.75rem;
+                margin: 0 0.75rem;
+                font-size: medium;
+            }
         }
         @media (max-width: 576px) {
             .table {

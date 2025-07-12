@@ -90,6 +90,13 @@
   }
 }
 
+@media (max-width: 576px) {
+  :root {
+    --sidebar-width: calc(2rem);
+    --sidebar-extended-width: calc(1rem + 150px);
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -125,9 +132,7 @@ body {
   color: var(--color-text);
   background: var(--color-background);
 
-  @media (max-width: 600px) {
-    font-size: 10px;
-  }
+
 }
 body.dark {
   color: var(--color-text-dark);
@@ -136,4 +141,11 @@ body.dark {
 body:not(.dark) {
   color: var(--color-text-light);
   background-color: var(--color-background-light);
+}
+
+@media (max-width: 576px) {
+  body {
+    line-height: 1;
+    font-size: 8px;
+  }
 }

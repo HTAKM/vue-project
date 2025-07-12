@@ -19,7 +19,6 @@ const prop = defineProps({
     margin: 0 0 5rem 0;
     flex-grow: 1;
     flex-wrap: wrap;
-
     h1 {
         color: var(--color-heading);
         transition: 0.2s ease-out;
@@ -114,7 +113,6 @@ const prop = defineProps({
 
     .inner-container {
         justify-content: center;
-        border: 1px;
         .table {
             width: 100%;
             th, td {
@@ -153,6 +151,25 @@ const prop = defineProps({
         a {
             display: inline-block;
             padding: 0;
+        }
+        @media (max-width: 576px) {
+            .table {
+                th, td {
+                    padding: 0.5px 2.5px;
+                }
+            }
+            .table-bordered {
+                th, td {
+                    border-width: 0.5px;
+                }
+            }
+            .button-inline button {
+                border-width: 0.5px;
+                border-radius: 0.5rem;
+                padding: 0.5rem;
+                margin: 0 0.5rem;
+                font-size: medium;
+            }
         }
     }
 }

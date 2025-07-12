@@ -64,8 +64,16 @@ const ToggleExpanded = () => {
         height: 100%;
         overflow: hidden;
         padding: 1rem;
-
+        transition: 0.2s ease-out;
+        position: fixed;
+        z-index: 99;
         background-color: var(--color-sidebar);
+        -webkit-backface-visibility: hidden;
+
+        @media (max-width: 576px) {
+            padding: 0.5rem;
+        }
+
         .logo a, 
         .menu-toggle-wrap .menu-toggle .material-symbols-outlined,
         .menu .button .material-symbols-outlined,
@@ -116,12 +124,6 @@ const ToggleExpanded = () => {
                 color: var(--color-heading-light);
             }
         }
-
-        transition: 0.2s ease-out;
-
-        position: fixed;
-        z-index: 99;
-
         .flex {
             flex: 1 1 0;
         }
@@ -135,8 +137,13 @@ const ToggleExpanded = () => {
                 display: flex;
                 justify-content: center;
             }
+            @media (max-width: 576px) {
+                width: 1rem;
+                a {
+                    font-size: 0.5rem;
+                }
+            }
         }
-
         .menu-toggle-wrap {
             display: flex;
             justify-content: flex-end;
@@ -148,58 +155,70 @@ const ToggleExpanded = () => {
             .menu-toggle {
                 transition: 0.2s ease-out;
                 padding: 0;
+                
                 .material-symbols-outlined {
                     font-size: 2rem;
                 }
             }
+            @media (max-width: 576px) {
+                margin-bottom: 0.5rem;
+                .menu-toggle .material-symbols-outlined {
+                    font-size: 1rem;
+                }
+            }
         }
-
         h3, .button .text{
             opacity: 0;
             transition: 0.3s ease-out;
             white-space: nowrap;
         }
-
         .menu {
             margin: 0 -1rem;
-
             .button {
                 display: flex;
                 align-items: center;
                 text-decoration: none;
                 padding: 0.5rem 1rem;
                 transition: 0.2s ease-out;
-
                 .material-symbols-outlined {
                     font-size: 2rem;
                     transition: 0.2s ease-out;
                 }
-
                 .text {
                     transition: 0.2s ease-out;
                 }
             }
+            @media (max-width: 576px) {
+                margin: 0 -0.5rem;
+                .button {
+                    padding: 0.5rem 0.5rem;
+                    .material-symbols-outlined {
+                        font-size: 1rem;
+                    }
+                }
+            }
         }
-
         &.expanded {
             width: var(--sidebar-extended-width);
-
             .menu-toggle-wrap {
                 top: -2rem;
-
                 .material-symbols-outlined {
                     transition: 0.2s ease-out;
                     transform: rotate(180deg);
                 }
             }
-
-            h3, .button .text, .visual-info .text {
+            h3, .button .text {
                 opacity: 1;
             }
-
-            .button, .visual-info{
-                .material-symbols-outlined {
-                    margin-right: 1rem;
+            .button .material-symbols-outlined {
+                margin-right: 1rem;
+            }
+            @media (max-width: 576px) {
+                .menu-toggle-wrap {
+                    top: -1rem;
+                }
+                .button .material-symbols-outlined {
+                    margin-right: 0.5rem;
                 }
             }
         }

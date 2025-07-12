@@ -67,9 +67,9 @@
   --color-sidebar-hover-dark: var(--vt-c-dark-purple-soft-tab);
 
   --section-gap: 160px;
-  --sidebar-width: calc(4rem);
-  --sidebar-extended-width: calc(2rem + 300px);
-  --navbar-height: calc(4rem);
+  --sidebar-width: calc(56px);
+  --sidebar-extended-width: calc(28px + 300px);
+  --navbar-height: calc(56px);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -92,15 +92,15 @@
 
 @media (max-width: 768px) {
   :root {
-    --sidebar-width: calc(3rem);
-    --sidebar-extended-width: calc(1.5rem + 225px);
+    --sidebar-width: calc(42px);
+    --sidebar-extended-width: calc(21px + 225px);
   }
 }
 
 @media (max-width: 576px) {
   :root {
-    --sidebar-width: calc(2rem);
-    --sidebar-extended-width: calc(1rem + 150px);
+    --sidebar-width: calc(28px);
+    --sidebar-extended-width: calc(14px + 150px);
   }
 }
 

@@ -16,7 +16,7 @@ const prop = defineProps({
 </template>
 <style style="scss">
 .session {
-    margin: 0 0 5rem 0;
+    margin: 0 0 70px 0;
     flex-grow: 1;
     flex-wrap: wrap;
     h1 {
@@ -138,9 +138,9 @@ const prop = defineProps({
             button {
                 border-width: 1px;
                 border-style: solid;
-                border-radius: 1rem;
-                padding: 1rem;
-                margin: 0 1rem;
+                border-radius: 14px;
+                padding: 14px;
+                margin: 0 14px;
                 font-size:x-large;
             }
         }
@@ -161,9 +161,9 @@ const prop = defineProps({
             }
             .button-inline button {
                 border-width: 0.75px;
-                border-radius: 0.75rem;
-                padding: 0.75rem;
-                margin: 0 0.75rem;
+                border-radius: 10.5px;
+                padding: 10.5px;
+                margin: 0 10.5px;
                 font-size: medium;
             }
         }
@@ -180,9 +180,9 @@ const prop = defineProps({
             }
             .button-inline button {
                 border-width: 0.5px;
-                border-radius: 0.5rem;
-                padding: 0.5rem;
-                margin: 0 0.5rem;
+                border-radius: 7px;
+                padding: 7px;
+                margin: 0 7px;
                 font-size: medium;
             }
         }

@@ -63,7 +63,7 @@ const ToggleExpanded = () => {
         min-height: 100%;
         height: 100%;
         overflow: hidden;
-        padding: 1rem;
+        padding: 14px;
         transition: 0.2s ease-out;
         position: fixed;
         z-index: 99;
@@ -71,10 +71,10 @@ const ToggleExpanded = () => {
         -webkit-backface-visibility: hidden;
         
         @media (max-width: 768px) {
-            padding: 0.75rem;
+            padding: 10.5px;
         }
         @media (max-width: 576px) {
-            padding: 0.5rem;
+            padding: 7px;
         }
 
         .logo a, 
@@ -131,32 +131,32 @@ const ToggleExpanded = () => {
             flex: 1 1 0;
         }
         .logo {
-            width: 2rem;
+            width: 28px;
             margin: 0 auto;
             a {
-                font-size: 1rem;
+                font-size: 14px;
                 font-weight: bolder;
                 white-space: nowrap;
                 display: flex;
                 justify-content: center;
             }
             @media (max-width: 768px) {
-                width: 1.5rem;
+                width: 21px;
                 a {
-                    font-size: 0.75rem;
+                    font-size: 10.5px;
                 }
             }
             @media (max-width: 576px) {
-                width: 1rem;
+                width: 14px;
                 a {
-                    font-size: 0.5rem;
+                    font-size: 7px;
                 }
             }
         }
         .menu-toggle-wrap {
             display: flex;
             justify-content: flex-end;
-            margin-bottom: 1rem;
+            margin-bottom: 14px;
             position: relative;
             top: 0;
             transition: 0.2s ease-out;
@@ -166,19 +166,19 @@ const ToggleExpanded = () => {
                 padding: 0;
                 
                 .material-symbols-outlined {
-                    font-size: 2rem;
+                    font-size: 28px;
                 }
             }
             @media (max-width: 768px) {
-                margin-bottom: 0.75rem;
+                margin-bottom: 10.5px;
                 .menu-toggle .material-symbols-outlined {
-                    font-size: 1.5rem;
+                    font-size: 21px;
                 }
             }
             @media (max-width: 576px) {
-                margin-bottom: 0.5rem;
+                margin-bottom: 7px;
                 .menu-toggle .material-symbols-outlined {
-                    font-size: 1rem;
+                    font-size: 14px;
                 }
             }
         }
@@ -188,15 +188,15 @@ const ToggleExpanded = () => {
             white-space: nowrap;
         }
         .menu {
-            margin: 0 -1rem;
+            margin: 0 -14px;
             .button {
                 display: flex;
                 align-items: center;
                 text-decoration: none;
-                padding: 0.5rem 1rem;
+                padding: 7px 14px;
                 transition: 0.2s ease-out;
                 .material-symbols-outlined {
-                    font-size: 2rem;
+                    font-size: 28px;
                     transition: 0.2s ease-out;
                 }
                 .text {
@@ -204,20 +204,20 @@ const ToggleExpanded = () => {
                 }
             }
             @media (max-width: 768px) {
-                margin: 0 -0.75rem;
+                margin: 0 -10.5px;
                 .button {
-                    padding: 0.75rem 0.75rem;
+                    padding: 10.5px 10.5px;
                     .material-symbols-outlined {
-                        font-size: 1.5rem;
+                        font-size: 21px;
                     }
                 }
             }
             @media (max-width: 576px) {
-                margin: 0 -0.5rem;
+                margin: 0 -7px;
                 .button {
-                    padding: 0.5rem 0.5rem;
+                    padding: 7px 7px;
                     .material-symbols-outlined {
-                        font-size: 1rem;
+                        font-size: 14px;
                     }
                 }
             }
@@ -225,7 +225,7 @@ const ToggleExpanded = () => {
         &.expanded {
             width: var(--sidebar-extended-width);
             .menu-toggle-wrap {
-                top: -2rem;
+                top: -28px;
                 .material-symbols-outlined {
                     transition: 0.2s ease-out;
                     transform: rotate(180deg);
@@ -235,22 +235,22 @@ const ToggleExpanded = () => {
                 opacity: 1;
             }
             .button .material-symbols-outlined {
-                margin-right: 1rem;
+                margin-right: 14px;
             }
             @media (max-width: 768px) {
                 .menu-toggle-wrap {
-                    top: -1.5rem;
+                    top: -21px;
                 }
                 .button .material-symbols-outlined {
-                    margin-right: 0.75rem;
+                    margin-right: 10.5px;
                 }
             }
             @media (max-width: 576px) {
                 .menu-toggle-wrap {
-                    top: -1rem;
+                    top: -14px;
                 }
                 .button .material-symbols-outlined {
-                    margin-right: 0.5rem;
+                    margin-right: 7px;
                 }
             }
         }

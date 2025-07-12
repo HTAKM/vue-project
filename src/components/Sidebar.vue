@@ -61,6 +61,7 @@ const ToggleExpanded = () => {
         flex-direction: column;
         width: var(--sidebar-width);
         min-height: 100vh;
+        height: 100vh;
         overflow: hidden;
         padding: 1rem;
 

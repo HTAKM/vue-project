@@ -122,6 +122,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: scroll;
+  color: var(--color-text);
+  background: var(--color-background);
+
+  @media (max-width: 600px) {
+    font-size: 10px;
+  }
 }
 body.dark {
   color: var(--color-text-dark);

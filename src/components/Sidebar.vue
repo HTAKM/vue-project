@@ -23,19 +23,19 @@ const ToggleExpanded = () => {
 
         <h3>Menu</h3>
         <div class="menu">
-            <router-link class="button" to="/vue-project/">
+            <router-link class="button" to="/">
                 <span class="material-symbols-outlined">home</span>
                 <span class="text">Home</span>
             </router-link>
-            <router-link class="button" to="/vue-project/about">
+            <router-link class="button" to="/about">
                 <span class="material-symbols-outlined">info</span>
                 <span class="text">About me</span>
             </router-link>
-            <router-link class="button" to="/vue-project/project">
+            <router-link class="button" to="/project">
                 <span class="material-symbols-outlined">work</span>
                 <span class="text">Projects</span>
             </router-link>
-            <router-link class="button" to="/vue-project/link">
+            <router-link class="button" to="/link">
                 <span class="material-symbols-outlined">captive_portal</span>
                 <span class="text">Links</span>
             </router-link>

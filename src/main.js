@@ -2,7 +2,7 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import PrimeVue from 'primevue/config'
 import Aura from "@primeuix/themes/aura"
 // import { AnimateOnScroll } from 'primevue'
@@ -14,26 +14,26 @@ import Website from './view/Website.vue'
 
 const app = createApp(App);
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     mode: 'hash',
     routes: [
         {
-            path: '/vue-project/',
+            path: '/',
             name: 'Index',
             component: Home
         },
         {
-            path: '/vue-project/about',
+            path: '/about',
             name: 'About',
             component: About
         },
         {
-            path: '/vue-project/project',
+            path: '/project',
             name: 'Project',
             component: Project
         },
         {
-            path: '/vue-project/link',
+            path: '/link',
             name: 'Related Websites',
             component: Website
         }

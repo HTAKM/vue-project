@@ -8,7 +8,7 @@ import dsv from '@rollup/plugin-dsv'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/vue-project/',
+  base: '/vue-project',
   plugins: [
     vue(),
     vueJsx(),

@@ -21,32 +21,32 @@ const prop = defineProps({
     flex-wrap: wrap;
 
     h1 {
-        color: var(--color-heading-light);
+        color: var(--color-heading);
         transition: 0.2s ease-out;
     }
     .inner-container {
         .table {
             thead th {
-                background-color: var(--color-border-heading-light);
+                background-color: var(--color-border-heading);
             }
             tbody tr:hover {
                 th, td {
-                    background-color: var(--color-border-hover-light);
+                    background-color: var(--color-border-hover);
                 }
             }
         }
         .table-bordered {
             td, th {
-                border-color: var(--color-border-light);
+                border-color: var(--color-border);
             }
         }
         .button-inline button {
-            background-color: var(--color-border-light);
-            border-color: var(--color-border-light);
-            color: var(--color-heading-light);
+            background-color: var(--color-border);
+            border-color: var(--color-border);
+            color: var(--color-heading);
         }
         a {
-            color: var(--color-link-text-light);
+            color: var(--color-link-text);
         }
     }
 
@@ -77,6 +77,37 @@ const prop = defineProps({
             }
             a {
                 color: var(--color-link-text-dark);
+            }
+        }
+    }
+
+    &:not(.dark) {
+        h1 {
+            color: var(--color-heading-light);
+        }
+        .inner-container {
+            .table {
+                thead th {
+                    background-color: var(--color-border-heading-light);
+                }
+                tbody tr:hover {
+                    th, td {
+                        background-color: var(--color-border-hover-light);
+                    }
+                }
+            }
+            .table-bordered {
+                td, th {
+                    border-color: var(--color-border-light);
+                }
+            }
+            .button-inline button {
+                background-color: var(--color-border-light);
+                border-color: var(--color-border-light);
+                color: var(--color-heading-light);
+            }
+            a {
+                color: var(--color-link-text-light);
             }
         }
     }

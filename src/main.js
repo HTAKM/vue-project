@@ -15,6 +15,7 @@ import Website from './view/Website.vue'
 const app = createApp(App);
 const router = createRouter({
     history: createWebHistory(),
+    mode: 'hash',
     routes: [
         {
             path: '/vue-project/',
@@ -44,5 +45,4 @@ app.use(PrimeVue, {
         preset: Aura,
     }
 });
-// app.directive('animateonscroll', AnimateOnScroll);
 app.mount('body');

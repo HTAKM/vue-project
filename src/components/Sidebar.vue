@@ -64,20 +64,20 @@ const ToggleExpanded = () => {
         overflow: hidden;
         padding: 1rem;
 
-        background-color: var(--color-sidebar-light);
+        background-color: var(--color-sidebar);
         .logo a, 
         .menu-toggle-wrap .menu-toggle .material-symbols-outlined,
         .menu .button .material-symbols-outlined,
         .menu .button .text {
-            color: var(--color-text-light);
+            color: var(--color-text);
         }
         .menu .button {
             &:hover, &.router-link-exact-active{
-                background-color: var(--color-sidebar-hover-light);
+                background-color: var(--color-sidebar-hover);
             }
         }
         h3 {
-            color: var(--color-heading-light);
+            color: var(--color-heading);
         }
 
         &.dark {
@@ -95,6 +95,24 @@ const ToggleExpanded = () => {
             }
             h3 {
                 color: var(--color-heading-dark);
+            }
+        }
+
+        &:not(.dark) {
+            background-color: var(--color-sidebar-light);
+            .logo a, 
+            .menu-toggle-wrap .menu-toggle .material-symbols-outlined,
+            .menu .button .material-symbols-outlined,
+            .menu .button .text {
+                color: var(--color-text-light);
+            }
+            .menu .button {
+                &:hover, &.router-link-exact-active{
+                    background-color: var(--color-sidebar-hover-light);
+                }
+            }
+            h3 {
+                color: var(--color-heading-light);
             }
         }
 

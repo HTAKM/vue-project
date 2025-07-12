@@ -122,10 +122,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: scroll;
-  color: var(--color-text-light);
-  background: var(--color-background-light);
 }
 body.dark {
   color: var(--color-text-dark);
   background: var(--color-background-dark);
+}
+body:not(.dark) {
+  color: var(--color-text-light);
+  background-color: var(--color-background-light);
 }

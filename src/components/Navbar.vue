@@ -14,7 +14,7 @@ const props = defineProps({
 <style scoped lang="scss">
 header {
     display: flex;
-    width: 100vw;
+    width: 100%;
     height: var(--navbar-height);
     // overflow: hidden;
     padding: 1rem;

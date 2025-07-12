@@ -25,7 +25,7 @@ const showGrades = gradeFile.filter((row) => GPAValidGrade.includes(row.Grade))
         <Session title="Contact" v-show="isShowing == 'Contact'" :isDark="isDark">
             <p>Email: <a href="mailto:'yhkwokae@connect.ust.hk'">yhkwokae@connect.ust.hk</a></p>
         </Session>
-        <Session title="Info" v-show="isShowing == 'Academic'">
+        <Session title="Info" v-show="isShowing == 'Academic'" :isDark="isDark">
             <p>Current University: The Hong Kong University of Science and Technology</p>
             <p>Year of Study: Year 3</p>
             <p>Current Major: (COSC + AI) + DSCT</p>

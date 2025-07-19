@@ -9,6 +9,7 @@ const checkDarkMode = (event) => {
 onMounted(() => {
     checkDarkMode();
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', checkDarkMode);
+    document.body.classList.add('loaded');
 });
 onUnmounted(() => {
     window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', checkDarkMode);

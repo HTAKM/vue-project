@@ -57,9 +57,9 @@ const ToggleExpanded = () => {
 </template>
 <style lang="scss" scoped>
 @use '@/assets/css/default.scss' as *;
-* {
-    transition: 0.2s ease;
-}
+// * {
+//     transition: 0.2s ease;
+// }
 aside {
     display: flex;
     flex-direction: column;

@@ -16,9 +16,9 @@ const prop = defineProps({
 </template>
 <style lang="scss">
 @use '@/assets/css/default.scss' as *;
-* {
-    transition: 0.2s ease;
-}
+// * {
+//     transition: 0.2s ease;
+// }
 .session {
     margin: 0 0 70px 0;
     flex-grow: 1;

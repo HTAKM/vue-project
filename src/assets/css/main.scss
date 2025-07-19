@@ -1,0 +1,22 @@
+@import './base.css';
+
+a {
+  text-decoration: none;
+  padding: 3px;
+}
+
+
+button {
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.loaded {
+  transition: 0.2s ease;
+  * {
+    transition: 0.2s ease;
+  }
+}

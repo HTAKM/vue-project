@@ -8870,7 +8870,7 @@ const _sfc_main$6 = {
     };
   }
 };
-const Sidebar = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-89f83b74"]]);
+const Sidebar = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-390914a3"]]);
 const _hoisted_1$5 = { id: "app" };
 const _hoisted_2$3 = { class: "main" };
 const _sfc_main$5 = {
@@ -8883,6 +8883,7 @@ const _sfc_main$5 = {
     onMounted(() => {
       checkDarkMode();
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", checkDarkMode);
+      document.body.classList.add("loaded");
     });
     onUnmounted(() => {
       window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change", checkDarkMode);

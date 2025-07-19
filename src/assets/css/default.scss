@@ -1,0 +1,44 @@
+%default-text-format {
+    font-size: 15px;
+    color: var(--color-text);
+    @media (max-width: 768px) {
+        font-size: 11.25px;
+    }
+    @media (max-width: 576px) {
+        font-size: 7.5px;
+    }
+}
+%default-border {
+    border-width: 1px;
+    border-style: solid;
+    @media (max-width: 768px) {
+        border-width: 0.75px;
+    }
+    @media (max-width: 576px) {
+        border-width: 0.5px;
+    }
+}
+%flex-center {
+    display: flex;
+    align-items: center;
+}
+@mixin marpad($mt, $mr, $mb, $ml, $pt, $pr, $pb, $pl) {
+    margin: $mt $mr $mb $ml;
+    padding: $pt $pr $pb $pl;
+    @media (max-width: 768px) {
+        margin: 
+            $mt calc($mr * 3 / 4) 
+            $mb calc($ml * 3 / 4);
+        padding: 
+            $pt calc($pr * 3 / 4) 
+            $pb calc($pl * 3 / 4);
+    }
+    @media (max-width: 576px) {
+        margin: 
+            $mt calc($mr / 2) 
+            $mb calc($ml / 2);
+        padding: 
+            $pt calc($pr / 2) 
+            $pb calc($pl / 2);
+    }
+}

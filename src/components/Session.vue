@@ -14,14 +14,17 @@ const prop = defineProps({
         </div>
     </Transition>
 </template>
-<style style="scss">
+<style lang="scss">
+@use '@/assets/css/default.scss' as *;
+* {
+    transition: 0.2s ease;
+}
 .session {
     margin: 0 0 70px 0;
     flex-grow: 1;
     flex-wrap: wrap;
     h1 {
         color: var(--color-heading);
-        transition: 0.2s ease-out;
     }
     .inner-container {
         .table {
@@ -113,7 +116,7 @@ const prop = defineProps({
         .table {
             width: 100%;
             th, td {
-                padding: 1px 5px;
+                @include marpad(0, 0, 0, 0, 1px, 5px, 1px, 5px);
             }
             thead th {
                 text-align: center;
@@ -125,8 +128,8 @@ const prop = defineProps({
         }
         .table-bordered {
             th, td {
-                border-width: 1px;
                 border-style: solid;
+                @extend %default-border;
             }
         }
         .button-inline {
@@ -134,14 +137,11 @@ const prop = defineProps({
             margin: 0 auto;
             width: 100%;
             justify-content: center;
-
             button {
-                border-width: 1px;
-                border-style: solid;
-                border-radius: 14px;
-                padding: 14px;
-                margin: 0 14px;
-                font-size:x-large;
+                @extend %default-border;
+                border-radius: 10px;
+                font-size: 20px;
+                @include marpad(0, 14px, 0, 14px, 14px, 14px, 14px, 14px);
             }
         }
         a {
@@ -149,41 +149,13 @@ const prop = defineProps({
             padding: 0;
         }
         @media (max-width: 768px) {
-            .table {
-                th, td {
-                    padding: 0.7px 3.75px;
-                }
-            }
-            .table-bordered {
-                th, td {
-                    border-width: 0.75px;
-                }
-            }
             .button-inline button {
-                border-width: 0.75px;
-                border-radius: 10.5px;
-                padding: 10.5px;
-                margin: 0 10.5px;
-                font-size: medium;
+                font-size: 15px;
             }
         }
         @media (max-width: 576px) {
-            .table {
-                th, td {
-                    padding: 0.5px 2.5px;
-                }
-            }
-            .table-bordered {
-                th, td {
-                    border-width: 0.5px;
-                }
-            }
             .button-inline button {
-                border-width: 0.5px;
-                border-radius: 7px;
-                padding: 7px;
-                margin: 0 7px;
-                font-size: medium;
+                font-size: 10px;
             }
         }
     }

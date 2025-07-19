@@ -1,6 +1,4 @@
 <script setup>
-import { Menubar } from 'primevue'
-import { ref } from 'vue'
 const props = defineProps({
     title: String
 })
@@ -16,13 +14,10 @@ header {
     display: flex;
     width: 100%;
     height: var(--navbar-height);
-    // overflow: hidden;
     padding: 1rem;
     background-color: var(--vt-c-light-purple-mute-tab);
     color: var(--vt-c-light-purple);
     transition: 0.2s ease-out;
-    // position: fixed;
-    // z-index: 99;
 
     @media (prefers-color-scheme: dark) {
         background-color: var(--vt-c-dark-purple-mute-tab);

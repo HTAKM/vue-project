@@ -55,204 +55,171 @@ const ToggleExpanded = () => {
         </div>
     </aside>
 </template>
-<style lang="scss">
-    aside {
-        display: flex;
-        flex-direction: column;
-        width: var(--sidebar-width);
-        min-height: 100%;
-        height: 100%;
-        overflow: hidden;
-        padding: 14px;
-        transition: 0.2s ease-out;
-        position: fixed;
-        z-index: 99;
-        background-color: var(--color-sidebar);
-        -webkit-backface-visibility: hidden;
-        
-        @media (max-width: 768px) {
-            padding: 10.5px;
+<style lang="scss" scoped>
+@use '@/assets/css/default.scss' as *;
+* {
+    transition: 0.2s ease;
+}
+aside {
+    display: flex;
+    flex-direction: column;
+    width: var(--sidebar-width);
+    min-height: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    z-index: 99;
+    background-color: var(--color-sidebar);
+    -webkit-backface-visibility: hidden;
+    @include marpad(0, 0, 0, 0, 14px, 14px, 14px, 14px);
+    .logo a, 
+    .menu-toggle-wrap .menu-toggle .material-symbols-outlined,
+    .menu .button .material-symbols-outlined,
+    .menu .button .text {
+        color: var(--color-text);
+    }
+    .menu .button {
+        &:hover, &.router-link-exact-active{
+            background-color: var(--color-sidebar-hover);
         }
-        @media (max-width: 576px) {
-            padding: 7px;
-        }
+    }
+    h3 {
+        color: var(--color-heading);
+    }
 
+    &.dark {
+        background-color: var(--color-sidebar-dark);
         .logo a, 
         .menu-toggle-wrap .menu-toggle .material-symbols-outlined,
         .menu .button .material-symbols-outlined,
         .menu .button .text {
-            color: var(--color-text);
+            color: var(--color-text-dark);
         }
         .menu .button {
             &:hover, &.router-link-exact-active{
-                background-color: var(--color-sidebar-hover);
+                background-color: var(--color-sidebar-hover-dark);
             }
         }
         h3 {
-            color: var(--color-heading);
+            color: var(--color-heading-dark);
         }
+    }
 
-        &.dark {
-            background-color: var(--color-sidebar-dark);
-            .logo a, 
-            .menu-toggle-wrap .menu-toggle .material-symbols-outlined,
-            .menu .button .material-symbols-outlined,
-            .menu .button .text {
-                color: var(--color-text-dark);
-            }
-            .menu .button {
-                &:hover, &.router-link-exact-active{
-                    background-color: var(--color-sidebar-hover-dark);
-                }
-            }
-            h3 {
-                color: var(--color-heading-dark);
+    &:not(.dark) {
+        background-color: var(--color-sidebar-light);
+        .logo a, 
+        .menu-toggle-wrap .menu-toggle .material-symbols-outlined,
+        .menu .button .material-symbols-outlined,
+        .menu .button .text {
+            color: var(--color-text-light);
+        }
+        .menu .button {
+            &:hover, &.router-link-exact-active{
+                background-color: var(--color-sidebar-hover-light);
             }
         }
-
-        &:not(.dark) {
-            background-color: var(--color-sidebar-light);
-            .logo a, 
-            .menu-toggle-wrap .menu-toggle .material-symbols-outlined,
-            .menu .button .material-symbols-outlined,
-            .menu .button .text {
-                color: var(--color-text-light);
-            }
-            .menu .button {
-                &:hover, &.router-link-exact-active{
-                    background-color: var(--color-sidebar-hover-light);
-                }
-            }
-            h3 {
-                color: var(--color-heading-light);
-            }
+        h3 {
+            color: var(--color-heading-light);
         }
-        .flex {
-            flex: 1 1 0;
-        }
-        .logo {
-            width: 28px;
-            margin: 0 auto;
-            a {
-                font-size: 14px;
-                font-weight: bolder;
-                white-space: nowrap;
-                display: flex;
-                justify-content: center;
-            }
-            @media (max-width: 768px) {
-                width: 21px;
-                a {
-                    font-size: 10.5px;
-                }
-            }
-            @media (max-width: 576px) {
-                width: 14px;
-                a {
-                    font-size: 7px;
-                }
-            }
-        }
-        .menu-toggle-wrap {
+    }
+    .flex {
+        flex: 1 1 0;
+    }
+    .logo {
+        width: 28px;
+        margin: 0 auto;
+        a {
+            font-size: 14px;
+            font-weight: bolder;
+            white-space: nowrap;
             display: flex;
-            justify-content: flex-end;
-            margin-bottom: 14px;
-            position: relative;
-            top: 0;
-            transition: 0.2s ease-out;
-
-            .menu-toggle {
-                transition: 0.2s ease-out;
-                padding: 0;
-                
-                .material-symbols-outlined {
-                    font-size: 28px;
-                }
+            justify-content: center;
+        }
+        @media (max-width: 768px) {
+            width: 21px;
+            a {
+                font-size: 10.5px;
             }
-            @media (max-width: 768px) {
-                margin-bottom: 10.5px;
-                .menu-toggle .material-symbols-outlined {
+        }
+        @media (max-width: 576px) {
+            width: 14px;
+            a {
+                font-size: 7px;
+            }
+        }
+    }
+    .menu-toggle-wrap {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        top: 0;
+        @include marpad(0, 0, 14px, 0, 0, 0, 0, 0);
+        .menu-toggle {
+            padding: 0;
+            .material-symbols-outlined {
+                font-size: 28px;
+                @media (max-width: 768px) {
                     font-size: 21px;
                 }
-            }
-            @media (max-width: 576px) {
-                margin-bottom: 7px;
-                .menu-toggle .material-symbols-outlined {
+                @media (max-width: 576px) {
                     font-size: 14px;
                 }
             }
         }
-        h3, .button .text{
-            opacity: 0;
-            transition: 0.3s ease-out;
-            white-space: nowrap;
-        }
-        .menu {
-            margin: 0 -14px;
-            .button {
-                display: flex;
-                align-items: center;
-                text-decoration: none;
-                padding: 7px 14px;
-                transition: 0.2s ease-out;
-                .material-symbols-outlined {
-                    font-size: 28px;
-                    transition: 0.2s ease-out;
+    }
+    h3, .button .text{
+        opacity: 0;
+        transition: 0.3s ease-out;
+        white-space: nowrap;
+    }
+    .menu {
+        @include marpad(0, -14px, 0, -14px, 0, 0, 0, 0);
+        .button {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            @include marpad(0, 0, 0, 0, 7px, 14px, 7px, 14px);
+            .material-symbols-outlined {
+                font-size: 28px;
+                @media (max-width: 768px) {
+                    font-size: 21px;
                 }
-                .text {
-                    transition: 0.2s ease-out;
-                }
-            }
-            @media (max-width: 768px) {
-                margin: 0 -10.5px;
-                .button {
-                    padding: 10.5px 10.5px;
-                    .material-symbols-outlined {
-                        font-size: 21px;
-                    }
-                }
-            }
-            @media (max-width: 576px) {
-                margin: 0 -7px;
-                .button {
-                    padding: 7px 7px;
-                    .material-symbols-outlined {
-                        font-size: 14px;
-                    }
-                }
-            }
-        }
-        &.expanded {
-            width: var(--sidebar-extended-width);
-            .menu-toggle-wrap {
-                top: -28px;
-                .material-symbols-outlined {
-                    transition: 0.2s ease-out;
-                    transform: rotate(180deg);
-                }
-            }
-            h3, .button .text {
-                opacity: 1;
-            }
-            .button .material-symbols-outlined {
-                margin-right: 14px;
-            }
-            @media (max-width: 768px) {
-                .menu-toggle-wrap {
-                    top: -21px;
-                }
-                .button .material-symbols-outlined {
-                    margin-right: 10.5px;
-                }
-            }
-            @media (max-width: 576px) {
-                .menu-toggle-wrap {
-                    top: -14px;
-                }
-                .button .material-symbols-outlined {
-                    margin-right: 7px;
+                @media (max-width: 576px) {
+                    font-size: 14px;
                 }
             }
         }
     }
+    &.expanded {
+        width: var(--sidebar-extended-width);
+        .menu-toggle-wrap {
+            top: -28px;
+            .material-symbols-outlined {
+                transform: rotate(180deg);
+            }
+        }
+        h3, .button .text {
+            opacity: 1;
+        }
+        .button .material-symbols-outlined {
+            margin-right: 14px;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle-wrap {
+                top: -21px;
+            }
+            .button .material-symbols-outlined {
+                margin-right: 10.5px;
+            }
+        }
+        @media (max-width: 576px) {
+            .menu-toggle-wrap {
+                top: -14px;
+            }
+            .button .material-symbols-outlined {
+                margin-right: 7px;
+            }
+        }
+    }
+}
 </style>

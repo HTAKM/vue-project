@@ -8761,6 +8761,13 @@ function extractChangingRecords(to, from) {
   }
   return [leavingRecords, updatingRecords, enteringRecords];
 }
+const _export_sfc = (sfc, props) => {
+  const target = sfc.__vccOpts || sfc;
+  for (const [key, val] of props) {
+    target[key] = val;
+  }
+  return target;
+};
 const _hoisted_1$6 = { class: "logo" };
 const _hoisted_2$4 = { href: "#" };
 const _hoisted_3$3 = { class: "menu" };
@@ -8863,6 +8870,7 @@ const _sfc_main$6 = {
     };
   }
 };
+const Sidebar = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-89f83b74"]]);
 const _hoisted_1$5 = { id: "app" };
 const _hoisted_2$3 = { class: "main" };
 const _sfc_main$5 = {
@@ -8891,7 +8899,7 @@ const _sfc_main$5 = {
     });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$5, [
-        createVNode(_sfc_main$6, {
+        createVNode(Sidebar, {
           head: "HU",
           class: normalizeClass({ dark: isDarkMode.value }),
           isDark: isDarkMode.value,

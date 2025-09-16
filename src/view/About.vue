@@ -14,9 +14,13 @@ export default {
   data() {
     return {
       isShowing: 'Contact',
-      GPAValidGrade: ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D', 'F'],
-      showGrades: gradeFile.filter((row) => this.GPAValidGrade.includes(row.Grade))
+      GPAValidGrade: ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D', 'F']
     };
+  },
+  computed: {
+    showGrades() {
+      return gradeFile.filter((row) => row.Grade && this.GPAValidGrade.includes(row.Grade));
+    }
   },
   methods: {
     changeShowing(tab) {

@@ -10632,7 +10632,7 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
             ])
           ]),
           createBaseVNode("tbody", null, [
-            (openBlock(true), createElementBlock(Fragment, null, renderList($data.showGrades, (row) => {
+            (openBlock(true), createElementBlock(Fragment, null, renderList($options.showGrades, (row) => {
               return openBlock(), createElementBlock("tr", null, [
                 createBaseVNode("td", null, "Year " + toDisplayString(row.Year) + " " + toDisplayString(row.Term), 1),
                 createBaseVNode("td", null, toDisplayString(row.Prefix) + " " + toDisplayString(row.Code), 1),
@@ -10773,9 +10773,13 @@ const _sfc_main$2 = {
   data() {
     return {
       isShowing: "Contact",
-      GPAValidGrade: ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F"],
-      showGrades: gradeFile.filter((row) => this.GPAValidGrade.includes(row.Grade))
+      GPAValidGrade: ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F"]
     };
+  },
+  computed: {
+    showGrades() {
+      return gradeFile.filter((row) => row.Grade && this.GPAValidGrade.includes(row.Grade));
+    }
   },
   methods: {
     changeShowing(tab) {

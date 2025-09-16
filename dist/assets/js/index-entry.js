@@ -2942,7 +2942,7 @@ function applyOptions(instance) {
     beforeUnmount,
     destroyed,
     unmounted,
-    render,
+    render: render2,
     renderTracked,
     renderTriggered,
     errorCaptured,
@@ -3040,8 +3040,8 @@ function applyOptions(instance) {
       instance.exposed = {};
     }
   }
-  if (render && instance.render === NOOP) {
-    instance.render = render;
+  if (render2 && instance.render === NOOP) {
+    instance.render = render2;
   }
   if (inheritAttrs != null) {
     instance.inheritAttrs = inheritAttrs;
@@ -3273,7 +3273,7 @@ function createAppContext() {
   };
 }
 let uid$1 = 0;
-function createAppAPI(render, hydrate) {
+function createAppAPI(render2, hydrate) {
   return function createApp2(rootComponent, rootProps = null) {
     if (!isFunction(rootComponent)) {
       rootComponent = extend({}, rootComponent);
@@ -3341,7 +3341,7 @@ function createAppAPI(render, hydrate) {
             namespace = void 0;
           }
           {
-            render(vnode, rootContainer, namespace);
+            render2(vnode, rootContainer, namespace);
           }
           isMounted = true;
           app2._container = rootContainer;
@@ -3359,7 +3359,7 @@ function createAppAPI(render, hydrate) {
             app2._instance,
             16
           );
-          render(null, app2._container);
+          render2(null, app2._container);
           delete app2._container.__vue_app__;
         }
       },
@@ -4986,7 +4986,7 @@ function baseCreateRenderer(options, createHydrationFns) {
     return teleportEnd ? hostNextSibling(teleportEnd) : el;
   };
   let isFlushing = false;
-  const render = (vnode, container, namespace) => {
+  const render2 = (vnode, container, namespace) => {
     if (vnode == null) {
       if (container._vnode) {
         unmount(container._vnode, null, null, true);
@@ -5024,9 +5024,9 @@ function baseCreateRenderer(options, createHydrationFns) {
   };
   let hydrate;
   return {
-    render,
+    render: render2,
     hydrate,
-    createApp: createAppAPI(render)
+    createApp: createAppAPI(render2)
   };
 }
 function resolveChildrenNamespace({ type, props }, currentNamespace) {
@@ -5325,7 +5325,7 @@ function renderComponentRoot(instance) {
     slots,
     attrs,
     emit: emit2,
-    render,
+    render: render2,
     renderCache,
     props,
     data,
@@ -5350,7 +5350,7 @@ function renderComponentRoot(instance) {
         }
       }) : proxyToUse;
       result = normalizeVNode(
-        render.call(
+        render2.call(
           thisProxy,
           proxyToUse,
           renderCache,
@@ -5362,10 +5362,10 @@ function renderComponentRoot(instance) {
       );
       fallthroughAttrs = attrs;
     } else {
-      const render2 = Component;
+      const render22 = Component;
       if (false) ;
       result = normalizeVNode(
-        render2.length > 1 ? render2(
+        render22.length > 1 ? render22(
           false ? shallowReadonly(props) : props,
           false ? {
             get attrs() {
@@ -5375,7 +5375,7 @@ function renderComponentRoot(instance) {
             slots,
             emit: emit2
           } : { attrs, slots, emit: emit2 }
-        ) : render2(
+        ) : render22(
           false ? shallowReadonly(props) : props,
           null
         )
@@ -8873,9 +8873,23 @@ const _sfc_main$6 = {
 const Sidebar = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-390914a3"]]);
 const _hoisted_1$5 = { id: "app" };
 const _hoisted_2$3 = { class: "main" };
+function render$4(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$5, [
+    createVNode($setup["Sidebar"], {
+      head: "HU",
+      class: normalizeClass({ dark: $setup.isDarkMode }),
+      isDark: $setup.isDarkMode,
+      onToggleDark: $setup.toggleDark
+    }, null, 8, ["class", "isDark"]),
+    createBaseVNode("div", _hoisted_2$3, [
+      createVNode($setup["RouterView"], { isDark: $setup.isDarkMode }, null, 8, ["isDark"])
+    ])
+  ]);
+}
 const _sfc_main$5 = {
   __name: "App",
-  setup(__props) {
+  setup(__props, { expose: __expose }) {
+    __expose();
     const isDarkMode = ref(false);
     const checkDarkMode = (event) => {
       isDarkMode.value = event ? event.matches : window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -8898,21 +8912,14 @@ const _sfc_main$5 = {
         document.body.classList.remove("dark");
       }
     });
-    return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", _hoisted_1$5, [
-        createVNode(Sidebar, {
-          head: "HU",
-          class: normalizeClass({ dark: isDarkMode.value }),
-          isDark: isDarkMode.value,
-          onToggleDark: toggleDark
-        }, null, 8, ["class", "isDark"]),
-        createBaseVNode("div", _hoisted_2$3, [
-          createVNode(unref(RouterView), { isDark: isDarkMode.value }, null, 8, ["isDark"])
-        ])
-      ]);
-    };
+    const __returned__ = { isDarkMode, checkDarkMode, toggleDark, get RouterView() {
+      return RouterView;
+    }, Sidebar, ref, onMounted, onUnmounted, watch };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
   }
 };
+const App = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", render$4]]);
 var oe$1 = Object.defineProperty;
 var K = Object.getOwnPropertySymbols;
 var ue = Object.prototype.hasOwnProperty, fe$1 = Object.prototype.propertyIsEnumerable;
@@ -10055,51 +10062,54 @@ const _sfc_main$4 = {
   }
 };
 const _hoisted_1$3 = { class: "home-page" };
+function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_Session = resolveComponent("Session");
+  const _component_router_link = resolveComponent("router-link");
+  return openBlock(), createElementBlock("main", _hoisted_1$3, [
+    createVNode(_component_Session, {
+      title: "Welcome!",
+      isDark: $props.isDark
+    }, {
+      default: withCtx(() => _cache[0] || (_cache[0] = [
+        createBaseVNode("p", null, "I am HU. You can also call me Henry or HTAKM.", -1),
+        createBaseVNode("p", null, "I am an undegraduate student of the Hong Kong University of Science and Technology.", -1)
+      ])),
+      _: 1,
+      __: [0]
+    }, 8, ["isDark"]),
+    createVNode(_component_Session, {
+      title: "My Website",
+      isDark: $props.isDark
+    }, {
+      default: withCtx(() => [
+        _cache[2] || (_cache[2] = createBaseVNode("p", null, "In this website, you can find some information about me, as well as the notes I made and some related links. You can click on the following links to find what you want.", -1)),
+        createBaseVNode("ul", null, [
+          createBaseVNode("li", null, [
+            createVNode(_component_router_link, { to: "/project#notes" }, {
+              default: withCtx(() => _cache[1] || (_cache[1] = [
+                createTextVNode("My Notes")
+              ])),
+              _: 1,
+              __: [1]
+            })
+          ])
+        ])
+      ]),
+      _: 1,
+      __: [2]
+    }, 8, ["isDark"])
+  ]);
+}
 const _sfc_main$3 = {
-  __name: "Home",
+  name: "Home",
+  components: {
+    Session: _sfc_main$4
+  },
   props: {
     isDark: Boolean
-  },
-  setup(__props) {
-    return (_ctx, _cache) => {
-      const _component_router_link = resolveComponent("router-link");
-      return openBlock(), createElementBlock("main", _hoisted_1$3, [
-        createVNode(_sfc_main$4, {
-          title: "Welcome!",
-          isDark: __props.isDark
-        }, {
-          default: withCtx(() => _cache[0] || (_cache[0] = [
-            createBaseVNode("p", null, "I am HU. You can also call me Henry or HTAKM.", -1),
-            createBaseVNode("p", null, "I am an undegraduate student of the Hong Kong University of Science and Technology.", -1)
-          ])),
-          _: 1,
-          __: [0]
-        }, 8, ["isDark"]),
-        createVNode(_sfc_main$4, {
-          title: "My Website",
-          isDark: __props.isDark
-        }, {
-          default: withCtx(() => [
-            _cache[2] || (_cache[2] = createBaseVNode("p", null, "In this website, you can find some information about me, as well as the notes I made and some related links. You can click on the following links to find what you want.", -1)),
-            createBaseVNode("ul", null, [
-              createBaseVNode("li", null, [
-                createVNode(_component_router_link, { to: "/project#notes" }, {
-                  default: withCtx(() => _cache[1] || (_cache[1] = [
-                    createTextVNode("My Notes")
-                  ])),
-                  _: 1,
-                  __: [1]
-                })
-              ])
-            ])
-          ]),
-          _: 1,
-          __: [2]
-        }, 8, ["isDark"])
-      ]);
-    };
   }
 };
+const Home = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", render$3]]);
 const gradeFile = [
   {
     Year: "1",
@@ -10109,6 +10119,15 @@ const gradeFile = [
     Name: "Introduction to Computer Science",
     Credit: "3",
     Grade: "A+"
+  },
+  {
+    Year: "1",
+    Term: "Fall",
+    Prefix: "CORE",
+    Code: "1402",
+    Name: "English Language for University Studies",
+    Credit: "3",
+    Grade: "T"
   },
   {
     Year: "1",
@@ -10464,6 +10483,33 @@ const gradeFile = [
   {
     Year: "3",
     Term: "Spring",
+    Prefix: "EMIA",
+    Code: "2020",
+    Name: "Cross-disciplinary Design Thinking",
+    Credit: "3",
+    Grade: "T"
+  },
+  {
+    Year: "3",
+    Term: "Spring",
+    Prefix: "HUMA",
+    Code: "1622",
+    Name: "Science, Technology and Society: Historical and Cultural Approaches",
+    Credit: "3",
+    Grade: "T"
+  },
+  {
+    Year: "3",
+    Term: "Spring",
+    Prefix: "LANG",
+    Code: "1000BROAD",
+    Name: "1000-level Course in Language",
+    Credit: "3",
+    Grade: "T"
+  },
+  {
+    Year: "3",
+    Term: "Spring",
     Prefix: "MATH",
     Code: "3322",
     Name: "Matrix Computation",
@@ -10478,221 +10524,266 @@ const gradeFile = [
     Name: "Regression Analysis",
     Credit: "3",
     Grade: "A-"
+  },
+  {
+    Year: "4",
+    Term: "Fall",
+    Prefix: "COMP",
+    Code: "4421",
+    Name: "Image Processing",
+    Credit: "3",
+    Grade: ""
+  },
+  {
+    Year: "4",
+    Term: "Fall",
+    Prefix: "COMP",
+    Code: "4901B",
+    Name: "Large Language Models",
+    Credit: "3",
+    Grade: ""
+  },
+  {
+    Year: "4",
+    Term: "Fall",
+    Prefix: "LANG",
+    Code: "1416C",
+    Name: "Effective Chinese Communication",
+    Credit: "3",
+    Grade: ""
+  },
+  {
+    Year: "4",
+    Term: "Fall",
+    Prefix: "MATH",
+    Code: "3332",
+    Name: "Data Analytic Tools",
+    Credit: "3",
+    Grade: ""
   }
 ];
 const _hoisted_1$2 = { class: "about-page" };
 const _hoisted_2$2 = { class: "button-inline" };
 const _hoisted_3$2 = { class: "table table-bordered" };
+function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_Session = resolveComponent("Session");
+  return openBlock(), createElementBlock("main", _hoisted_1$2, [
+    createVNode(_component_Session, { isDark: $props.isDark }, {
+      default: withCtx(() => [
+        createBaseVNode("div", _hoisted_2$2, [
+          createBaseVNode("button", {
+            onClick: _cache[0] || (_cache[0] = ($event) => $options.changeShowing("Contact"))
+          }, "Contact"),
+          createBaseVNode("button", {
+            onClick: _cache[1] || (_cache[1] = ($event) => $options.changeShowing("Academic"))
+          }, "Academic"),
+          createBaseVNode("button", {
+            onClick: _cache[2] || (_cache[2] = ($event) => $options.changeShowing("Experience"))
+          }, "Experience"),
+          createBaseVNode("button", {
+            onClick: _cache[3] || (_cache[3] = ($event) => $options.changeShowing("Games"))
+          }, "Games")
+        ])
+      ]),
+      _: 1
+    }, 8, ["isDark"]),
+    withDirectives(createVNode(_component_Session, {
+      title: "Contact",
+      isDark: $props.isDark
+    }, {
+      default: withCtx(() => _cache[4] || (_cache[4] = [
+        createBaseVNode("p", null, [
+          createTextVNode("Email: "),
+          createBaseVNode("a", { href: "mailto:'yhkwokae@connect.ust.hk'" }, "yhkwokae@connect.ust.hk")
+        ], -1)
+      ])),
+      _: 1,
+      __: [4]
+    }, 8, ["isDark"]), [
+      [vShow, $data.isShowing == "Contact"]
+    ]),
+    withDirectives(createVNode(_component_Session, {
+      title: "Info",
+      isDark: $props.isDark
+    }, {
+      default: withCtx(() => _cache[5] || (_cache[5] = [
+        createBaseVNode("p", null, "Current University: The Hong Kong University of Science and Technology", -1),
+        createBaseVNode("p", null, "Year of Study: Year 3", -1),
+        createBaseVNode("p", null, "Current Major: (COSC + AI) + DSCT", -1),
+        createBaseVNode("p", null, "Target: Graduate in First Class Honors", -1)
+      ])),
+      _: 1,
+      __: [5]
+    }, 8, ["isDark"]), [
+      [vShow, $data.isShowing == "Academic"]
+    ]),
+    withDirectives(createVNode(_component_Session, {
+      title: "Grade",
+      isDark: $props.isDark
+    }, {
+      default: withCtx(() => [
+        _cache[6] || (_cache[6] = createBaseVNode("p", null, "The following is my grade.", -1)),
+        createBaseVNode("table", _hoisted_3$2, [
+          createBaseVNode("thead", null, [
+            createBaseVNode("tr", null, [
+              (openBlock(), createElementBlock(Fragment, null, renderList(["Term", "Course Code", "Course Name", "Credits", "Grade"], (header) => {
+                return createBaseVNode("th", { key: header }, toDisplayString(header), 1);
+              }), 64))
+            ])
+          ]),
+          createBaseVNode("tbody", null, [
+            (openBlock(true), createElementBlock(Fragment, null, renderList($data.showGrades, (row) => {
+              return openBlock(), createElementBlock("tr", null, [
+                createBaseVNode("td", null, "Year " + toDisplayString(row.Year) + " " + toDisplayString(row.Term), 1),
+                createBaseVNode("td", null, toDisplayString(row.Prefix) + " " + toDisplayString(row.Code), 1),
+                createBaseVNode("td", null, toDisplayString(row.Name), 1),
+                createBaseVNode("td", null, toDisplayString(row.Credit), 1),
+                createBaseVNode("td", null, toDisplayString(row.Grade), 1)
+              ]);
+            }), 256))
+          ])
+        ])
+      ]),
+      _: 1,
+      __: [6]
+    }, 8, ["isDark"]), [
+      [vShow, $data.isShowing == "Academic"]
+    ]),
+    withDirectives(createVNode(_component_Session, {
+      title: "Experience",
+      isDark: $props.isDark
+    }, {
+      default: withCtx(() => _cache[7] || (_cache[7] = [
+        createBaseVNode("h2", null, "Department of Computer Science and Engineering, HKUST", -1),
+        createBaseVNode("h3", null, "Undergraduate Teaching Assistent (COMP 1023)", -1),
+        createBaseVNode("h5", null, "Time: July-August 2024", -1),
+        createBaseVNode("p", null, " Upon failed applications for summer TAs in other existing courses, due to my excellent results in COMP 2211 (Exploring Artificial Intelligence), Dr. Desmond Tsoi invited me to participate in the early development of his new course, COMP 1023 (Introduction to Python Programming), as a UGTA to help with developing lab assignments from stretch. ", -1),
+        createBaseVNode("br", null, null, -1),
+        createBaseVNode("h2", null, "Department of Computer Science and Engineering, HKUST", -1),
+        createBaseVNode("h3", null, "Undergraduate Teaching Assistent (COMP 1023)", -1),
+        createBaseVNode("h5", null, "Time: February-June 2025", -1),
+        createBaseVNode("p", null, " This time, I was successfully applied to become an UGTA in COMP 1023 again due to outstanding academic results last semester. I helped polish the assignments developed by previous UGTAs, including adding necessary testing components and improve visualizations. ", -1),
+        createBaseVNode("br", null, null, -1),
+        createBaseVNode("h2", null, "AI Future Education Limited", -1),
+        createBaseVNode("h3", null, "Programmer / Researcher Internship", -1),
+        createBaseVNode("h5", null, "Time: July-August 2025", -1),
+        createBaseVNode("p", null, null, -1)
+      ])),
+      _: 1,
+      __: [7]
+    }, 8, ["isDark"]), [
+      [vShow, $data.isShowing == "Experience"]
+    ]),
+    withDirectives(createVNode(_component_Session, {
+      title: "Games I am playing",
+      isDark: $props.isDark
+    }, {
+      default: withCtx(() => _cache[8] || (_cache[8] = [
+        createBaseVNode("p", null, "Below are games that I am playing currently (likely paused for now but I would come back)", -1),
+        createBaseVNode("ul", null, [
+          createBaseVNode("li", null, "Infinite Galaxy (DO NOT PLAY!!! This is a p2w game and I am a masochist playing as a f2p.)"),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://store.steampowered.com/app/1399720/Antimatter_Dimensions/",
+              target: "_blank"
+            }, "Antimatter Dimension")
+          ]),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://keyemilco.wixsite.com/econline",
+              target: "_blank"
+            }, "EcoKey2")
+          ]),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://store.steampowered.com/app/1546320/Your_Chronicle/",
+              target: "_blank"
+            }, "Your Chronicle")
+          ]),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://store.steampowered.com/app/280220/Creeper_World_3_Arc_Eternal/",
+              target: "_blank"
+            }, "Creeper World 3: Arc Eternal")
+          ])
+        ], -1)
+      ])),
+      _: 1,
+      __: [8]
+    }, 8, ["isDark"]), [
+      [vShow, $data.isShowing == "Games"]
+    ]),
+    withDirectives(createVNode(_component_Session, {
+      title: "Games I have played",
+      isDark: $props.isDark
+    }, {
+      default: withCtx(() => _cache[9] || (_cache[9] = [
+        createBaseVNode("p", null, "Below are games that I have played and like.", -1),
+        createBaseVNode("ul", null, [
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://eco.nekogame.com/",
+              target: "_blank"
+            }, "Nekogame Emil Chronicle Online")
+          ]),
+          createBaseVNode("li", null, "ECO-Re (Server closed)"),
+          createBaseVNode("li", null, "Lemon Team ECO (Server closed)"),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://synergism.cc/",
+              target: "_blank"
+            }, "Synergism")
+          ]),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://www.talesrunner.com.hk/",
+              target: "_blank"
+            }, "跑 Online")
+          ]),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://pixelplace.io/",
+              target: "_blank"
+            }, "pixelplace.io")
+          ]),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/",
+              target: "_blank"
+            }, "Portable Puzzle Collection")
+          ]),
+          createBaseVNode("li", null, "Geometry Dash")
+        ], -1)
+      ])),
+      _: 1,
+      __: [9]
+    }, 8, ["isDark"]), [
+      [vShow, $data.isShowing == "Games"]
+    ])
+  ]);
+}
 const _sfc_main$2 = {
-  __name: "About",
+  name: "About",
+  components: {
+    Session: _sfc_main$4
+  },
   props: {
     isDark: Boolean
   },
-  setup(__props) {
-    const isShowing = ref("Contact");
-    const changeShowing = (tab) => {
-      isShowing.value = tab;
+  data() {
+    return {
+      isShowing: "Contact",
+      GPAValidGrade: ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F"],
+      showGrades: gradeFile.filter((row) => this.GPAValidGrade.includes(row.Grade))
     };
-    const GPAValidGrade = ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F"];
-    const showGrades = gradeFile.filter((row) => GPAValidGrade.includes(row.Grade));
-    return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("main", _hoisted_1$2, [
-        createVNode(_sfc_main$4, { isDark: __props.isDark }, {
-          default: withCtx(() => [
-            createBaseVNode("div", _hoisted_2$2, [
-              createBaseVNode("button", {
-                onClick: _cache[0] || (_cache[0] = ($event) => changeShowing("Contact"))
-              }, "Contact"),
-              createBaseVNode("button", {
-                onClick: _cache[1] || (_cache[1] = ($event) => changeShowing("Academic"))
-              }, "Academic"),
-              createBaseVNode("button", {
-                onClick: _cache[2] || (_cache[2] = ($event) => changeShowing("Experience"))
-              }, "Experience"),
-              createBaseVNode("button", {
-                onClick: _cache[3] || (_cache[3] = ($event) => changeShowing("Games"))
-              }, "Games")
-            ])
-          ]),
-          _: 1
-        }, 8, ["isDark"]),
-        withDirectives(createVNode(_sfc_main$4, {
-          title: "Contact",
-          isDark: __props.isDark
-        }, {
-          default: withCtx(() => _cache[4] || (_cache[4] = [
-            createBaseVNode("p", null, [
-              createTextVNode("Email: "),
-              createBaseVNode("a", { href: "mailto:'yhkwokae@connect.ust.hk'" }, "yhkwokae@connect.ust.hk")
-            ], -1)
-          ])),
-          _: 1,
-          __: [4]
-        }, 8, ["isDark"]), [
-          [vShow, isShowing.value == "Contact"]
-        ]),
-        withDirectives(createVNode(_sfc_main$4, {
-          title: "Info",
-          isDark: __props.isDark
-        }, {
-          default: withCtx(() => _cache[5] || (_cache[5] = [
-            createBaseVNode("p", null, "Current University: The Hong Kong University of Science and Technology", -1),
-            createBaseVNode("p", null, "Year of Study: Year 3", -1),
-            createBaseVNode("p", null, "Current Major: (COSC + AI) + DSCT", -1),
-            createBaseVNode("p", null, "Target: Graduate in First Class Honors", -1)
-          ])),
-          _: 1,
-          __: [5]
-        }, 8, ["isDark"]), [
-          [vShow, isShowing.value == "Academic"]
-        ]),
-        withDirectives(createVNode(_sfc_main$4, {
-          title: "Grade",
-          isDark: __props.isDark
-        }, {
-          default: withCtx(() => [
-            _cache[6] || (_cache[6] = createBaseVNode("p", null, "The following is my grade.", -1)),
-            createBaseVNode("table", _hoisted_3$2, [
-              createBaseVNode("thead", null, [
-                createBaseVNode("tr", null, [
-                  (openBlock(), createElementBlock(Fragment, null, renderList(["Term", "Course Code", "Course Name", "Credits", "Grade"], (header) => {
-                    return createBaseVNode("th", { key: header }, toDisplayString(header), 1);
-                  }), 64))
-                ])
-              ]),
-              createBaseVNode("tbody", null, [
-                (openBlock(true), createElementBlock(Fragment, null, renderList(unref(showGrades), (row) => {
-                  return openBlock(), createElementBlock("tr", null, [
-                    createBaseVNode("td", null, "Year " + toDisplayString(row.Year) + " " + toDisplayString(row.Term), 1),
-                    createBaseVNode("td", null, toDisplayString(row.Prefix) + " " + toDisplayString(row.Code), 1),
-                    createBaseVNode("td", null, toDisplayString(row.Name), 1),
-                    createBaseVNode("td", null, toDisplayString(row.Credit), 1),
-                    createBaseVNode("td", null, toDisplayString(row.Grade), 1)
-                  ]);
-                }), 256))
-              ])
-            ])
-          ]),
-          _: 1,
-          __: [6]
-        }, 8, ["isDark"]), [
-          [vShow, isShowing.value == "Academic"]
-        ]),
-        withDirectives(createVNode(_sfc_main$4, {
-          title: "Experience",
-          isDark: __props.isDark
-        }, {
-          default: withCtx(() => _cache[7] || (_cache[7] = [
-            createBaseVNode("h2", null, "Department of Computer Science and Engineering, HKUST", -1),
-            createBaseVNode("h3", null, "Undergraduate Teaching Assistent (COMP 1023)", -1),
-            createBaseVNode("h5", null, "Time: July-August 2024", -1),
-            createBaseVNode("p", null, " Upon failed applications for summer TAs in other existing courses, due to my excellent results in COMP 2211 (Exploring Artificial Intelligence), Dr. Desmond Tsoi invited me to participate in the early development of his new course, COMP 1023 (Introduction to Python Programming), as a UGTA to help with developing lab assignments from stretch. ", -1),
-            createBaseVNode("br", null, null, -1),
-            createBaseVNode("h2", null, "Department of Computer Science and Engineering, HKUST", -1),
-            createBaseVNode("h3", null, "Undergraduate Teaching Assistent (COMP 1023)", -1),
-            createBaseVNode("h5", null, "Time: February-June 2025", -1),
-            createBaseVNode("p", null, " This time, I was successfully applied to become an UGTA in COMP 1023 again due to outstanding academic results last semester. I helped polish the assignments developed by previous UGTAs, including adding necessary testing components and improve visualizations. ", -1),
-            createBaseVNode("br", null, null, -1),
-            createBaseVNode("h2", null, "AI Future Education Limited", -1),
-            createBaseVNode("h3", null, "Programmer / Researcher Internship", -1),
-            createBaseVNode("h5", null, "Time: July-August 2025", -1),
-            createBaseVNode("p", null, null, -1)
-          ])),
-          _: 1,
-          __: [7]
-        }, 8, ["isDark"]), [
-          [vShow, isShowing.value == "Experience"]
-        ]),
-        withDirectives(createVNode(_sfc_main$4, {
-          title: "Games I am playing",
-          isDark: __props.isDark
-        }, {
-          default: withCtx(() => _cache[8] || (_cache[8] = [
-            createBaseVNode("p", null, "Below are games that I am playing currently (likely paused for now but I would come back)", -1),
-            createBaseVNode("ul", null, [
-              createBaseVNode("li", null, "Infinite Galaxy (DO NOT PLAY!!! This is a p2w game and I am a masochist playing as a f2p.)"),
-              createBaseVNode("li", null, [
-                createBaseVNode("a", {
-                  href: "https://store.steampowered.com/app/1399720/Antimatter_Dimensions/",
-                  target: "_blank"
-                }, "Antimatter Dimension")
-              ]),
-              createBaseVNode("li", null, [
-                createBaseVNode("a", {
-                  href: "https://keyemilco.wixsite.com/econline",
-                  target: "_blank"
-                }, "EcoKey2")
-              ]),
-              createBaseVNode("li", null, [
-                createBaseVNode("a", {
-                  href: "https://store.steampowered.com/app/1546320/Your_Chronicle/",
-                  target: "_blank"
-                }, "Your Chronicle")
-              ]),
-              createBaseVNode("li", null, [
-                createBaseVNode("a", {
-                  href: "https://store.steampowered.com/app/280220/Creeper_World_3_Arc_Eternal/",
-                  target: "_blank"
-                }, "Creeper World 3: Arc Eternal")
-              ])
-            ], -1)
-          ])),
-          _: 1,
-          __: [8]
-        }, 8, ["isDark"]), [
-          [vShow, isShowing.value == "Games"]
-        ]),
-        withDirectives(createVNode(_sfc_main$4, {
-          title: "Games I have played",
-          isDark: __props.isDark
-        }, {
-          default: withCtx(() => _cache[9] || (_cache[9] = [
-            createBaseVNode("p", null, "Below are games that I have played and like.", -1),
-            createBaseVNode("ul", null, [
-              createBaseVNode("li", null, [
-                createBaseVNode("a", {
-                  href: "https://eco.nekogame.com/",
-                  target: "_blank"
-                }, "Nekogame Emil Chronicle Online")
-              ]),
-              createBaseVNode("li", null, "ECO-Re (Server closed)"),
-              createBaseVNode("li", null, "Lemon Team ECO (Server closed)"),
-              createBaseVNode("li", null, [
-                createBaseVNode("a", {
-                  href: "https://synergism.cc/",
-                  target: "_blank"
-                }, "Synergism")
-              ]),
-              createBaseVNode("li", null, [
-                createBaseVNode("a", {
-                  href: "https://www.talesrunner.com.hk/",
-                  target: "_blank"
-                }, "跑 Online")
-              ]),
-              createBaseVNode("li", null, [
-                createBaseVNode("a", {
-                  href: "https://pixelplace.io/",
-                  target: "_blank"
-                }, "pixelplace.io")
-              ]),
-              createBaseVNode("li", null, [
-                createBaseVNode("a", {
-                  href: "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/",
-                  target: "_blank"
-                }, "Portable Puzzle Collection")
-              ]),
-              createBaseVNode("li", null, "Geometry Dash")
-            ], -1)
-          ])),
-          _: 1,
-          __: [9]
-        }, 8, ["isDark"]), [
-          [vShow, isShowing.value == "Games"]
-        ])
-      ]);
-    };
+  },
+  methods: {
+    changeShowing(tab) {
+      this.isShowing = tab;
+    }
   }
 };
+const About = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", render$2]]);
 const notesData = [
   {
     title: "HKUST MATH 2131 Cheat Sheet",
@@ -10777,83 +10868,92 @@ const _hoisted_3$1 = ["href"];
 const _hoisted_4$1 = ["href"];
 const _hoisted_5$1 = ["href"];
 const _hoisted_6 = ["href"];
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_Session = resolveComponent("Session");
+  return openBlock(), createElementBlock("main", _hoisted_1$1, [
+    createVNode(_component_Session, {
+      title: "Notes",
+      id: "notes",
+      isDark: $props.isDark
+    }, {
+      default: withCtx(() => [
+        _cache[0] || (_cache[0] = createBaseVNode("p", null, "Here are some of the notes I have made. (In start date chronological order)", -1)),
+        createBaseVNode("table", _hoisted_2$1, [
+          createBaseVNode("thead", null, [
+            createBaseVNode("tr", null, [
+              (openBlock(), createElementBlock(Fragment, null, renderList(["Title", "LaTeX Class used", "pdf file", "tex file", "Other files"], (head) => {
+                return createBaseVNode("th", null, toDisplayString(head), 1);
+              }), 64))
+            ])
+          ]),
+          createBaseVNode("tbody", null, [
+            (openBlock(true), createElementBlock(Fragment, null, renderList($data.notesData, (note) => {
+              return openBlock(), createElementBlock("tr", null, [
+                createBaseVNode("th", null, toDisplayString(note.title), 1),
+                createBaseVNode("td", null, toDisplayString(note.class), 1),
+                createBaseVNode("td", null, [
+                  createBaseVNode("a", {
+                    href: note.pdfLink,
+                    target: "_blank"
+                  }, "pdf", 8, _hoisted_3$1)
+                ]),
+                createBaseVNode("td", null, [
+                  createBaseVNode("a", {
+                    href: note.texLink,
+                    target: "_blank"
+                  }, "LaTeX", 8, _hoisted_4$1)
+                ]),
+                createBaseVNode("td", null, [
+                  createBaseVNode("a", {
+                    href: note.others ? note.others.link : "",
+                    target: "_blank"
+                  }, toDisplayString(note.others ? note.others.name : ""), 9, _hoisted_5$1)
+                ])
+              ]);
+            }), 256))
+          ])
+        ])
+      ]),
+      _: 1,
+      __: [0]
+    }, 8, ["isDark"]),
+    createVNode(_component_Session, {
+      title: "LaTeX Class",
+      isDark: $props.isDark
+    }, {
+      default: withCtx(() => [
+        _cache[1] || (_cache[1] = createBaseVNode("p", null, "I have made some customized LaTeX class to make my notes. You can find them below:", -1)),
+        createBaseVNode("ul", null, [
+          (openBlock(true), createElementBlock(Fragment, null, renderList($data.latexClasses, (latexClass) => {
+            return openBlock(), createElementBlock("li", null, [
+              createBaseVNode("a", {
+                href: latexClass.link
+              }, toDisplayString(latexClass.name), 9, _hoisted_6)
+            ]);
+          }), 256))
+        ])
+      ]),
+      _: 1,
+      __: [1]
+    }, 8, ["isDark"])
+  ]);
+}
 const _sfc_main$1 = {
-  __name: "Project",
+  name: "Project",
+  components: {
+    Session: _sfc_main$4
+  },
   props: {
     isDark: Boolean
   },
-  setup(__props) {
-    return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("main", _hoisted_1$1, [
-        createVNode(_sfc_main$4, {
-          title: "Notes",
-          id: "notes",
-          isDark: __props.isDark
-        }, {
-          default: withCtx(() => [
-            _cache[0] || (_cache[0] = createBaseVNode("p", null, "Here are some of the notes I have made. (In start date chronological order)", -1)),
-            createBaseVNode("table", _hoisted_2$1, [
-              createBaseVNode("thead", null, [
-                createBaseVNode("tr", null, [
-                  (openBlock(), createElementBlock(Fragment, null, renderList(["Title", "LaTeX Class used", "pdf file", "tex file", "Other files"], (head) => {
-                    return createBaseVNode("th", null, toDisplayString(head), 1);
-                  }), 64))
-                ])
-              ]),
-              createBaseVNode("tbody", null, [
-                (openBlock(true), createElementBlock(Fragment, null, renderList(unref(notesData), (note) => {
-                  return openBlock(), createElementBlock("tr", null, [
-                    createBaseVNode("th", null, toDisplayString(note.title), 1),
-                    createBaseVNode("td", null, toDisplayString(note.class), 1),
-                    createBaseVNode("td", null, [
-                      createBaseVNode("a", {
-                        href: note.pdfLink,
-                        target: "_blank"
-                      }, "pdf", 8, _hoisted_3$1)
-                    ]),
-                    createBaseVNode("td", null, [
-                      createBaseVNode("a", {
-                        href: note.texLink,
-                        target: "_blank"
-                      }, "LaTeX", 8, _hoisted_4$1)
-                    ]),
-                    createBaseVNode("td", null, [
-                      createBaseVNode("a", {
-                        href: note.others ? note.others.link : "",
-                        target: "_blank"
-                      }, toDisplayString(note.others ? note.others.name : ""), 9, _hoisted_5$1)
-                    ])
-                  ]);
-                }), 256))
-              ])
-            ])
-          ]),
-          _: 1,
-          __: [0]
-        }, 8, ["isDark"]),
-        createVNode(_sfc_main$4, {
-          title: "LaTeX Class",
-          isDark: __props.isDark
-        }, {
-          default: withCtx(() => [
-            _cache[1] || (_cache[1] = createBaseVNode("p", null, "I have made some customized LaTeX class to make my notes. You can find them below:", -1)),
-            createBaseVNode("ul", null, [
-              (openBlock(true), createElementBlock(Fragment, null, renderList(unref(latexClasses), (latexClass) => {
-                return openBlock(), createElementBlock("li", null, [
-                  createBaseVNode("a", {
-                    href: latexClass.link
-                  }, toDisplayString(latexClass.name), 9, _hoisted_6)
-                ]);
-              }), 256))
-            ])
-          ]),
-          _: 1,
-          __: [1]
-        }, 8, ["isDark"])
-      ]);
+  data() {
+    return {
+      notesData,
+      latexClasses
     };
   }
 };
+const Project = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", render$1]]);
 const lectureMaterialLinks = [
   {
     courseCode: "CENG 1500",
@@ -10936,78 +11036,86 @@ const _hoisted_2 = { class: "table table-bordered" };
 const _hoisted_3 = ["href"];
 const _hoisted_4 = ["href"];
 const _hoisted_5 = ["href"];
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_Session = resolveComponent("Session");
+  return openBlock(), createElementBlock("main", _hoisted_1, [
+    createVNode(_component_Session, {
+      title: "Links to some BGM that I listen to:",
+      isDark: $props.isDark
+    }, {
+      default: withCtx(() => _cache[0] || (_cache[0] = [
+        createBaseVNode("table", { class: "table" }, [
+          createBaseVNode("tbody", null, [
+            createBaseVNode("tr", null, [
+              createBaseVNode("th", null, "Emil Chronicle Online"),
+              createBaseVNode("td", null, [
+                createBaseVNode("a", { href: "https://www.youtube.com/playlist?list=PLDooSxhH10QvG9iVwQoTt5IiGi1_wpn9p" }, "BGM"),
+                createTextVNode(" (Not complete list)")
+              ])
+            ])
+          ])
+        ], -1)
+      ])),
+      _: 1,
+      __: [0]
+    }, 8, ["isDark"]),
+    createVNode(_component_Session, {
+      title: "Links of lecture materials",
+      isDark: $props.isDark
+    }, {
+      default: withCtx(() => [
+        createBaseVNode("table", _hoisted_2, [
+          createBaseVNode("thead", null, [
+            createBaseVNode("tr", null, [
+              (openBlock(), createElementBlock(Fragment, null, renderList(["Course Code", "Link", "Notes", "LaTeX"], (head) => {
+                return createBaseVNode("th", null, toDisplayString(head), 1);
+              }), 64))
+            ])
+          ]),
+          createBaseVNode("tbody", null, [
+            (openBlock(true), createElementBlock(Fragment, null, renderList($data.lectureMaterialLinks, (row) => {
+              return openBlock(), createElementBlock("tr", null, [
+                createBaseVNode("th", null, toDisplayString(row.courseCode), 1),
+                createBaseVNode("td", null, [
+                  createBaseVNode("a", {
+                    href: row.link ? row.link : ""
+                  }, toDisplayString(row.link ? "Google Drive" : ""), 9, _hoisted_3)
+                ]),
+                createBaseVNode("td", null, [
+                  createBaseVNode("a", {
+                    href: row.pdf ? row.pdf : ""
+                  }, toDisplayString(row.pdf ? "pdf" : ""), 9, _hoisted_4)
+                ]),
+                createBaseVNode("td", null, [
+                  createBaseVNode("a", {
+                    href: row.tex ? row.tex : ""
+                  }, toDisplayString(row.tex ? "LaTeX" : ""), 9, _hoisted_5)
+                ])
+              ]);
+            }), 256))
+          ])
+        ])
+      ]),
+      _: 1
+    }, 8, ["isDark"])
+  ]);
+}
 const _sfc_main = {
-  __name: "Website",
+  name: "Website",
+  components: {
+    Session: _sfc_main$4
+  },
   props: {
     isDark: Boolean
   },
-  setup(__props) {
-    return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("main", _hoisted_1, [
-        createVNode(_sfc_main$4, {
-          title: "Links to some BGM that I listen to:",
-          isDark: __props.isDark
-        }, {
-          default: withCtx(() => _cache[0] || (_cache[0] = [
-            createBaseVNode("table", { class: "table" }, [
-              createBaseVNode("tbody", null, [
-                createBaseVNode("tr", null, [
-                  createBaseVNode("th", null, "Emil Chronicle Online"),
-                  createBaseVNode("td", null, [
-                    createBaseVNode("a", { href: "https://www.youtube.com/playlist?list=PLDooSxhH10QvG9iVwQoTt5IiGi1_wpn9p" }, "BGM"),
-                    createTextVNode(" (Not complete list)")
-                  ])
-                ])
-              ])
-            ], -1)
-          ])),
-          _: 1,
-          __: [0]
-        }, 8, ["isDark"]),
-        createVNode(_sfc_main$4, {
-          title: "Links of lecture materials",
-          isDark: __props.isDark
-        }, {
-          default: withCtx(() => [
-            createBaseVNode("table", _hoisted_2, [
-              createBaseVNode("thead", null, [
-                createBaseVNode("tr", null, [
-                  (openBlock(), createElementBlock(Fragment, null, renderList(["Course Code", "Link", "Notes", "LaTeX"], (head) => {
-                    return createBaseVNode("th", null, toDisplayString(head), 1);
-                  }), 64))
-                ])
-              ]),
-              createBaseVNode("tbody", null, [
-                (openBlock(true), createElementBlock(Fragment, null, renderList(unref(lectureMaterialLinks), (row) => {
-                  return openBlock(), createElementBlock("tr", null, [
-                    createBaseVNode("th", null, toDisplayString(row.courseCode), 1),
-                    createBaseVNode("td", null, [
-                      createBaseVNode("a", {
-                        href: row.link ? row.link : ""
-                      }, toDisplayString(row.link ? "Google Drive" : ""), 9, _hoisted_3)
-                    ]),
-                    createBaseVNode("td", null, [
-                      createBaseVNode("a", {
-                        href: row.pdf ? row.pdf : ""
-                      }, toDisplayString(row.pdf ? "pdf" : ""), 9, _hoisted_4)
-                    ]),
-                    createBaseVNode("td", null, [
-                      createBaseVNode("a", {
-                        href: row.tex ? row.tex : ""
-                      }, toDisplayString(row.tex ? "LaTeX" : ""), 9, _hoisted_5)
-                    ])
-                  ]);
-                }), 256))
-              ])
-            ])
-          ]),
-          _: 1
-        }, 8, ["isDark"])
-      ]);
+  data() {
+    return {
+      lectureMaterialLinks
     };
   }
 };
-const app = createApp(_sfc_main$5);
+const Website = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", render]]);
+const app = createApp(App);
 const router = createRouter({
   history: createWebHashHistory(),
   mode: "hash",
@@ -11015,22 +11123,22 @@ const router = createRouter({
     {
       path: "/",
       name: "Index",
-      component: _sfc_main$3
+      component: Home
     },
     {
       path: "/about",
       name: "About",
-      component: _sfc_main$2
+      component: About
     },
     {
       path: "/project",
       name: "Project",
-      component: _sfc_main$1
+      component: Project
     },
     {
       path: "/link",
       name: "Related Websites",
-      component: _sfc_main
+      component: Website
     }
   ]
 });

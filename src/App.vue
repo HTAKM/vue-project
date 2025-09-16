@@ -25,14 +25,7 @@ watch(isDarkMode, (newValue) => {
     }
 })
 </script>
-<template>
-    <div id="app">
-        <Sidebar head="HU" :class="{dark : isDarkMode}" :isDark="isDarkMode" @toggleDark="toggleDark" />
-        <div class="main">
-            <RouterView :isDark="isDarkMode" />
-        </div>
-    </div>
-</template>
+<template src="./assets/html/app.html" />
 <style lang="scss">
 #app {
     margin: 0;

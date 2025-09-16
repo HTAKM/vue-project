@@ -1,0 +1,6 @@
+<div id="app">
+    <Sidebar head="HU" :class="{dark : isDarkMode}" :isDark="isDarkMode" @toggleDark="toggleDark" />
+    <div class="main">
+        <RouterView :isDark="isDarkMode" />
+    </div>
+</div>

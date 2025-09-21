@@ -1,0 +1,20 @@
+#app {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.main {
+    padding: calc(var(--navbar-height) + 28px) 56px 28px calc(var(--sidebar-width) + 56px);
+    font-weight: normal;
+    display: flex;
+    transition: 0.2s ease-out;
+    @media (max-width: 768px) {
+        padding: calc(var(--navbar-height) + 21px) 42px 21px calc(var(--sidebar-width) + 42px);
+    }
+    @media (max-width: 576px) {
+        padding: calc(var(--navbar-height) + 14px) 28px 14px calc(var(--sidebar-width) + 28px);
+    }
+}

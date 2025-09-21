@@ -1240,6 +1240,20 @@ const lectureMaterialLinks = [
     link: "https://drive.google.com/drive/folders/1Ou4Z5RBhXSB2ezXifbiF7qb6ylbZ-X9T?usp=sharing"
   }
 ];
+const _sfc_main = {
+  name: "Website",
+  components: {
+    Segment
+  },
+  props: {
+    isDark: Boolean
+  },
+  data() {
+    return {
+      lectureMaterialLinks
+    };
+  }
+};
 const _hoisted_1 = { class: "website-page" };
 const _hoisted_2 = { class: "table table-bordered" };
 const _hoisted_3 = ["href"];
@@ -1250,7 +1264,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("main", _hoisted_1, [
     createVNode(_component_segment, {
       title: "Links to some BGM that I listen to:",
-      isDark: $props.isDark
+      isDark: _ctx.isDark
     }, {
       default: withCtx(() => _cache[0] || (_cache[0] = [
         createBaseVNode("table", { class: "table" }, [
@@ -1270,7 +1284,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, 8, ["isDark"]),
     createVNode(_component_segment, {
       title: "Links of lecture materials",
-      isDark: $props.isDark
+      isDark: _ctx.isDark
     }, {
       default: withCtx(() => [
         createBaseVNode("table", _hoisted_2, [
@@ -1282,7 +1296,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             ])
           ]),
           createBaseVNode("tbody", null, [
-            (openBlock(true), createElementBlock(Fragment, null, renderList($data.lectureMaterialLinks, (row) => {
+            (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.lectureMaterialLinks, (row) => {
               return openBlock(), createElementBlock("tr", null, [
                 createBaseVNode("th", null, toDisplayString(row.courseCode), 1),
                 createBaseVNode("td", null, [
@@ -1309,20 +1323,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, 8, ["isDark"])
   ]);
 }
-const _sfc_main = {
-  name: "Website",
-  components: {
-    Segment
-  },
-  props: {
-    isDark: Boolean
-  },
-  data() {
-    return {
-      lectureMaterialLinks
-    };
-  }
-};
 const Website = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", render]]);
 const app = createApp(App);
 const router = createRouter({

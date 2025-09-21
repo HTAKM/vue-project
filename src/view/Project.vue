@@ -1,24 +1,8 @@
-<script>
-import Session from '@/components/Session.vue';
-import notesData from '@/assets/notesData.js';
-import latexClasses from '@/assets/latexTemplateClass.js';
-
-export default {
-  name: 'Project',
-  components: {
-    Session
-  },
-  props: {
-    isDark: Boolean
-  },
-  data() {
-    return {
-      notesData,
-      latexClasses
-    };
-  }
-};
+<script src="@/assets/js/project.js">
 </script>
-<template src="../assets/html/Project.html" />
-<style scoped style="scss">
+
+<template src="@/assets/html/Project.html">
+</template>
+
+<style scoped lang="scss">
 </style>

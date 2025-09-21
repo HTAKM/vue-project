@@ -1,5 +1,5 @@
 <main class="project-page">
-    <Session title="Notes" id="notes" :isDark="isDark">
+    <segment title="Notes" id="notes" :isDark="isDark">
         <p>Here are some of the notes I have made. (In start date chronological order)</p>
         <table class="table table-bordered">
             <thead>
@@ -17,13 +17,13 @@
                 </tr>
             </tbody>
         </table>
-    </Session>
-    <Session title="LaTeX Class" :isDark="isDark">
+    </segment>
+    <segment title="LaTeX Class" :isDark="isDark">
         <p>I have made some customized LaTeX class to make my notes. You can find them below:</p>
         <ul>
             <li v-for="latexClass in latexClasses">
                 <a :href="latexClass.link">{{ latexClass.name }}</a>
             </li>
         </ul>
-    </Session>
+    </segment>
 </main>

@@ -1,16 +1,8 @@
-<script>
-import Session from '@/components/Session.vue';
-
-export default {
-  name: 'Home',
-  components: {
-    Session
-  },
-  props: {
-    isDark: Boolean
-  }
-};
+<script src="@/assets/js/home.js">
 </script>
-<template src="../assets/html/Home.html" />
+
+<template src="@/assets/html/Home.html">
+</template>
+
 <style scoped lang="scss">
 </style>

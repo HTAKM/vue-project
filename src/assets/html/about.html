@@ -1,23 +1,26 @@
 <main class="about-page">
-    <Session :isDark="isDark">
+    <segment class="session" :isDark="isDark">
         <div class="button-inline">
             <button @click="changeShowing('Contact')">Contact</button>
             <button @click="changeShowing('Academic')">Academic</button>
             <button @click="changeShowing('Experience')">Experience</button>
             <button @click="changeShowing('Games')">Games</button>
         </div>
-    </Session>
-    <Session title="Contact" v-show="isShowing == 'Contact'" :isDark="isDark">
-        <p>Email: <a href="mailto:'yhkwokae@connect.ust.hk'">yhkwokae@connect.ust.hk</a></p>
-    </Session>
-    <Session title="Info" v-show="isShowing == 'Academic'" :isDark="isDark">
-        <p>Current University: The Hong Kong University of Science and Technology</p>
-        <p>Year of Study: Year 3</p>
-        <p>Current Major: (COSC + AI) + DSCT</p>
-        <p>Target: Graduate in First Class Honors</p>
-    </Session>
-    <Session title="Grade" v-show="isShowing == 'Academic'" :isDark="isDark">
-        <p>The following is my grade.</p>
+    </segment>
+
+    <segment title="Contact" class="session" v-show="isShowing === 'Contact'" :isDark="isDark">
+        <p class="mb-0">Email: <a href="mailto:yhkwokae@connect.ust.hk">yhkwokae@connect.ust.hk</a></p>
+    </segment>
+
+    <segment title="Academic Info" class="session" v-show="isShowing === 'Academic'" :isDark="isDark">
+        <p class="mb-0">Current University: The Hong Kong University of Science and Technology</p>
+        <p class="mb-0">Year of Study: Year 4</p>
+        <p class="mb-0">Current Major: (COSC + AI) + DSCT</p>
+        <p class="mb-0">Target: Graduate in First Class Honors</p>
+    </segment>
+
+    <segment title="Grades" class="session" v-show="isShowing === 'Academic'" :isDark="isDark">
+        <p class="mb-0">The following is my grade:</p>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -25,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="row in showGrades">
+                <tr v-for="row in showGrades" :key="`${row.Prefix} + ${row.Code}`">
                     <td>Year {{ row.Year }} {{ row.Term }}</td>
                     <td>{{ row.Prefix }} {{ row.Code }}</td>
                     <td>{{ row.Name }}</td>
@@ -34,46 +37,84 @@
                 </tr>
             </tbody>
         </table>
-    </Session>
-    <Session title="Experience" v-show="isShowing == 'Experience'" :isDark="isDark">
-        <h2>Department of Computer Science and Engineering, HKUST</h2>
-        <h3>Undergraduate Teaching Assistent (COMP 1023)</h3>
-        <h5>Time: July-August 2024</h5>
-        <p>
-            Upon failed applications for summer TAs in other existing courses,
-            due to my excellent results in COMP 2211 (Exploring Artificial Intelligence), 
-            Dr. Desmond Tsoi invited me to participate in the early development of his new course, 
-            COMP 1023 (Introduction to Python Programming), as a UGTA to help with developing lab assignments from stretch.
-        </p>
-        <br/>
-        <h2>Department of Computer Science and Engineering, HKUST</h2>
-        <h3>Undergraduate Teaching Assistent (COMP 1023)</h3>
-        <h5>Time: February-June 2025</h5>
-        <p>
-            This time, I was successfully applied to become an UGTA in COMP 1023 again due to outstanding academic results last semester.
-            I helped polish the assignments developed by previous UGTAs, 
-            including adding necessary testing components and improve visualizations. 
-        </p>
-        <br/>
-        <h2>AI Future Education Limited</h2>
-        <h3>Programmer / Researcher Internship</h3>
-        <h5>Time: July-August 2025</h5>
-        <p>
+    </segment>
 
-        </p>
-    </Session>
-    <Session title="Games I am playing" v-show="isShowing == 'Games'" :isDark="isDark">
-        <p>Below are games that I am playing currently (likely paused for now but I would come back)</p>
+    <segment title="Experience" class="session" v-show="isShowing === 'Experience'" :isDark="isDark">
+        <div class="row">
+            <div class="col-8">
+                <h2>Undergraduate Teaching Assistant (COMP 1023)</h2>
+                <h4>Department of Computer Science and Engineering, HKUST</h4>
+            </div>
+            <div class="col-4 text-right">
+                <small>July - August 2024</small>
+            </div>
+            <div class="col-12">
+                <p>
+                    After failed applications for summer TA positions in other courses, 
+                    Dr. Desmond Tsoi invited me to assist in the early development of his new course, 
+                    COMP 1023 (Introduction to Python Programming), 
+                    due to my excellent results in COMP 2211 (Exploring Artificial Intelligence). 
+                    I contributed to developing lab assignments from scratch.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h2>Undergraduate Teaching Assistant (COMP 1023)</h2>
+                <h4>Department of Computer Science and Engineering, HKUST</h4>
+            </div>
+            <div class="col-4 text-right">
+                <small>February - June 2025</small>
+            </div>
+            <div class="col-12">
+                <p>
+                    I successfully reapplied as a UGTA for COMP 1023 due to my outstanding academic performance. 
+                    My responsibilities included polishing assignments developed by previous UGTAs, 
+                    adding necessary testing components, and improving visualizations.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h2>Programmer / Researcher Intern</h2>
+                <h4>AI Future Education Limited</h4>
+            </div>
+            <div class="col-4 text-right">
+                <small>July - August 2025</small>
+            </div>
+            <div class="col-12">
+                <p>
+                    This was my first internship, where I worked as a programmer/researcher intern at AI Future Education Limited, a startup focusing on AI education. 
+                    My role was more akin to a full-stack developer, as I contributed to both frontend and backend development, 
+                    including AI chatbot development.
+                </p>
+                <p>
+                    I was primarily responsible for backend development, using Flask, 
+                    while the frontend was built with Vue.js. 
+                    Additionally, I researched the performance of state-of-the-art small Chinese-language models and used llama-cpp-python for model inference. 
+                    The AI chatbot was developed sequentially, employing rule-based methods for knowledge-based questions and RAG-based methods for scenario-based questions, with prompt engineering at every step.
+                </p>
+                <p>
+                    Towards the end of the internship, we explored AWS services, including EC2, Lambda, and SageMaker. 
+                    This internship provided invaluable experience in AI and web development in a real-world setting.
+                </p>
+            </div>
+        </div>
+    </segment>
+
+    <segment title="Games Playing" class="session" v-show="isShowing === 'Games'" :isDark="isDark">
+        <p>Below are games I am currently playing (likely paused but will resume):</p>
         <ul>
-            <li>Infinite Galaxy (DO NOT PLAY!!! This is a p2w game and I am a masochist playing as a f2p.)</li>
-            <li><a href="https://store.steampowered.com/app/1399720/Antimatter_Dimensions/" target="_blank">Antimatter Dimension</a></li>
+            <li>Infinite Galaxy (DO NOT PLAY! This is a pay-to-win game, and I am a masochist playing as free-to-play.)</li>
+            <li><a href="https://store.steampowered.com/app/1399720/Antimatter_Dimensions/" target="_blank">Antimatter Dimensions</a></li>
             <li><a href="https://keyemilco.wixsite.com/econline" target="_blank">EcoKey2</a></li>
             <li><a href="https://store.steampowered.com/app/1546320/Your_Chronicle/" target="_blank">Your Chronicle</a></li>
             <li><a href="https://store.steampowered.com/app/280220/Creeper_World_3_Arc_Eternal/" target="_blank">Creeper World 3: Arc Eternal</a></li>
         </ul>
-    </Session>
-    <Session title="Games I have played" v-show="isShowing == 'Games'" :isDark="isDark">
-        <p>Below are games that I have played and like.</p>
+    </segment>
+
+    <segment title="Games Played" class="session" v-show="isShowing === 'Games'" :isDark="isDark">
+        <p>Below are games I have played and enjoyed:</p>
         <ul>
             <li><a href="https://eco.nekogame.com/" target="_blank">Nekogame Emil Chronicle Online</a></li>
             <li>ECO-Re (Server closed)</li>
@@ -84,5 +125,5 @@
             <li><a href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/" target="_blank">Portable Puzzle Collection</a></li>
             <li>Geometry Dash</li>
         </ul>
-    </Session>
+    </segment>
 </main>

@@ -1,0 +1,169 @@
+@use '@/assets/css/default.scss' as *;
+
+.segment {
+    margin: 0 0 70px 0;
+    justify-content: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+
+    h1 {
+        color: var(--color-heading);
+    }
+
+    .table {
+        thead th {
+            background-color: var(--color-border-heading);
+        }
+
+        tbody tr:hover {
+            th,
+            td {
+                background-color: var(--color-border-hover);
+            }
+        }
+
+        width: 100%;
+
+        th,
+        td {
+            @include marpad(0, 0, 0, 0, 1px, 5px, 1px, 5px);
+        }
+
+        thead th {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        tbody th {
+            text-align: left;
+        }
+    }
+
+    .table-bordered {
+        td,
+        th {
+            border-color: var(--color-border);
+            border-style: solid;
+            @extend %default-border;
+        }
+    }
+
+    .button-inline {
+        display: inline-flex;
+        margin: 0 auto;
+        width: 100%;
+        justify-content: center;
+
+        button {
+            @extend %default-border;
+            border-radius: 10px;
+            font-size: 20px;
+            @include marpad(0, 14px, 0, 14px, 14px, 14px, 14px, 14px);
+        }
+
+        @media (max-width: 768px) {
+            button {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            button {
+                font-size: 10px;
+            }
+        }
+    }
+
+    a {
+        color: var(--color-link-text);
+        display: inline-block;
+        padding: 0;
+    }
+
+    &.dark {
+        h1 {
+            color: var(--color-heading-dark);
+        }
+
+        .table {
+            thead th {
+                background-color: var(--color-border-heading-dark);
+            }
+
+            tbody tr:hover {
+                th,
+                td {
+                    background-color: var(--color-border-hover-dark);
+                }
+            }
+        }
+
+        .table-bordered {
+            td,
+            th {
+                border-color: var(--color-border-dark);
+            }
+        }
+
+        .button-inline button {
+            background-color: var(--color-border-dark);
+            border-color: var(--color-border-dark);
+            color: var(--color-heading-dark);
+        }
+
+        a {
+            color: var(--color-link-text-dark);
+        }
+    }
+
+    &:not(.dark) {
+        h1 {
+            color: var(--color-heading-light);
+        }
+
+        .table {
+            thead th {
+                background-color: var(--color-border-heading-light);
+            }
+
+            tbody tr:hover {
+                th,
+                td {
+                    background-color: var(--color-border-hover-light);
+                }
+            }
+        }
+
+        .table-bordered {
+            td,
+            th {
+                border-color: var(--color-border-light);
+            }
+        }
+
+        .button-inline button {
+            background-color: var(--color-border-light);
+            border-color: var(--color-border-light);
+            color: var(--color-heading-light);
+        }
+
+        a {
+            color: var(--color-link-text-light);
+        }
+    }
+}
+
+.v-enter-from {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.v-enter-active {
+    transition: opacity 0.5s ease-out, transform 1s ease;
+    transition-delay: 0.1s;
+}
+
+.v-enter-to {
+    opacity: 1;
+    transform: translateY(0);
+}

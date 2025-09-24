@@ -60,6 +60,12 @@ const notesData = [
             name: "Images used",
             link: "./notes/Constraint Satisfaction Problem Images.zip"
         }
+    },
+    {
+        title: "HKUST MATH 3332 (Working in Progress)",
+        class: "huhtakm-template-book.v2",
+        // pdfLink: "",
+        // texLink: "", 
     }
 ];
 

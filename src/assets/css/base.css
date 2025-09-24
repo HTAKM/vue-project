@@ -1,18 +1,18 @@
-/* color palette from <https://github.com/vuejs/theme> */
+/* Polished color palette for better readability */
 :root {
-  --vt-c-light-purple: #d0a1e6;
-  --vt-c-light-purple-soft: #c597db;
-  --vt-c-light-purple-mute: #b78bcc;
-  --vt-c-light-purple-tab: #be5ce6;
-  --vt-c-light-purple-soft-tab: #c369e7;
-  --vt-c-light-purple-mute-tab: #c96fed;
-  --vt-c-dark-purple: #211b24;
-  --vt-c-dark-purple-soft: #2b232e;
-  --vt-c-dark-purple-mute: #392f3d;
-  --vt-c-dark-purple-tab: #381d42;
-  --vt-c-dark-purple-soft-tab: #301938;
-  --vt-c-dark-purple-mute-tab: #2d1635;
-  /* --vt-c-indigo: #2c3e50; */
+  --vt-c-light-purple: #d1b5e6;
+  --vt-c-light-purple-soft: #c8addd;
+  --vt-c-light-purple-mute: #bf9fd4;
+  --vt-c-light-purple-tab: #c48ae8;
+  --vt-c-light-purple-soft-tab: #ba82de;
+  --vt-c-light-purple-mute-tab: #b079d4;
+
+  --vt-c-dark-purple: #20152b;
+  --vt-c-dark-purple-soft: #291c35;
+  --vt-c-dark-purple-mute: #311f3e;
+  --vt-c-dark-purple-tab: #3a1d4a;
+  --vt-c-dark-purple-soft-tab: #321841;
+  --vt-c-dark-purple-mute-tab: #2b1438;
 
   --vt-c-divider-light-1: rgba(184, 147, 201, 1);
   --vt-c-divider-light-2: rgba(184, 147, 201, 0.8);
@@ -21,12 +21,12 @@
   --vt-c-divider-dark-2: rgba(63, 55, 66, 0.4);
   --vt-c-divider-dark-3: rgba(63, 55, 66, 0.1);
 
-  --vt-c-text-light-1: rgba(28, 22, 31, 1);
-  --vt-c-text-light-2: rgba(50, 44, 53, 0.9);
-  --vt-c-link-light: rgba(133, 27, 36, 0.8);
-  --vt-c-text-dark-1: rgba(226, 189, 243, 0.75);
-  --vt-c-text-dark-2: rgba(221, 184, 238, 0.5);
-  --vt-c-link-dark: rgba(121, 184, 238, 0.5);
+  --vt-c-text-light-1: rgba(30, 25, 40, 1);
+  --vt-c-text-light-2: rgba(45, 40, 55, 0.9);
+  --vt-c-link-light: rgba(140, 40, 50, 0.85);
+  --vt-c-text-dark-1: rgba(240, 220, 255, 0.85);
+  --vt-c-text-dark-2: rgba(230, 210, 245, 0.65);
+  --vt-c-link-dark: rgba(150, 200, 255, 0.75);
 }
 
 :root {
@@ -104,9 +104,7 @@
   }
 }
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
   margin: 0;
   font-weight: normal;
@@ -115,32 +113,20 @@
 body {
   min-height: 100%;
   line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: scroll;
   color: var(--color-text);
   background: var(--color-background);
-
-
 }
+
 body.dark {
   color: var(--color-text-dark);
   background: var(--color-background-dark);
 }
+
 body:not(.dark) {
   color: var(--color-text-light);
   background-color: var(--color-background-light);

@@ -261,7 +261,7 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => [
-        _cache[2] || (_cache[2] = createBaseVNode("p", { class: "mb-0" }, "In this website, you can find some information about me, as well as the notes I made and some related links. You can click on the following links to find what you want.", -1)),
+        _cache[3] || (_cache[3] = createBaseVNode("p", { class: "mb-0" }, " In this website, you can find some information about me, as well as the notes I made and some related links. You can click on the following links to find what you want. ", -1)),
         createBaseVNode("ul", null, [
           createBaseVNode("li", null, [
             createVNode(_component_router_link, { to: "/project#notes" }, {
@@ -271,11 +271,18 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
               _: 1,
               __: [1]
             })
-          ])
+          ]),
+          _cache[2] || (_cache[2] = createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://htakm.github.io/htakm_test/",
+              target: "_blank",
+              rel: "noopener"
+            }, "My Old Website")
+          ], -1))
         ])
       ]),
       _: 1,
-      __: [2]
+      __: [3]
     }, 8, ["isDark"])
   ]);
 }
@@ -1055,6 +1062,12 @@ const notesData = [
       name: "Images used",
       link: "./notes/Constraint Satisfaction Problem Images.zip"
     }
+  },
+  {
+    title: "HKUST MATH 3332 (Working in Progress)",
+    class: "huhtakm-template-book.v2"
+    // pdfLink: "",
+    // texLink: "", 
   }
 ];
 const latexClasses = [
@@ -1105,7 +1118,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
         createBaseVNode("table", _hoisted_2$1, [
           createBaseVNode("thead", null, [
             createBaseVNode("tr", null, [
-              (openBlock(), createElementBlock(Fragment, null, renderList(["Title", "LaTeX Class used", "pdf file", "tex file", "Other files"], (head) => {
+              (openBlock(), createElementBlock(Fragment, null, renderList(["Title", "LaTeX Class used", "PDF file", "TEX file", "Other files"], (head) => {
                 return createBaseVNode("th", null, toDisplayString(head), 1);
               }), 64))
             ])
@@ -1117,15 +1130,15 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
                 createBaseVNode("td", null, toDisplayString(note.class), 1),
                 createBaseVNode("td", null, [
                   createBaseVNode("a", {
-                    href: note.pdfLink,
+                    href: note.pdfLink ? note.pdfLink : "",
                     target: "_blank"
-                  }, "pdf", 8, _hoisted_3$1)
+                  }, toDisplayString(note.pdfLink ? "PDF" : ""), 9, _hoisted_3$1)
                 ]),
                 createBaseVNode("td", null, [
                   createBaseVNode("a", {
-                    href: note.texLink,
+                    href: note.texLink ? note.texLink : "",
                     target: "_blank"
-                  }, "LaTeX", 8, _hoisted_4$1)
+                  }, toDisplayString(note.texLink ? "TEX" : ""), 9, _hoisted_4$1)
                 ]),
                 createBaseVNode("td", null, [
                   createBaseVNode("a", {

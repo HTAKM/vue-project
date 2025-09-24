@@ -1,6 +1,6 @@
 # vue-project
 
-This template should help get you started developing with Vue 3 in Vite.
+The website link: https://htakm.github.io/vue-project/
 
 ## Recommended IDE Setup
 
@@ -27,4 +27,3 @@ npm run dev
 ```sh
 npm run build
 ```
-# vue-project

@@ -1043,7 +1043,7 @@ const notesData = [
   },
   {
     title: 'Probability v2.0 (Rewritten notes of "HKUST MATH 2431")',
-    class: "huhtakm-template-book.cls",
+    class: "huhtakm-template-book-v2.cls",
     pdfLink: "./notes/Probability.pdf",
     texLink: "./notes/Probability.tex"
   },

@@ -1,6 +1,8 @@
 import { f as createElementBlock, j as createBaseVNode, t as toDisplayString, k as createVNode, l as withCtx, m as normalizeClass, q as resolveComponent, v as openBlock, x as createBlock, T as Transition, y as renderSlot, z as createTextVNode, A as withDirectives, B as vShow, F as Fragment, C as renderList, D as createApp } from "./@vue-chunk.js";
 import { c as createRouter, a as createWebHashHistory } from "./vue-router-chunk.js";
 import { Q as Qr } from "./@primeuix-chunk.js";
+import notesData from "https://htakm.github.io/latex-notes/js/notesData.js";
+import latexClasses from "https://htakm.github.io/latex-notes/js/latexTemplateClass.js";
 import { P as PrimeVue } from "./@primevue-chunk.js";
 (function polyfill() {
   const relList = document.createElement("link").relList;
@@ -1000,90 +1002,6 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 const About = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", render$2]]);
-const notesData = [
-  {
-    title: "HKUST MATH 2131 Cheat Sheet",
-    class: "article",
-    pdfLink: "./notes/MATH 2131 Cheat Sheet.pdf",
-    texLink: "./notes/MATH 2131 Cheat Sheet.tex"
-  },
-  {
-    title: "HKUST MATH 2411 Cheat Sheet",
-    class: "article",
-    pdfLink: "./notes/MATH 2411 Cheat Sheet.pdf",
-    texLink: "./notes/MATH 2411 Cheat Sheet.tex"
-  },
-  {
-    title: "HKUST PHYS 1002 Cheat Sheet",
-    class: "article",
-    pdfLink: "./notes/PHYS 1002 Cheat Sheet.pdf",
-    texLink: "./notes/PHYS 1002 Cheat Sheet.tex"
-  },
-  {
-    title: "HKUST MATH 2431",
-    class: "huhtakm-template-book.cls",
-    pdfLink: "./notes/MATH 2431.pdf",
-    texLink: "./notes/MATH 2431.tex"
-  },
-  {
-    title: "HKUST MATH 2023 (Summary)",
-    class: "huhtakm-template-book.cls",
-    pdfLink: "./notes/MATH 2023 (Simplified).pdf",
-    texLink: "./notes/MATH 2023 (Simplified).tex"
-  },
-  {
-    title: "HKDSE Vectors and Matrics",
-    class: "huhtakm-template-book.cls",
-    pdfLink: "./notes/matrix.pdf",
-    texLink: "./notes/matrix.tex",
-    others: {
-      name: "Images used",
-      link: "./notes/matrix images.zip"
-    }
-  },
-  {
-    title: 'Probability v2.0 (Rewritten notes of "HKUST MATH 2431")',
-    class: "huhtakm-template-book-v2.cls",
-    pdfLink: "./notes/Probability.pdf",
-    texLink: "./notes/Probability.tex"
-  },
-  {
-    title: "HKUST MATH 3423",
-    class: "huhtakm-template-book.v2",
-    pdfLink: "./notes/MATH 3423.pdf",
-    texLink: "./notes/MATH 3423.tex"
-  },
-  {
-    title: "Constraint Satisfaction Problem",
-    class: "article",
-    pdfLink: "./notes/Constraint Satisfaction Problem.pdf",
-    texLink: "./notes/Constraint Satisfaction Problem.tex",
-    others: {
-      name: "Images used",
-      link: "./notes/Constraint Satisfaction Problem Images.zip"
-    }
-  },
-  {
-    title: "HKUST MATH 3332 (Working in Progress)",
-    class: "huhtakm-template-book.v2"
-    // pdfLink: "",
-    // texLink: "", 
-  }
-];
-const latexClasses = [
-  {
-    name: "huhtakm-template-article",
-    link: "./notes/huhtakm-template-article.cls"
-  },
-  {
-    name: "huhtakm-template-book",
-    link: "./notes/huhtakm-template-book.cls"
-  },
-  {
-    name: "huhtakm-template-book-v2",
-    link: "./notes/huhtakm-template-book-v2.cls"
-  }
-];
 const _sfc_main$1 = {
   name: "Project",
   components: {

@@ -1090,6 +1090,23 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       ]),
       _: 1,
       __: [1]
+    }, 8, ["isDark"]),
+    createVNode(_component_segment, {
+      title: "Report Typos",
+      isDark: _ctx.isDark
+    }, {
+      default: withCtx(() => _cache[2] || (_cache[2] = [
+        createBaseVNode("p", null, [
+          createTextVNode("If there are typos in my notes (excluding cheat sheets), please let me know via "),
+          createBaseVNode("a", {
+            href: "https://github.com/htakm/latex-notes/issues",
+            "aria-label": "Report an issue on GitHub"
+          }, "GitHub Issues"),
+          createTextVNode(".")
+        ], -1)
+      ])),
+      _: 1,
+      __: [2]
     }, 8, ["isDark"])
   ]);
 }

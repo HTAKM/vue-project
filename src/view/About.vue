@@ -5,4 +5,5 @@
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/css/page/about.scss" as *;
 </style>

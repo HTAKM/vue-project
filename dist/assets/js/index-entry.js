@@ -867,42 +867,42 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => _cache[7] || (_cache[7] = [
-        createBaseVNode("div", { class: "row" }, [
-          createBaseVNode("div", { class: "col-8" }, [
-            createBaseVNode("h2", null, "Undergraduate Teaching Assistant (COMP 1023)"),
-            createBaseVNode("h4", null, "Department of Computer Science and Engineering, HKUST")
+        createBaseVNode("div", { class: "experience-item" }, [
+          createBaseVNode("div", { class: "experience-title" }, [
+            createBaseVNode("h2", null, "Programmer / Researcher Intern"),
+            createBaseVNode("h4", null, "AI Future Education Limited")
           ]),
-          createBaseVNode("div", { class: "col-4 text-right" }, [
-            createBaseVNode("small", null, "July - August 2024")
+          createBaseVNode("div", { class: "experience-date text-right" }, [
+            createBaseVNode("small", null, "July - August 2025")
           ]),
           createBaseVNode("div", { class: "col-12" }, [
-            createBaseVNode("p", null, " After failed applications for summer TA positions in other courses, Dr. Desmond Tsoi invited me to assist in the early development of his new course, COMP 1023 (Introduction to Python Programming), due to my excellent results in COMP 2211 (Exploring Artificial Intelligence). I contributed to developing lab assignments from scratch. ")
+            createBaseVNode("p", null, " This was my first internship, where I worked as a programmer/researcher intern at AI Future Education Limited, a startup focusing on value education. My role was more akin to a full-stack developer, as I contributed to both frontend and backend development, including AI chatbot development. "),
+            createBaseVNode("p", null, " I was primarily responsible for backend development, using Flask, while the frontend was built with Vue.js. Additionally, I researched the performance of state-of-the-art small Chinese-language models and used llama-cpp-python for model inference. The AI chatbot was developed sequentially, employing rule-based methods for knowledge-based questions and RAG-based methods for scenario-based questions, with prompt engineering at every step. "),
+            createBaseVNode("p", null, " Towards the end of the internship, we explored AWS services, including EC2, Lambda, and SageMaker. This internship provided invaluable experience in AI and web development in a real-world setting. ")
           ])
         ], -1),
-        createBaseVNode("div", { class: "row" }, [
-          createBaseVNode("div", { class: "col-8" }, [
+        createBaseVNode("div", { class: "experience-item" }, [
+          createBaseVNode("div", { class: "experience-title" }, [
             createBaseVNode("h2", null, "Undergraduate Teaching Assistant (COMP 1023)"),
             createBaseVNode("h4", null, "Department of Computer Science and Engineering, HKUST")
           ]),
-          createBaseVNode("div", { class: "col-4 text-right" }, [
+          createBaseVNode("div", { class: "experience-date text-right" }, [
             createBaseVNode("small", null, "February - June 2025")
           ]),
           createBaseVNode("div", { class: "col-12" }, [
             createBaseVNode("p", null, " I successfully reapplied as a UGTA for COMP 1023 due to my outstanding academic performance. My responsibilities included polishing assignments developed by previous UGTAs, adding necessary testing components, and improving visualizations. ")
           ])
         ], -1),
-        createBaseVNode("div", { class: "row" }, [
-          createBaseVNode("div", { class: "col-8" }, [
-            createBaseVNode("h2", null, "Programmer / Researcher Intern"),
-            createBaseVNode("h4", null, "AI Future Education Limited")
+        createBaseVNode("div", { class: "experience-item" }, [
+          createBaseVNode("div", { class: "experience-title" }, [
+            createBaseVNode("h2", null, "Undergraduate Teaching Assistant (COMP 1023)"),
+            createBaseVNode("h4", null, "Department of Computer Science and Engineering, HKUST")
           ]),
-          createBaseVNode("div", { class: "col-4 text-right" }, [
-            createBaseVNode("small", null, "July - August 2025")
+          createBaseVNode("div", { class: "experience-date text-right" }, [
+            createBaseVNode("small", null, "July - August 2024")
           ]),
           createBaseVNode("div", { class: "col-12" }, [
-            createBaseVNode("p", null, " This was my first internship, where I worked as a programmer/researcher intern at AI Future Education Limited, a startup focusing on AI education. My role was more akin to a full-stack developer, as I contributed to both frontend and backend development, including AI chatbot development. "),
-            createBaseVNode("p", null, " I was primarily responsible for backend development, using Flask, while the frontend was built with Vue.js. Additionally, I researched the performance of state-of-the-art small Chinese-language models and used llama-cpp-python for model inference. The AI chatbot was developed sequentially, employing rule-based methods for knowledge-based questions and RAG-based methods for scenario-based questions, with prompt engineering at every step. "),
-            createBaseVNode("p", null, " Towards the end of the internship, we explored AWS services, including EC2, Lambda, and SageMaker. This internship provided invaluable experience in AI and web development in a real-world setting. ")
+            createBaseVNode("p", null, " After failed applications for summer TA positions in other courses, Dr. Desmond Tsoi invited me to assist in the early development of his new course, COMP 1023 (Introduction to Python Programming), due to my excellent results in COMP 2211 (Exploring Artificial Intelligence). I contributed to developing lab assignments from scratch. ")
           ])
         ], -1)
       ])),
@@ -1001,7 +1001,7 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
     ])
   ]);
 }
-const About = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", render$2]]);
+const About = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", render$2], ["__scopeId", "data-v-c1bc7f34"]]);
 const _sfc_main$1 = {
   name: "Project",
   components: {

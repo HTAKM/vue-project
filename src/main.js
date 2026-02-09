@@ -6,10 +6,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import PrimeVue from 'primevue/config'
 import Aura from "@primeuix/themes/aura"
 
-import Home from './view/Home.vue'
-import About from './view/About.vue'
-import Project from './view/Project.vue'
-import Website from './view/Website.vue'
+import Home from './views/Home.vue'
 
 const app = createApp(App);
 const router = createRouter({
@@ -24,17 +21,17 @@ const router = createRouter({
         {
             path: '/about',
             name: 'About',
-            component: About
+            component: () => import('./views/About.vue')
         },
         {
             path: '/project',
             name: 'Project',
-            component: Project
+            component: () => import('./views/Project.vue')
         },
         {
             path: '/link',
             name: 'Related Websites',
-            component: Website
+            component: () => import('./views/Website.vue')
         }
     ]
 })

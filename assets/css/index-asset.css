@@ -666,4 +666,27 @@ aside.expanded .button .material-symbols-outlined[data-v-afea40ea] {
 .v-enter-to {
   opacity: 1;
   transform: translateY(0);
+}.experience-item[data-v-d68b0996] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-bottom: 2rem;
+}
+.experience-title[data-v-d68b0996] {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 66.67%;
+  flex: 0 0 66.67%;
+  max-width: 66.67%;
+  padding-left: 15px;
+  margin-bottom: 1rem;
+}
+.experience-date[data-v-d68b0996] {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 33.33%;
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
 }

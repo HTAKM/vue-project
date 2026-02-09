@@ -5,5 +5,5 @@
 </template>
 
 <style lang="scss" scoped>
-@use '@/assets/css/sidebar.scss' as *;
+@use '@/assets/css/pages/sidebar.scss' as *;
 </style>

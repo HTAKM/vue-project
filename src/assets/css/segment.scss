@@ -56,6 +56,7 @@
 
         button {
             @extend %default-border;
+            // box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             font-size: 20px;
             @include marpad(0, 14px, 0, 14px, 14px, 14px, 14px, 14px);

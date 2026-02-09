@@ -5,5 +5,5 @@
 </template>
 
 <style scoped lang="scss">
-@use "@/assets/css/page/about.scss" as *;
+@use "@/assets/css/pages/about.scss" as *;
 </style>

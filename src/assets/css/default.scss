@@ -9,8 +9,8 @@
     }
 }
 %default-border {
-    border-width: 1px;
-    border-style: solid;
+    border-width: 2px;
+    border-style: outset;
     @media (max-width: 768px) {
         border-width: 0.75px;
     }

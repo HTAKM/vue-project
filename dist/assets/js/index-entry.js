@@ -153,7 +153,7 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const Sidebar = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", render$6], ["__scopeId", "data-v-93319068"]]);
+const Sidebar = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", render$6], ["__scopeId", "data-v-5cfd2851"]]);
 const _sfc_main$5 = {
   components: {
     Sidebar
@@ -1001,7 +1001,7 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
     ])
   ]);
 }
-const About = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", render$2], ["__scopeId", "data-v-c1bc7f34"]]);
+const About = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", render$2], ["__scopeId", "data-v-ec1033bf"]]);
 const _sfc_main$1 = {
   name: "Project",
   components: {

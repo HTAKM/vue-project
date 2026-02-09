@@ -7,6 +7,9 @@ import PrimeVue from 'primevue/config'
 import Aura from "@primeuix/themes/aura"
 
 import Home from './views/Home.vue'
+import About from './views/About.vue'
+import Project from './views/Project.vue'
+import Website from './views/Website.vue'
 
 const app = createApp(App);
 const router = createRouter({
@@ -21,17 +24,17 @@ const router = createRouter({
         {
             path: '/about',
             name: 'About',
-            component: () => import('./views/About.vue')
+            component: About
         },
         {
             path: '/project',
             name: 'Project',
-            component: () => import('./views/Project.vue')
+            component: Project
         },
         {
             path: '/link',
             name: 'Related Websites',
-            component: () => import('./views/Website.vue')
+            component: Website
         }
     ]
 })

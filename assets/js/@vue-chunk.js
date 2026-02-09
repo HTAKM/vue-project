@@ -6863,10 +6863,10 @@ function normalizeContainer(container) {
   return container;
 }
 export {
-  withDirectives as A,
-  vShow as B,
-  renderList as C,
-  createApp as D,
+  createApp as A,
+  withDirectives as B,
+  vShow as C,
+  renderList as D,
   Fragment as F,
   Transition as T,
   readonly as a,

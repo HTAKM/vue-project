@@ -291,7 +291,7 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
 const Home = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", render$3]]);
 const gradeFile = [
   {
-    Year: "1",
+    Year: "2022/23",
     Term: "Fall",
     Prefix: "COMP",
     Code: "1021",
@@ -300,7 +300,7 @@ const gradeFile = [
     Grade: "A+"
   },
   {
-    Year: "1",
+    Year: "2022/23",
     Term: "Fall",
     Prefix: "CORE",
     Code: "1402",
@@ -309,7 +309,7 @@ const gradeFile = [
     Grade: "T"
   },
   {
-    Year: "1",
+    Year: "2022/23",
     Term: "Fall",
     Prefix: "LIFS",
     Code: "1901",
@@ -318,7 +318,7 @@ const gradeFile = [
     Grade: "B-"
   },
   {
-    Year: "1",
+    Year: "2022/23",
     Term: "Fall",
     Prefix: "MATH",
     Code: "1013",
@@ -327,7 +327,7 @@ const gradeFile = [
     Grade: "A"
   },
   {
-    Year: "1",
+    Year: "2022/23",
     Term: "Fall",
     Prefix: "MECH",
     Code: "1906",
@@ -336,7 +336,7 @@ const gradeFile = [
     Grade: "B+"
   },
   {
-    Year: "1",
+    Year: "2022/23",
     Term: "Fall",
     Prefix: "PHYS",
     Code: "1112",
@@ -345,7 +345,7 @@ const gradeFile = [
     Grade: "A-"
   },
   {
-    Year: "1",
+    Year: "2022/23",
     Term: "Spring",
     Prefix: "CENG",
     Code: "1500",
@@ -354,7 +354,7 @@ const gradeFile = [
     Grade: "B+"
   },
   {
-    Year: "1",
+    Year: "2022/23",
     Term: "Spring",
     Prefix: "CORE",
     Code: "1403A",
@@ -363,7 +363,7 @@ const gradeFile = [
     Grade: "B+"
   },
   {
-    Year: "1",
+    Year: "2022/23",
     Term: "Spring",
     Prefix: "CORE",
     Code: "1631",
@@ -372,7 +372,7 @@ const gradeFile = [
     Grade: "A"
   },
   {
-    Year: "1",
+    Year: "2022/23",
     Term: "Spring",
     Prefix: "CORE",
     Code: "1901",
@@ -381,7 +381,7 @@ const gradeFile = [
     Grade: "B"
   },
   {
-    Year: "1",
+    Year: "2022/23",
     Term: "Spring",
     Prefix: "CORE",
     Code: "1905B",
@@ -390,7 +390,7 @@ const gradeFile = [
     Grade: "P"
   },
   {
-    Year: "1",
+    Year: "2022/23",
     Term: "Spring",
     Prefix: "LEGL",
     Code: "1000",
@@ -399,7 +399,7 @@ const gradeFile = [
     Grade: "P"
   },
   {
-    Year: "1",
+    Year: "2022/23",
     Term: "Spring",
     Prefix: "MATH",
     Code: "1014",
@@ -408,7 +408,7 @@ const gradeFile = [
     Grade: "A"
   },
   {
-    Year: "1",
+    Year: "2022/23",
     Term: "Summer",
     Prefix: "PHYS",
     Code: "1114",
@@ -417,7 +417,7 @@ const gradeFile = [
     Grade: "A"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Fall",
     Prefix: "COMP",
     Code: "2011",
@@ -426,7 +426,7 @@ const gradeFile = [
     Grade: "A"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Fall",
     Prefix: "COMP",
     Code: "2711H",
@@ -435,7 +435,7 @@ const gradeFile = [
     Grade: "A-"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Fall",
     Prefix: "EMIA",
     Code: "2010A",
@@ -444,7 +444,7 @@ const gradeFile = [
     Grade: "P"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Fall",
     Prefix: "MATH",
     Code: "2131",
@@ -453,7 +453,7 @@ const gradeFile = [
     Grade: "B+"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Fall",
     Prefix: "MATH",
     Code: "2411",
@@ -462,7 +462,7 @@ const gradeFile = [
     Grade: "A+"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Fall",
     Prefix: "PHYS",
     Code: "1002",
@@ -471,7 +471,7 @@ const gradeFile = [
     Grade: "A+"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Winter",
     Prefix: "COMP",
     Code: "1029V",
@@ -480,7 +480,7 @@ const gradeFile = [
     Grade: "P"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Winter",
     Prefix: "ISOM",
     Code: "1700",
@@ -489,7 +489,7 @@ const gradeFile = [
     Grade: "B+"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Spring",
     Prefix: "COMP",
     Code: "2012",
@@ -498,7 +498,7 @@ const gradeFile = [
     Grade: "A"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Spring",
     Prefix: "COMP",
     Code: "2211",
@@ -507,7 +507,7 @@ const gradeFile = [
     Grade: "A+"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Spring",
     Prefix: "COMP",
     Code: "2611",
@@ -516,7 +516,7 @@ const gradeFile = [
     Grade: "A"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Spring",
     Prefix: "COMP",
     Code: "3711H",
@@ -525,7 +525,7 @@ const gradeFile = [
     Grade: "AU"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Spring",
     Prefix: "LANG",
     Code: "2030",
@@ -534,7 +534,7 @@ const gradeFile = [
     Grade: "B"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Spring",
     Prefix: "MATH",
     Code: "2023",
@@ -543,7 +543,7 @@ const gradeFile = [
     Grade: "B+"
   },
   {
-    Year: "2",
+    Year: "2023/24",
     Term: "Spring",
     Prefix: "MATH",
     Code: "2431",
@@ -552,7 +552,7 @@ const gradeFile = [
     Grade: "A"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Fall",
     Prefix: "COMP",
     Code: "3111H",
@@ -561,7 +561,7 @@ const gradeFile = [
     Grade: "A"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Fall",
     Prefix: "COMP",
     Code: "3211",
@@ -570,7 +570,7 @@ const gradeFile = [
     Grade: "A+"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Fall",
     Prefix: "COMP",
     Code: "3711",
@@ -579,7 +579,7 @@ const gradeFile = [
     Grade: "A+"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Fall",
     Prefix: "ENGG",
     Code: "2010",
@@ -588,7 +588,7 @@ const gradeFile = [
     Grade: "P"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Fall",
     Prefix: "MATH",
     Code: "2033",
@@ -597,7 +597,7 @@ const gradeFile = [
     Grade: "A"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Fall",
     Prefix: "MATH",
     Code: "3423",
@@ -606,7 +606,7 @@ const gradeFile = [
     Grade: "A"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Fall",
     Prefix: "UROP",
     Code: "1100N",
@@ -615,7 +615,7 @@ const gradeFile = [
     Grade: "P"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Winter",
     Prefix: "COMP",
     Code: "1029J",
@@ -624,7 +624,7 @@ const gradeFile = [
     Grade: "P"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Spring",
     Prefix: "COMP",
     Code: "3511",
@@ -633,7 +633,7 @@ const gradeFile = [
     Grade: "A-"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Spring",
     Prefix: "COMP",
     Code: "4211",
@@ -642,7 +642,7 @@ const gradeFile = [
     Grade: "B+"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Spring",
     Prefix: "COMP",
     Code: "4431",
@@ -651,7 +651,7 @@ const gradeFile = [
     Grade: "B+"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Spring",
     Prefix: "COMP",
     Code: "4901Y",
@@ -660,7 +660,7 @@ const gradeFile = [
     Grade: "A"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Spring",
     Prefix: "EMIA",
     Code: "2020",
@@ -669,7 +669,7 @@ const gradeFile = [
     Grade: "T"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Spring",
     Prefix: "HUMA",
     Code: "1622",
@@ -678,7 +678,7 @@ const gradeFile = [
     Grade: "T"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Spring",
     Prefix: "LANG",
     Code: "1000BROAD",
@@ -687,7 +687,7 @@ const gradeFile = [
     Grade: "T"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Spring",
     Prefix: "MATH",
     Code: "3322",
@@ -696,7 +696,7 @@ const gradeFile = [
     Grade: "A"
   },
   {
-    Year: "3",
+    Year: "2024/25",
     Term: "Spring",
     Prefix: "MATH",
     Code: "3424",
@@ -705,7 +705,7 @@ const gradeFile = [
     Grade: "A-"
   },
   {
-    Year: "4",
+    Year: "2025/26",
     Term: "Fall",
     Prefix: "COMP",
     Code: "4421",
@@ -714,7 +714,7 @@ const gradeFile = [
     Grade: "A+"
   },
   {
-    Year: "4",
+    Year: "2025/26",
     Term: "Fall",
     Prefix: "COMP",
     Code: "4901B",
@@ -723,7 +723,7 @@ const gradeFile = [
     Grade: "B"
   },
   {
-    Year: "4",
+    Year: "2025/26",
     Term: "Fall",
     Prefix: "LANG",
     Code: "1416C",
@@ -732,7 +732,7 @@ const gradeFile = [
     Grade: "B+"
   },
   {
-    Year: "4",
+    Year: "2025/26",
     Term: "Fall",
     Prefix: "MATH",
     Code: "3332",
@@ -741,7 +741,7 @@ const gradeFile = [
     Grade: "A"
   },
   {
-    Year: "4",
+    Year: "2025/26",
     Term: "Spring",
     Prefix: "COMP",
     Code: "1942",
@@ -750,7 +750,7 @@ const gradeFile = [
     Grade: ""
   },
   {
-    Year: "4",
+    Year: "2025/26",
     Term: "Spring",
     Prefix: "COMP",
     Code: "4321",
@@ -759,7 +759,7 @@ const gradeFile = [
     Grade: ""
   },
   {
-    Year: "4",
+    Year: "2025/26",
     Term: "Spring",
     Prefix: "COMP",
     Code: "4981",
@@ -768,7 +768,7 @@ const gradeFile = [
     Grade: ""
   },
   {
-    Year: "4",
+    Year: "2025/26",
     Term: "Spring",
     Prefix: "ISOM",
     Code: "3320",
@@ -868,7 +868,8 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => [
-        _cache[6] || (_cache[6] = createBaseVNode("p", { class: "mb-0" }, "The following is my grade:", -1)),
+        _cache[6] || (_cache[6] = createBaseVNode("p", { class: "mb-0" }, "Current CGA: 3.754 / 4.300, Current Major CGA: 3.856", -1)),
+        _cache[7] || (_cache[7] = createBaseVNode("p", { class: "mb-0" }, "The following is my grade:", -1)),
         createBaseVNode("table", _hoisted_3$2, [
           createBaseVNode("thead", null, [
             createBaseVNode("tr", null, [
@@ -882,7 +883,7 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
               return openBlock(), createElementBlock("tr", {
                 key: `${row.Prefix} + ${row.Code}`
               }, [
-                createBaseVNode("td", null, "Year " + toDisplayString(row.Year) + " " + toDisplayString(row.Term), 1),
+                createBaseVNode("td", null, toDisplayString(row.Year) + " " + toDisplayString(row.Term), 1),
                 createBaseVNode("td", null, toDisplayString(row.Prefix) + " " + toDisplayString(row.Code), 1),
                 createBaseVNode("td", null, toDisplayString(row.Name), 1),
                 createBaseVNode("td", null, toDisplayString(row.Credit), 1),
@@ -893,7 +894,7 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
         ])
       ]),
       _: 1,
-      __: [6]
+      __: [6, 7]
     }, 8, ["isDark"]), [
       [vShow, _ctx.isShowing === "Academic"]
     ]),
@@ -902,7 +903,7 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
       class: "session",
       isDark: _ctx.isDark
     }, {
-      default: withCtx(() => _cache[7] || (_cache[7] = [
+      default: withCtx(() => _cache[8] || (_cache[8] = [
         createBaseVNode("div", { class: "experience-item" }, [
           createBaseVNode("div", { class: "experience-title" }, [
             createBaseVNode("h2", null, "Programmer / Researcher Intern"),
@@ -943,7 +944,7 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
         ], -1)
       ])),
       _: 1,
-      __: [7]
+      __: [8]
     }, 8, ["isDark"]), [
       [vShow, _ctx.isShowing === "Experience"]
     ]),
@@ -952,7 +953,7 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
       class: "session",
       isDark: _ctx.isDark
     }, {
-      default: withCtx(() => _cache[8] || (_cache[8] = [
+      default: withCtx(() => _cache[9] || (_cache[9] = [
         createBaseVNode("p", null, "Below are games I am currently playing (likely paused but will resume):", -1),
         createBaseVNode("ul", null, [
           createBaseVNode("li", null, "Infinite Galaxy (DO NOT PLAY! This is a pay-to-win game, and I am a masochist playing as free-to-play.)"),
@@ -983,7 +984,7 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
         ], -1)
       ])),
       _: 1,
-      __: [8]
+      __: [9]
     }, 8, ["isDark"]), [
       [vShow, _ctx.isShowing === "Games"]
     ]),
@@ -992,7 +993,7 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
       class: "session",
       isDark: _ctx.isDark
     }, {
-      default: withCtx(() => _cache[9] || (_cache[9] = [
+      default: withCtx(() => _cache[10] || (_cache[10] = [
         createBaseVNode("p", null, "Below are games I have played and enjoyed:", -1),
         createBaseVNode("ul", null, [
           createBaseVNode("li", null, [
@@ -1031,7 +1032,7 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
         ], -1)
       ])),
       _: 1,
-      __: [9]
+      __: [10]
     }, 8, ["isDark"]), [
       [vShow, _ctx.isShowing === "Games"]
     ])

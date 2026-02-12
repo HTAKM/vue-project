@@ -20,6 +20,7 @@
     </segment>
 
     <segment title="Grades" class="session" v-show="isShowing === 'Academic'" :isDark="isDark">
+        <p class="mb-0">Current CGA: 3.754 / 4.300, Current Major CGA: 3.856</p>
         <p class="mb-0">The following is my grade:</p>
         <table class="table table-bordered">
             <thead>
@@ -29,7 +30,7 @@
             </thead>
             <tbody>
                 <tr v-for="row in showGrades" :key="`${row.Prefix} + ${row.Code}`">
-                    <td>Year {{ row.Year }} {{ row.Term }}</td>
+                    <td>{{ row.Year }} {{ row.Term }}</td>
                     <td>{{ row.Prefix }} {{ row.Code }}</td>
                     <td>{{ row.Name }}</td>
                     <td>{{ row.Credit }}</td>

@@ -711,7 +711,7 @@ const gradeFile = [
     Code: "4421",
     Name: "Image Processing",
     Credit: "3",
-    Grade: ""
+    Grade: "A+"
   },
   {
     Year: "4",
@@ -720,7 +720,7 @@ const gradeFile = [
     Code: "4901B",
     Name: "Large Language Models",
     Credit: "3",
-    Grade: ""
+    Grade: "B"
   },
   {
     Year: "4",
@@ -729,7 +729,7 @@ const gradeFile = [
     Code: "1416C",
     Name: "Effective Chinese Communication",
     Credit: "3",
-    Grade: ""
+    Grade: "B+"
   },
   {
     Year: "4",
@@ -737,6 +737,42 @@ const gradeFile = [
     Prefix: "MATH",
     Code: "3332",
     Name: "Data Analytic Tools",
+    Credit: "3",
+    Grade: "A"
+  },
+  {
+    Year: "4",
+    Term: "Spring",
+    Prefix: "COMP",
+    Code: "1942",
+    Name: "Exploring and Visualizing Data",
+    Credit: "3",
+    Grade: ""
+  },
+  {
+    Year: "4",
+    Term: "Spring",
+    Prefix: "COMP",
+    Code: "4321",
+    Name: "Search Engines for Web and Enterprise Data",
+    Credit: "3",
+    Grade: ""
+  },
+  {
+    Year: "4",
+    Term: "Spring",
+    Prefix: "COMP",
+    Code: "4981",
+    Name: "Final Year Project",
+    Credit: "6",
+    Grade: ""
+  },
+  {
+    Year: "4",
+    Term: "Spring",
+    Prefix: "ISOM",
+    Code: "3320",
+    Name: "Business Applications Development in Java",
     Credit: "3",
     Grade: ""
   }

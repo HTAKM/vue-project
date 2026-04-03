@@ -531,15 +531,15 @@ aside.expanded .button .material-symbols-outlined[data-v-afea40ea] {
 .segment h1 {
   color: var(--color-heading);
 }
-.segment .table {
-  width: 100%;
-}
 .segment .table thead th {
   background-color: var(--color-border-heading);
 }
 .segment .table tbody tr:hover th,
 .segment .table tbody tr:hover td {
   background-color: var(--color-border-hover);
+}
+.segment .table {
+  width: 100%;
 }
 .segment .table th,
 .segment .table td {

@@ -3,13 +3,10 @@ import './assets/css/main.scss'
 import { createApp } from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
-import PrimeVue from 'primevue/config'
-import Aura from "@primeuix/themes/aura"
 
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Project from './views/Project.vue'
-import Website from './views/Website.vue'
 
 const app = createApp(App);
 const router = createRouter({
@@ -31,17 +28,7 @@ const router = createRouter({
             name: 'Project',
             component: Project
         },
-        {
-            path: '/link',
-            name: 'Related Websites',
-            component: Website
-        }
     ]
 })
 app.use(router);
-app.use(PrimeVue, {
-    theme: {
-        preset: Aura,
-    }
-});
 app.mount('body');

@@ -1,6 +1,5 @@
 import Segment from '@/components/Segment.vue';
 import gradeFile from '@/assets/course-and-grade.csv';
-import { defineAsyncComponent, ref } from 'vue';
 
 export default {
   name: 'About',

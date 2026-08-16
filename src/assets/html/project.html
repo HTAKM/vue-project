@@ -1,38 +1,52 @@
 <main class="project-page">
     <segment title="Notes" id="notes" :isDark="isDark">
-        <div class="description">
-            <p>Here are some of the notes I have made. (In start date chronological order)</p>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th v-for="head in ['Title', 'LaTeX Class used', 'PDF file', 'TEX file', 'Other files']">{{ head }}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="note in notesData">
-                        <th>{{ note.title }}</th>
-                        <td>{{ note.class }}</td>
-                        <td><a :href="note.pdfLink ? note.pdfLink : ''" target="_blank">{{ note.pdfLink ? 'PDF' : '' }}</a></td>
-                        <td><a :href="note.texLink ? note.texLink : ''" target="_blank">{{ note.texLink ? 'TEX' : '' }}</a></td>
-                        <td><a :href="note.others ? note.others.link : ''" target="_blank">{{ note.others ? note.others.name : '' }}</a></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="row-item">
+            <div class="description">
+                <p>Here are some of the notes I have made (ordered by start date).</p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th v-for="head in ['Title', 'LaTeX Class used', 'PDF file', 'TEX file', 'Other files']">{{ head }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="note in notesData">
+                            <th>{{ note.title }}</th>
+                            <td>{{ note.class }}</td>
+                            <td><a :href="note.pdfLink ? note.pdfLink : ''" target="_blank">{{ note.pdfLink ? 'PDF' : '' }}</a></td>
+                            <td><a :href="note.texLink ? note.texLink : ''" target="_blank">{{ note.texLink ? 'TEX' : '' }}</a></td>
+                            <td><a :href="note.others ? note.others.link : ''" target="_blank">{{ note.others ? note.others.name : '' }}</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row-item">
+            <div class="description">
+                <p>I have made some customized LaTeX class to make my notes. You can find them below:</p>
+                <ul>
+                    <li v-for="latexClass in latexClasses">
+                        <a :href="latexClass.link">{{ latexClass.name }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>  
+        <div class="row-item">
+            <div class="description">
+                <p>If there are typos in my notes (excluding cheat sheets), please let me know via <a href="https://github.com/htakm/latex-notes/issues" aria-label="Report an issue on GitHub">GitHub Issues</a>.</p>
+            </div>
         </div>
     </segment>
-    <segment title="LaTeX Class" :isDark="isDark">
-        <div class="description">
-            <p>I have made some customized LaTeX class to make my notes. You can find them below:</p>
-            <ul>
-                <li v-for="latexClass in latexClasses">
-                    <a :href="latexClass.link">{{ latexClass.name }}</a>
-                </li>
-            </ul>
-        </div>
-    </segment>
-    <segment title="Report Typos" :isDark="isDark">
-        <div class="description">
-            <p>If there are typos in my notes (excluding cheat sheets), please let me know via <a href="https://github.com/htakm/latex-notes/issues" aria-label="Report an issue on GitHub">GitHub Issues</a>.</p>
+    <segment title="Other projects" :isDark="isDark">
+        <div class="row-item">
+            <div class="description">
+                <p>Here are some of the other projects I have participated in:</p>
+                <ul>
+                    <li v-for="project in otherProjects">
+                        <a :href="project.link" target="_blank">{{ project.name }}</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </segment>
 </main>

@@ -1,6 +1,7 @@
 import Segment from '@/components/Segment.vue';
 import notesData from 'https://htakm.github.io/latex-notes/js/notesData.js';
 import latexClasses from 'https://htakm.github.io/latex-notes/js/latexTemplateClass.js';
+import otherProjects from '@/assets/js/other_projects.js';
 
 export default {
   name: 'Project',
@@ -13,7 +14,8 @@ export default {
   data() {
     return {
       notesData,
-      latexClasses
+      latexClasses,
+      otherProjects
     };
   }
 };

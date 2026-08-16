@@ -39,7 +39,7 @@ import latexClasses from "https://htakm.github.io/latex-notes/js/latexTemplateCl
     fetch(link.href, fetchOpts);
   }
 })();
-const _sfc_main$5 = {
+const _sfc_main$6 = {
   props: {
     head: String,
     isDark: Boolean
@@ -56,17 +56,17 @@ const _sfc_main$5 = {
     }
   }
 };
-const _hoisted_1$5 = { class: "logo" };
+const _hoisted_1$6 = { class: "logo" };
 const _hoisted_2$5 = { href: "#" };
 const _hoisted_3$3 = { class: "menu-toggle-wrap" };
 const _hoisted_4$2 = { class: "menu" };
 const _hoisted_5$1 = { class: "menu" };
-function render$5(_ctx, _cache, $props, $setup, $data, $options) {
+function render$6(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_link = resolveComponent("router-link");
   return openBlock(), createElementBlock("aside", {
     class: normalizeClass(`${_ctx.expanded ? "expanded" : ""}`)
   }, [
-    createBaseVNode("div", _hoisted_1$5, [
+    createBaseVNode("div", _hoisted_1$6, [
       createBaseVNode("a", _hoisted_2$5, toDisplayString(_ctx.head), 1)
     ]),
     createBaseVNode("div", _hoisted_3$3, [
@@ -77,7 +77,7 @@ function render$5(_ctx, _cache, $props, $setup, $data, $options) {
         createBaseVNode("span", { class: "material-symbols-outlined" }, "keyboard_double_arrow_right", -1)
       ])])
     ]),
-    _cache[9] || (_cache[9] = createBaseVNode("h3", null, "Menu", -1)),
+    _cache[10] || (_cache[10] = createBaseVNode("h3", null, "Menu", -1)),
     createBaseVNode("div", _hoisted_4$2, [
       createVNode(_component_router_link, {
         class: "button",
@@ -101,29 +101,39 @@ function render$5(_ctx, _cache, $props, $setup, $data, $options) {
       }),
       createVNode(_component_router_link, {
         class: "button",
-        to: "/project"
+        to: "/experience"
       }, {
         default: withCtx(() => [..._cache[6] || (_cache[6] = [
-          createBaseVNode("span", { class: "material-symbols-outlined" }, "work", -1),
+          createBaseVNode("span", { class: "material-symbols-outlined" }, "work_history", -1),
+          createBaseVNode("span", { class: "text" }, "Experience", -1)
+        ])]),
+        _: 1
+      }),
+      createVNode(_component_router_link, {
+        class: "button",
+        to: "/project"
+      }, {
+        default: withCtx(() => [..._cache[7] || (_cache[7] = [
+          createBaseVNode("span", { class: "material-symbols-outlined" }, "assignment", -1),
           createBaseVNode("span", { class: "text" }, "Projects", -1)
         ])]),
         _: 1
       })
     ]),
-    _cache[10] || (_cache[10] = createBaseVNode("div", { class: "flex" }, null, -1)),
+    _cache[11] || (_cache[11] = createBaseVNode("div", { class: "flex" }, null, -1)),
     createBaseVNode("div", _hoisted_5$1, [
       _ctx.isDark ? (openBlock(), createElementBlock("button", {
         key: 0,
         class: "button",
         onClick: _cache[1] || (_cache[1] = ($event) => this.$emit("toggleDark", false))
-      }, [..._cache[7] || (_cache[7] = [
+      }, [..._cache[8] || (_cache[8] = [
         createBaseVNode("span", { class: "material-symbols-outlined" }, "brightness_3", -1),
         createBaseVNode("span", { class: "text" }, "Dark mode", -1)
       ])])) : (openBlock(), createElementBlock("button", {
         key: 1,
         class: "button",
         onClick: _cache[2] || (_cache[2] = ($event) => this.$emit("toggleDark", true))
-      }, [..._cache[8] || (_cache[8] = [
+      }, [..._cache[9] || (_cache[9] = [
         createBaseVNode("span", { class: "material-symbols-outlined" }, "brightness_5", -1),
         createBaseVNode("span", { class: "text" }, "Light mode", -1)
       ])]))
@@ -137,8 +147,8 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const Sidebar = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", render$5], ["__scopeId", "data-v-afea40ea"]]);
-const _sfc_main$4 = {
+const Sidebar = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", render$6], ["__scopeId", "data-v-afea40ea"]]);
+const _sfc_main$5 = {
   components: {
     Sidebar
   },
@@ -176,12 +186,12 @@ const _sfc_main$4 = {
     window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change", this.checkDarkMode);
   }
 };
-const _hoisted_1$4 = { id: "app" };
+const _hoisted_1$5 = { id: "app" };
 const _hoisted_2$4 = { class: "main" };
-function render$4(_ctx, _cache, $props, $setup, $data, $options) {
+function render$5(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Sidebar = resolveComponent("Sidebar");
   const _component_RouterView = resolveComponent("RouterView");
-  return openBlock(), createElementBlock("div", _hoisted_1$4, [
+  return openBlock(), createElementBlock("div", _hoisted_1$5, [
     createVNode(_component_Sidebar, {
       head: "HU",
       class: normalizeClass({ dark: _ctx.isDarkMode }),
@@ -193,22 +203,22 @@ function render$4(_ctx, _cache, $props, $setup, $data, $options) {
     ])
   ]);
 }
-const App = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", render$4]]);
-const _sfc_main$3 = {
+const App = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", render$5]]);
+const _sfc_main$4 = {
   props: {
     title: String,
     isDark: Boolean
   }
 };
-const _hoisted_1$3 = { class: "main-body" };
+const _hoisted_1$4 = { class: "main-body" };
 const _hoisted_2$3 = { class: "heading" };
-function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock(Transition, { appear: "" }, {
     default: withCtx(() => [
       createBaseVNode("div", {
         class: normalizeClass(["segment mt-3", { dark: _ctx.isDark }])
       }, [
-        createBaseVNode("div", _hoisted_1$3, [
+        createBaseVNode("div", _hoisted_1$4, [
           createBaseVNode("div", _hoisted_2$3, [
             createBaseVNode("h1", null, toDisplayString(_ctx.title), 1)
           ]),
@@ -219,8 +229,8 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
     _: 3
   });
 }
-const Segment = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", render$3]]);
-const _sfc_main$2 = {
+const Segment = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", render$4]]);
+const _sfc_main$3 = {
   name: "Home",
   components: {
     Segment
@@ -229,13 +239,13 @@ const _sfc_main$2 = {
     isDark: Boolean
   }
 };
-const _hoisted_1$2 = { class: "home-page" };
+const _hoisted_1$3 = { class: "home-page" };
 const _hoisted_2$2 = { class: "row-item" };
 const _hoisted_3$2 = { class: "description" };
-function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_link = resolveComponent("router-link");
   const _component_segment = resolveComponent("segment");
-  return openBlock(), createElementBlock("main", _hoisted_1$2, [
+  return openBlock(), createElementBlock("main", _hoisted_1$3, [
     createVNode(_component_segment, {
       title: "Welcome!",
       isDark: _ctx.isDark
@@ -269,7 +279,7 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
     }, 8, ["isDark"])
   ]);
 }
-const Home = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", render$2]]);
+const Home = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", render$3]]);
 const gradeFile = [
   {
     Year: "2022/23",
@@ -695,7 +705,7 @@ const gradeFile = [
     Grade: "A+"
   }
 ];
-const _sfc_main$1 = {
+const _sfc_main$2 = {
   name: "About",
   components: {
     Segment
@@ -720,13 +730,13 @@ const _sfc_main$1 = {
     }
   }
 };
-const _hoisted_1$1 = { class: "about-page" };
+const _hoisted_1$2 = { class: "about-page" };
 const _hoisted_2$1 = { class: "button-inline" };
 const _hoisted_3$1 = { class: "row-item" };
 const _hoisted_4$1 = { class: "table table-bordered" };
-function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+function render$2(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_segment = resolveComponent("segment");
-  return openBlock(), createElementBlock("main", _hoisted_1$1, [
+  return openBlock(), createElementBlock("main", _hoisted_1$2, [
     createVNode(_component_segment, {
       class: "session",
       isDark: _ctx.isDark
@@ -740,10 +750,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
             onClick: _cache[1] || (_cache[1] = ($event) => _ctx.changeShowing("Academic"))
           }, "Academic"),
           createBaseVNode("button", {
-            onClick: _cache[2] || (_cache[2] = ($event) => _ctx.changeShowing("Experience"))
-          }, "Experience"),
-          createBaseVNode("button", {
-            onClick: _cache[3] || (_cache[3] = ($event) => _ctx.changeShowing("Games"))
+            onClick: _cache[2] || (_cache[2] = ($event) => _ctx.changeShowing("Games"))
           }, "Games")
         ])
       ]),
@@ -754,7 +761,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       class: "session",
       isDark: _ctx.isDark
     }, {
-      default: withCtx(() => [..._cache[4] || (_cache[4] = [
+      default: withCtx(() => [..._cache[3] || (_cache[3] = [
         createBaseVNode("div", { class: "row-item" }, [
           createBaseVNode("div", { class: "description" }, [
             createBaseVNode("p", null, [
@@ -773,7 +780,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       class: "session",
       isDark: _ctx.isDark
     }, {
-      default: withCtx(() => [..._cache[5] || (_cache[5] = [
+      default: withCtx(() => [..._cache[4] || (_cache[4] = [
         createBaseVNode("div", { class: "row-item" }, [
           createBaseVNode("div", { class: "title" }, [
             createBaseVNode("h3", null, "The Hong Kong University of Science and Technology")
@@ -802,7 +809,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
     }, {
       default: withCtx(() => [
         createBaseVNode("div", _hoisted_3$1, [
-          _cache[6] || (_cache[6] = createBaseVNode("div", { class: "description" }, [
+          _cache[5] || (_cache[5] = createBaseVNode("div", { class: "description" }, [
             createBaseVNode("p", null, "GPA: 3.772 / 4.300"),
             createBaseVNode("p", null, "Major CGA: 3.874 / 4.300"),
             createBaseVNode("p", null, "The following is my grade:")
@@ -836,20 +843,122 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       [vShow, _ctx.isShowing === "Academic"]
     ]),
     withDirectives(createVNode(_component_segment, {
-      title: "Experience",
+      title: "Games Playing",
+      class: "session",
+      isDark: _ctx.isDark
+    }, {
+      default: withCtx(() => [..._cache[6] || (_cache[6] = [
+        createBaseVNode("p", null, "Below are games I am currently playing (likely paused but will resume):", -1),
+        createBaseVNode("ul", null, [
+          createBaseVNode("li", null, "Infinite Galaxy (DO NOT PLAY! This is a pay-to-win game, and I am a masochist playing as free-to-play.)"),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://store.steampowered.com/app/1399720/Antimatter_Dimensions/",
+              target: "_blank"
+            }, "Antimatter Dimensions")
+          ]),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://keyemilco.wixsite.com/econline",
+              target: "_blank"
+            }, "EcoKey2")
+          ]),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://store.steampowered.com/app/1546320/Your_Chronicle/",
+              target: "_blank"
+            }, "Your Chronicle")
+          ]),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://store.steampowered.com/app/280220/Creeper_World_3_Arc_Eternal/",
+              target: "_blank"
+            }, "Creeper World 3: Arc Eternal")
+          ])
+        ], -1)
+      ])]),
+      _: 1
+    }, 8, ["isDark"]), [
+      [vShow, _ctx.isShowing === "Games"]
+    ]),
+    withDirectives(createVNode(_component_segment, {
+      title: "Games Played",
       class: "session",
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => [..._cache[7] || (_cache[7] = [
+        createBaseVNode("p", null, "Below are games I have played and enjoyed:", -1),
+        createBaseVNode("ul", null, [
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://eco.nekogame.com/",
+              target: "_blank"
+            }, "Nekogame Emil Chronicle Online")
+          ]),
+          createBaseVNode("li", null, "ECO-Re (Server closed)"),
+          createBaseVNode("li", null, "Lemon Team ECO (Server closed)"),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://synergism.cc/",
+              target: "_blank"
+            }, "Synergism")
+          ]),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://www.talesrunner.com.hk/",
+              target: "_blank"
+            }, "跑 Online")
+          ]),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://pixelplace.io/",
+              target: "_blank"
+            }, "pixelplace.io")
+          ]),
+          createBaseVNode("li", null, [
+            createBaseVNode("a", {
+              href: "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/",
+              target: "_blank"
+            }, "Portable Puzzle Collection")
+          ]),
+          createBaseVNode("li", null, "Geometry Dash")
+        ], -1)
+      ])]),
+      _: 1
+    }, 8, ["isDark"]), [
+      [vShow, _ctx.isShowing === "Games"]
+    ])
+  ]);
+}
+const About = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", render$2]]);
+const _sfc_main$1 = {
+  name: "Experience",
+  components: {
+    Segment
+  },
+  props: {
+    isDark: Boolean
+  }
+};
+const _hoisted_1$1 = { class: "experience-page" };
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_segment = resolveComponent("segment");
+  return openBlock(), createElementBlock("main", _hoisted_1$1, [
+    createVNode(_component_segment, {
+      title: "Experience",
+      id: "experience",
+      isDark: _ctx.isDark
+    }, {
+      default: withCtx(() => [..._cache[0] || (_cache[0] = [
         createBaseVNode("div", { class: "row-item" }, [
           createBaseVNode("div", { class: "title" }, [
-            createBaseVNode("h5", null, "Software Engineer")
+            createBaseVNode("h2", null, "Software Engineer")
           ]),
           createBaseVNode("div", { class: "date text-right" }, [
-            createBaseVNode("h6", null, "JUL 2026 - PRESENT")
+            createBaseVNode("small", null, "JUL 2026 - PRESENT")
           ]),
           createBaseVNode("div", { class: "subtitle" }, [
-            createBaseVNode("h6", null, "Winley Technology Limited")
+            createBaseVNode("h4", null, "Winley Technology Limited")
           ])
         ], -1),
         createBaseVNode("div", { class: "row-item" }, [
@@ -914,98 +1023,10 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
         ], -1)
       ])]),
       _: 1
-    }, 8, ["isDark"]), [
-      [vShow, _ctx.isShowing === "Experience"]
-    ]),
-    withDirectives(createVNode(_component_segment, {
-      title: "Games Playing",
-      class: "session",
-      isDark: _ctx.isDark
-    }, {
-      default: withCtx(() => [..._cache[8] || (_cache[8] = [
-        createBaseVNode("p", null, "Below are games I am currently playing (likely paused but will resume):", -1),
-        createBaseVNode("ul", null, [
-          createBaseVNode("li", null, "Infinite Galaxy (DO NOT PLAY! This is a pay-to-win game, and I am a masochist playing as free-to-play.)"),
-          createBaseVNode("li", null, [
-            createBaseVNode("a", {
-              href: "https://store.steampowered.com/app/1399720/Antimatter_Dimensions/",
-              target: "_blank"
-            }, "Antimatter Dimensions")
-          ]),
-          createBaseVNode("li", null, [
-            createBaseVNode("a", {
-              href: "https://keyemilco.wixsite.com/econline",
-              target: "_blank"
-            }, "EcoKey2")
-          ]),
-          createBaseVNode("li", null, [
-            createBaseVNode("a", {
-              href: "https://store.steampowered.com/app/1546320/Your_Chronicle/",
-              target: "_blank"
-            }, "Your Chronicle")
-          ]),
-          createBaseVNode("li", null, [
-            createBaseVNode("a", {
-              href: "https://store.steampowered.com/app/280220/Creeper_World_3_Arc_Eternal/",
-              target: "_blank"
-            }, "Creeper World 3: Arc Eternal")
-          ])
-        ], -1)
-      ])]),
-      _: 1
-    }, 8, ["isDark"]), [
-      [vShow, _ctx.isShowing === "Games"]
-    ]),
-    withDirectives(createVNode(_component_segment, {
-      title: "Games Played",
-      class: "session",
-      isDark: _ctx.isDark
-    }, {
-      default: withCtx(() => [..._cache[9] || (_cache[9] = [
-        createBaseVNode("p", null, "Below are games I have played and enjoyed:", -1),
-        createBaseVNode("ul", null, [
-          createBaseVNode("li", null, [
-            createBaseVNode("a", {
-              href: "https://eco.nekogame.com/",
-              target: "_blank"
-            }, "Nekogame Emil Chronicle Online")
-          ]),
-          createBaseVNode("li", null, "ECO-Re (Server closed)"),
-          createBaseVNode("li", null, "Lemon Team ECO (Server closed)"),
-          createBaseVNode("li", null, [
-            createBaseVNode("a", {
-              href: "https://synergism.cc/",
-              target: "_blank"
-            }, "Synergism")
-          ]),
-          createBaseVNode("li", null, [
-            createBaseVNode("a", {
-              href: "https://www.talesrunner.com.hk/",
-              target: "_blank"
-            }, "跑 Online")
-          ]),
-          createBaseVNode("li", null, [
-            createBaseVNode("a", {
-              href: "https://pixelplace.io/",
-              target: "_blank"
-            }, "pixelplace.io")
-          ]),
-          createBaseVNode("li", null, [
-            createBaseVNode("a", {
-              href: "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/",
-              target: "_blank"
-            }, "Portable Puzzle Collection")
-          ]),
-          createBaseVNode("li", null, "Geometry Dash")
-        ], -1)
-      ])]),
-      _: 1
-    }, 8, ["isDark"]), [
-      [vShow, _ctx.isShowing === "Games"]
-    ])
+    }, 8, ["isDark"])
   ]);
 }
-const About = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", render$1]]);
+const Experience = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", render$1]]);
 const otherProjects = [
   {
     name: "VLLM KV Cache Visualization Tool",
@@ -1163,6 +1184,11 @@ const router = createRouter({
       path: "/about",
       name: "About",
       component: About
+    },
+    {
+      path: "/experience",
+      name: "Experience",
+      component: Experience
     },
     {
       path: "/project",

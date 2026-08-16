@@ -57,9 +57,9 @@ const _sfc_main$5 = {
   }
 };
 const _hoisted_1$5 = { class: "logo" };
-const _hoisted_2$3 = { href: "#" };
-const _hoisted_3$2 = { class: "menu-toggle-wrap" };
-const _hoisted_4$1 = { class: "menu" };
+const _hoisted_2$5 = { href: "#" };
+const _hoisted_3$3 = { class: "menu-toggle-wrap" };
+const _hoisted_4$2 = { class: "menu" };
 const _hoisted_5$1 = { class: "menu" };
 function render$5(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_link = resolveComponent("router-link");
@@ -67,9 +67,9 @@ function render$5(_ctx, _cache, $props, $setup, $data, $options) {
     class: normalizeClass(`${_ctx.expanded ? "expanded" : ""}`)
   }, [
     createBaseVNode("div", _hoisted_1$5, [
-      createBaseVNode("a", _hoisted_2$3, toDisplayString(_ctx.head), 1)
+      createBaseVNode("a", _hoisted_2$5, toDisplayString(_ctx.head), 1)
     ]),
-    createBaseVNode("div", _hoisted_3$2, [
+    createBaseVNode("div", _hoisted_3$3, [
       createBaseVNode("button", {
         class: "menu-toggle",
         onClick: _cache[0] || (_cache[0] = (...args) => _ctx.toggleExpanded && _ctx.toggleExpanded(...args))
@@ -78,7 +78,7 @@ function render$5(_ctx, _cache, $props, $setup, $data, $options) {
       ])])
     ]),
     _cache[9] || (_cache[9] = createBaseVNode("h3", null, "Menu", -1)),
-    createBaseVNode("div", _hoisted_4$1, [
+    createBaseVNode("div", _hoisted_4$2, [
       createVNode(_component_router_link, {
         class: "button",
         to: "/"
@@ -177,7 +177,7 @@ const _sfc_main$4 = {
   }
 };
 const _hoisted_1$4 = { id: "app" };
-const _hoisted_2$2 = { class: "main" };
+const _hoisted_2$4 = { class: "main" };
 function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Sidebar = resolveComponent("Sidebar");
   const _component_RouterView = resolveComponent("RouterView");
@@ -188,7 +188,7 @@ function render$4(_ctx, _cache, $props, $setup, $data, $options) {
       isDark: _ctx.isDarkMode,
       onToggleDark: _ctx.toggleDark
     }, null, 8, ["class", "isDark", "onToggleDark"]),
-    createBaseVNode("div", _hoisted_2$2, [
+    createBaseVNode("div", _hoisted_2$4, [
       createVNode(_component_RouterView, { isDark: _ctx.isDarkMode }, null, 8, ["isDark"])
     ])
   ]);
@@ -200,7 +200,8 @@ const _sfc_main$3 = {
     isDark: Boolean
   }
 };
-const _hoisted_1$3 = { class: "col" };
+const _hoisted_1$3 = { class: "main-body" };
+const _hoisted_2$3 = { class: "heading" };
 function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock(Transition, { appear: "" }, {
     default: withCtx(() => [
@@ -208,7 +209,9 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
         class: normalizeClass(["segment mt-3", { dark: _ctx.isDark }])
       }, [
         createBaseVNode("div", _hoisted_1$3, [
-          createBaseVNode("h1", null, toDisplayString(_ctx.title), 1),
+          createBaseVNode("div", _hoisted_2$3, [
+            createBaseVNode("h1", null, toDisplayString(_ctx.title), 1)
+          ]),
           renderSlot(_ctx.$slots, "default")
         ])
       ], 2)
@@ -227,42 +230,39 @@ const _sfc_main$2 = {
   }
 };
 const _hoisted_1$2 = { class: "home-page" };
+const _hoisted_2$2 = { class: "row-item" };
+const _hoisted_3$2 = { class: "description" };
 function render$2(_ctx, _cache, $props, $setup, $data, $options) {
-  const _component_segment = resolveComponent("segment");
   const _component_router_link = resolveComponent("router-link");
+  const _component_segment = resolveComponent("segment");
   return openBlock(), createElementBlock("main", _hoisted_1$2, [
     createVNode(_component_segment, {
       title: "Welcome!",
       isDark: _ctx.isDark
     }, {
-      default: withCtx(() => [..._cache[0] || (_cache[0] = [
-        createBaseVNode("p", { class: "mb-0" }, "I am HU. You can also call me Henry or HTAKM.", -1),
-        createBaseVNode("p", { class: "mb-0" }, "I am an undegraduate student of the Hong Kong University of Science and Technology.", -1)
-      ])]),
-      _: 1
-    }, 8, ["isDark"]),
-    createVNode(_component_segment, {
-      title: "My Website",
-      isDark: _ctx.isDark
-    }, {
       default: withCtx(() => [
-        _cache[3] || (_cache[3] = createBaseVNode("p", { class: "mb-0" }, " In this website, you can find some information about me, as well as the notes I made and some related links. You can click on the following links to find what you want. ", -1)),
-        createBaseVNode("ul", null, [
-          createBaseVNode("li", null, [
-            createVNode(_component_router_link, { to: "/project#notes" }, {
-              default: withCtx(() => [..._cache[1] || (_cache[1] = [
-                createTextVNode("My Notes", -1)
-              ])]),
-              _: 1
-            })
-          ]),
-          _cache[2] || (_cache[2] = createBaseVNode("li", null, [
-            createBaseVNode("a", {
-              href: "https://htakm.github.io/htakm_test/",
-              target: "_blank",
-              rel: "noopener"
-            }, "My Old Website")
-          ], -1))
+        createBaseVNode("div", _hoisted_2$2, [
+          createBaseVNode("div", _hoisted_3$2, [
+            _cache[2] || (_cache[2] = createBaseVNode("p", null, " I am HU. You can also call me Henry or HTAKM. I an currently working as a software engineer in Winley. I was a former undergraduate student at the Hong Kong University of Science and Technology, majoring in Computer Science (with Extended Major in Artificial Intelligence) and minoring in Data Science and Technology. ", -1)),
+            _cache[3] || (_cache[3] = createBaseVNode("p", null, " In this website, you can find some information about me, as well as the notes I made throughout my academic journey and some related links. You can click on the following links to find what you want. ", -1)),
+            createBaseVNode("ul", null, [
+              createBaseVNode("li", null, [
+                createVNode(_component_router_link, { to: "/project#notes" }, {
+                  default: withCtx(() => [..._cache[0] || (_cache[0] = [
+                    createTextVNode("My Notes", -1)
+                  ])]),
+                  _: 1
+                })
+              ]),
+              _cache[1] || (_cache[1] = createBaseVNode("li", null, [
+                createBaseVNode("a", {
+                  href: "https://htakm.github.io/htakm_test/",
+                  target: "_blank",
+                  rel: "noopener"
+                }, "My Old Website")
+              ], -1))
+            ])
+          ])
         ])
       ]),
       _: 1
@@ -364,24 +364,6 @@ const gradeFile = [
   {
     Year: "2022/23",
     Term: "Spring",
-    Prefix: "CORE",
-    Code: "1905B",
-    Name: "Behavioral Foundations of University Education: Habits, Mindsets, and Wellness",
-    Credit: "3",
-    Grade: "P"
-  },
-  {
-    Year: "2022/23",
-    Term: "Spring",
-    Prefix: "LEGL",
-    Code: "1000",
-    Name: "Legal Education (PRC Constitution, Basic Law, National Security Law and Legal System of HKSAR)",
-    Credit: "0",
-    Grade: "P"
-  },
-  {
-    Year: "2022/23",
-    Term: "Spring",
     Prefix: "MATH",
     Code: "1014",
     Name: "Calculus II",
@@ -418,15 +400,6 @@ const gradeFile = [
   {
     Year: "2023/24",
     Term: "Fall",
-    Prefix: "EMIA",
-    Code: "2010A",
-    Name: "Cross-disciplinary Seminar: Artificial Intelligence",
-    Credit: "0",
-    Grade: "P"
-  },
-  {
-    Year: "2023/24",
-    Term: "Fall",
     Prefix: "MATH",
     Code: "2131",
     Name: "Honors in Linear and Abstract Algebra",
@@ -450,15 +423,6 @@ const gradeFile = [
     Name: "Introduction to Astrophysics and Astronomy",
     Credit: "3",
     Grade: "A+"
-  },
-  {
-    Year: "2023/24",
-    Term: "Winter",
-    Prefix: "COMP",
-    Code: "1029V",
-    Name: "Excel VBA Programming Bridging Course",
-    Credit: "1",
-    Grade: "P"
   },
   {
     Year: "2023/24",
@@ -562,15 +526,6 @@ const gradeFile = [
   {
     Year: "2024/25",
     Term: "Fall",
-    Prefix: "ENGG",
-    Code: "2010",
-    Name: "Engineering Seminar Series",
-    Credit: "0",
-    Grade: "P"
-  },
-  {
-    Year: "2024/25",
-    Term: "Fall",
     Prefix: "MATH",
     Code: "2033",
     Name: "Mathematical Analysis",
@@ -585,24 +540,6 @@ const gradeFile = [
     Name: "Statistical Inference",
     Credit: "3",
     Grade: "A"
-  },
-  {
-    Year: "2024/25",
-    Term: "Fall",
-    Prefix: "UROP",
-    Code: "1100N",
-    Name: "Undergraduate Research Opportunities Series 1",
-    Credit: "1",
-    Grade: "P"
-  },
-  {
-    Year: "2024/25",
-    Term: "Winter",
-    Prefix: "COMP",
-    Code: "1029J",
-    Name: "Java Programming Bridging Course",
-    Credit: "1",
-    Grade: "P"
   },
   {
     Year: "2024/25",
@@ -728,7 +665,7 @@ const gradeFile = [
     Code: "1942",
     Name: "Exploring and Visualizing Data",
     Credit: "3",
-    Grade: ""
+    Grade: "A"
   },
   {
     Year: "2025/26",
@@ -737,7 +674,7 @@ const gradeFile = [
     Code: "4321",
     Name: "Search Engines for Web and Enterprise Data",
     Credit: "3",
-    Grade: ""
+    Grade: "B+"
   },
   {
     Year: "2025/26",
@@ -746,7 +683,7 @@ const gradeFile = [
     Code: "4981",
     Name: "Final Year Project",
     Credit: "6",
-    Grade: ""
+    Grade: "A"
   },
   {
     Year: "2025/26",
@@ -755,7 +692,7 @@ const gradeFile = [
     Code: "3320",
     Name: "Business Applications Development in Java",
     Credit: "3",
-    Grade: ""
+    Grade: "A+"
   }
 ];
 const _sfc_main$1 = {
@@ -785,7 +722,8 @@ const _sfc_main$1 = {
 };
 const _hoisted_1$1 = { class: "about-page" };
 const _hoisted_2$1 = { class: "button-inline" };
-const _hoisted_3$1 = { class: "table table-bordered" };
+const _hoisted_3$1 = { class: "row-item" };
+const _hoisted_4$1 = { class: "table table-bordered" };
 function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_segment = resolveComponent("segment");
   return openBlock(), createElementBlock("main", _hoisted_1$1, [
@@ -817,9 +755,13 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => [..._cache[4] || (_cache[4] = [
-        createBaseVNode("p", { class: "mb-0" }, [
-          createTextVNode("Email: "),
-          createBaseVNode("a", { href: "mailto:yhkwokae@connect.ust.hk" }, "yhkwokae@connect.ust.hk")
+        createBaseVNode("div", { class: "row-item" }, [
+          createBaseVNode("div", { class: "description" }, [
+            createBaseVNode("p", null, [
+              createTextVNode("Email: "),
+              createBaseVNode("a", { href: "mailto:yhkwokae@connect.ust.hk" }, "yhkwokae@connect.ust.hk")
+            ])
+          ])
         ], -1)
       ])]),
       _: 1
@@ -832,10 +774,22 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => [..._cache[5] || (_cache[5] = [
-        createBaseVNode("p", { class: "mb-0" }, "Current University: The Hong Kong University of Science and Technology", -1),
-        createBaseVNode("p", { class: "mb-0" }, "Year of Study: Year 4", -1),
-        createBaseVNode("p", { class: "mb-0" }, "Current Major: (COSC + AI) + DSCT", -1),
-        createBaseVNode("p", { class: "mb-0" }, "Target: Graduate in First Class Honors", -1)
+        createBaseVNode("div", { class: "row-item" }, [
+          createBaseVNode("div", { class: "title" }, [
+            createBaseVNode("h3", null, "The Hong Kong University of Science and Technology")
+          ]),
+          createBaseVNode("div", { class: "date text-right" }, [
+            createBaseVNode("small", null, "SEP 2022 - JUL 2026")
+          ]),
+          createBaseVNode("div", { class: "subtitle" }, [
+            createBaseVNode("h4", null, "Bachelor of Science")
+          ]),
+          createBaseVNode("div", { class: "description" }, [
+            createBaseVNode("p", null, "Main major: Computer Science (with Extended Major in Artificial Intelligence)"),
+            createBaseVNode("p", null, "Additional major: Data Science and Technology"),
+            createBaseVNode("p", null, "Classification: First Class Honors")
+          ])
+        ], -1)
       ])]),
       _: 1
     }, 8, ["isDark"]), [
@@ -847,28 +801,33 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => [
-        _cache[6] || (_cache[6] = createBaseVNode("p", { class: "mb-0" }, "Current CGA: 3.754 / 4.300, Current Major CGA: 3.856", -1)),
-        _cache[7] || (_cache[7] = createBaseVNode("p", { class: "mb-0" }, "The following is my grade:", -1)),
-        createBaseVNode("table", _hoisted_3$1, [
-          createBaseVNode("thead", null, [
-            createBaseVNode("tr", null, [
-              (openBlock(), createElementBlock(Fragment, null, renderList(["Term", "Course Code", "Course Name", "Credits", "Grade"], (header) => {
-                return createBaseVNode("th", { key: header }, toDisplayString(header), 1);
-              }), 64))
+        createBaseVNode("div", _hoisted_3$1, [
+          _cache[6] || (_cache[6] = createBaseVNode("div", { class: "description" }, [
+            createBaseVNode("p", null, "GPA: 3.772 / 4.300"),
+            createBaseVNode("p", null, "Major CGA: 3.874 / 4.300"),
+            createBaseVNode("p", null, "The following is my grade:")
+          ], -1)),
+          createBaseVNode("table", _hoisted_4$1, [
+            createBaseVNode("thead", null, [
+              createBaseVNode("tr", null, [
+                (openBlock(), createElementBlock(Fragment, null, renderList(["Term", "Course Code", "Course Name", "Credits", "Grade"], (header) => {
+                  return createBaseVNode("th", { key: header }, toDisplayString(header), 1);
+                }), 64))
+              ])
+            ]),
+            createBaseVNode("tbody", null, [
+              (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.showGrades, (row) => {
+                return openBlock(), createElementBlock("tr", {
+                  key: `${row.Prefix} + ${row.Code}`
+                }, [
+                  createBaseVNode("td", null, toDisplayString(row.Year) + " " + toDisplayString(row.Term), 1),
+                  createBaseVNode("td", null, toDisplayString(row.Prefix) + " " + toDisplayString(row.Code), 1),
+                  createBaseVNode("td", null, toDisplayString(row.Name), 1),
+                  createBaseVNode("td", null, toDisplayString(row.Credit), 1),
+                  createBaseVNode("td", null, toDisplayString(row.Grade), 1)
+                ]);
+              }), 128))
             ])
-          ]),
-          createBaseVNode("tbody", null, [
-            (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.showGrades, (row) => {
-              return openBlock(), createElementBlock("tr", {
-                key: `${row.Prefix} + ${row.Code}`
-              }, [
-                createBaseVNode("td", null, toDisplayString(row.Year) + " " + toDisplayString(row.Term), 1),
-                createBaseVNode("td", null, toDisplayString(row.Prefix) + " " + toDisplayString(row.Code), 1),
-                createBaseVNode("td", null, toDisplayString(row.Name), 1),
-                createBaseVNode("td", null, toDisplayString(row.Credit), 1),
-                createBaseVNode("td", null, toDisplayString(row.Grade), 1)
-              ]);
-            }), 128))
           ])
         ])
       ]),
@@ -881,43 +840,76 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       class: "session",
       isDark: _ctx.isDark
     }, {
-      default: withCtx(() => [..._cache[8] || (_cache[8] = [
-        createBaseVNode("div", { class: "experience-item" }, [
-          createBaseVNode("div", { class: "experience-title" }, [
-            createBaseVNode("h2", null, "Programmer / Researcher Intern"),
+      default: withCtx(() => [..._cache[7] || (_cache[7] = [
+        createBaseVNode("div", { class: "row-item" }, [
+          createBaseVNode("div", { class: "title" }, [
+            createBaseVNode("h5", null, "Software Engineer")
+          ]),
+          createBaseVNode("div", { class: "date text-right" }, [
+            createBaseVNode("h6", null, "JUL 2026 - PRESENT")
+          ]),
+          createBaseVNode("div", { class: "subtitle" }, [
+            createBaseVNode("h6", null, "Winley Technology Limited")
+          ])
+        ], -1),
+        createBaseVNode("div", { class: "row-item" }, [
+          createBaseVNode("div", { class: "title" }, [
+            createBaseVNode("h2", null, "Undergraduate Teaching Assistant (COMP 1021)")
+          ]),
+          createBaseVNode("div", { class: "date text-right" }, [
+            createBaseVNode("small", null, "FEB 2026 - MAY 2026")
+          ]),
+          createBaseVNode("div", { class: "subtitle" }, [
+            createBaseVNode("h4", null, "Department of Computer Science and Engineering, HKUST")
+          ]),
+          createBaseVNode("div", { class: "description" }, [
+            createBaseVNode("p", null, " This time, I chose to be a UGTA in an already well-established course, COMP 1021 (Introduction to Computer Science), which is a course for non-engineering students even since COMP 1023 is offered. "),
+            createBaseVNode("p", null, " I was responsible for hosting some of the weekly lab sessions, where I answered students' questions regarding the course content and assignments. ")
+          ])
+        ], -1),
+        createBaseVNode("div", { class: "row-item" }, [
+          createBaseVNode("div", { class: "title" }, [
+            createBaseVNode("h2", null, "Programmer / Researcher Intern")
+          ]),
+          createBaseVNode("div", { class: "date text-right" }, [
+            createBaseVNode("small", null, "JUL 2025 - AUG 2025")
+          ]),
+          createBaseVNode("div", { class: "subtitle" }, [
             createBaseVNode("h4", null, "AI Future Education Limited")
           ]),
-          createBaseVNode("div", { class: "experience-date text-right" }, [
-            createBaseVNode("small", null, "July - August 2025")
-          ]),
-          createBaseVNode("div", { class: "col-12" }, [
-            createBaseVNode("p", null, " This was my first internship, where I worked as a programmer/researcher intern at AI Future Education Limited, a startup focusing on value education. My role was more akin to a full-stack developer, as I contributed to both frontend and backend development, including AI chatbot development. "),
-            createBaseVNode("p", null, " I was primarily responsible for backend development, using Flask, while the frontend was built with Vue.js. Additionally, I researched the performance of state-of-the-art small Chinese-language models and used llama-cpp-python for model inference. The AI chatbot was developed sequentially, employing rule-based methods for knowledge-based questions and RAG-based methods for scenario-based questions, with prompt engineering at every step. "),
+          createBaseVNode("div", { class: "description" }, [
+            createBaseVNode("p", null, " This was my first internship, where I worked as a programmer intern at AI Future Education Limited, a startup focusing on AI education. My role was more akin to a full-stack developer, as I contributed to both frontend and backend development, including AI chatbot development. "),
+            createBaseVNode("p", null, " I was primarily responsible for backend development using Flask as the web application framework, while the frontend UI was built with Vue.js. In addition, I researched the performance of state-of-the-art small Chinese-language models and used llama-cpp-python for model inference. The AI chatbot was developed sequentially, employing rule-based methods for knowledge-based questions and RAG-based methods for scenario-based questions, with prompt engineering at every step. "),
             createBaseVNode("p", null, " Towards the end of the internship, we explored AWS services, including EC2, Lambda, and SageMaker. This internship provided invaluable experience in AI and web development in a real-world setting. ")
           ])
         ], -1),
-        createBaseVNode("div", { class: "experience-item" }, [
-          createBaseVNode("div", { class: "experience-title" }, [
-            createBaseVNode("h2", null, "Undergraduate Teaching Assistant (COMP 1023)"),
+        createBaseVNode("div", { class: "row-item" }, [
+          createBaseVNode("div", { class: "title" }, [
+            createBaseVNode("h2", null, "Undergraduate Teaching Assistant (COMP 1023)")
+          ]),
+          createBaseVNode("div", { class: "date text-right" }, [
+            createBaseVNode("small", null, "FEB 2025 - JUN 2025")
+          ]),
+          createBaseVNode("div", { class: "subtitle" }, [
             createBaseVNode("h4", null, "Department of Computer Science and Engineering, HKUST")
           ]),
-          createBaseVNode("div", { class: "experience-date text-right" }, [
-            createBaseVNode("small", null, "February - June 2025")
-          ]),
-          createBaseVNode("div", { class: "col-12" }, [
-            createBaseVNode("p", null, " I successfully reapplied as a UGTA for COMP 1023 due to my outstanding academic performance. My responsibilities included polishing assignments developed by previous UGTAs, adding necessary testing components, and improving visualizations. ")
+          createBaseVNode("div", { class: "description" }, [
+            createBaseVNode("p", null, " I successfully reapplied as a UGTA for COMP 1023 due to outstanding academic performance. My responsibilities included polishing assignments developed by previous UGTAs, adding necessary testing components, and improving visualizations. "),
+            createBaseVNode("p", null, " I am happy to have been given the opportunity to witness the development of a new course, both at the very start and the intermediate stages. This experience has been invaluable in understanding the intricacies of course design and development. ")
           ])
         ], -1),
-        createBaseVNode("div", { class: "experience-item" }, [
-          createBaseVNode("div", { class: "experience-title" }, [
-            createBaseVNode("h2", null, "Undergraduate Teaching Assistant (COMP 1023)"),
+        createBaseVNode("div", { class: "row-item" }, [
+          createBaseVNode("div", { class: "title" }, [
+            createBaseVNode("h2", null, "Undergraduate Teaching Assistant (COMP 1023)")
+          ]),
+          createBaseVNode("div", { class: "date text-right" }, [
+            createBaseVNode("small", null, "JUL 2024 - AUG 2024")
+          ]),
+          createBaseVNode("div", { class: "subtitle" }, [
             createBaseVNode("h4", null, "Department of Computer Science and Engineering, HKUST")
           ]),
-          createBaseVNode("div", { class: "experience-date text-right" }, [
-            createBaseVNode("small", null, "July - August 2024")
-          ]),
-          createBaseVNode("div", { class: "col-12" }, [
-            createBaseVNode("p", null, " After failed applications for summer TA positions in other courses, Dr. Desmond Tsoi invited me to assist in the early development of his new course, COMP 1023 (Introduction to Python Programming), due to my excellent results in COMP 2211 (Exploring Artificial Intelligence). I contributed to developing lab assignments from scratch. ")
+          createBaseVNode("div", { class: "description" }, [
+            createBaseVNode("p", null, " After failed applications for summer TA positions in other courses, Dr. Desmond Tsoi invited me to assist in the early development of his new course, COMP 1023 (Introduction to Python Programming), due to my excellent results in COMP 2211 (Exploring Artificial Intelligence). I contributed to developing lab assignments from scratch, which serves as a valuable experience in curriculum design and teaching assistance. ")
           ])
         ], -1)
       ])]),
@@ -930,7 +922,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       class: "session",
       isDark: _ctx.isDark
     }, {
-      default: withCtx(() => [..._cache[9] || (_cache[9] = [
+      default: withCtx(() => [..._cache[8] || (_cache[8] = [
         createBaseVNode("p", null, "Below are games I am currently playing (likely paused but will resume):", -1),
         createBaseVNode("ul", null, [
           createBaseVNode("li", null, "Infinite Galaxy (DO NOT PLAY! This is a pay-to-win game, and I am a masochist playing as free-to-play.)"),
@@ -969,7 +961,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       class: "session",
       isDark: _ctx.isDark
     }, {
-      default: withCtx(() => [..._cache[10] || (_cache[10] = [
+      default: withCtx(() => [..._cache[9] || (_cache[9] = [
         createBaseVNode("p", null, "Below are games I have played and enjoyed:", -1),
         createBaseVNode("ul", null, [
           createBaseVNode("li", null, [
@@ -1013,7 +1005,17 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
     ])
   ]);
 }
-const About = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", render$1], ["__scopeId", "data-v-d68b0996"]]);
+const About = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", render$1]]);
+const otherProjects = [
+  {
+    name: "VLLM KV Cache Visualization Tool",
+    link: "https://github.com/Jack-1-1-1-1-0/KAI-2_KV_Cache"
+  },
+  {
+    name: "Simple LLM agent",
+    link: "https://github.com/HTAKM/COMP4901B_agent"
+  }
+];
 const _sfc_main = {
   name: "Project",
   components: {
@@ -1025,16 +1027,24 @@ const _sfc_main = {
   data() {
     return {
       notesData,
-      latexClasses
+      latexClasses,
+      otherProjects
     };
   }
 };
 const _hoisted_1 = { class: "project-page" };
-const _hoisted_2 = { class: "table table-bordered" };
-const _hoisted_3 = ["href"];
-const _hoisted_4 = ["href"];
+const _hoisted_2 = { class: "row-item" };
+const _hoisted_3 = { class: "description" };
+const _hoisted_4 = { class: "table table-bordered" };
 const _hoisted_5 = ["href"];
 const _hoisted_6 = ["href"];
+const _hoisted_7 = ["href"];
+const _hoisted_8 = { class: "row-item" };
+const _hoisted_9 = { class: "description" };
+const _hoisted_10 = ["href"];
+const _hoisted_11 = { class: "row-item" };
+const _hoisted_12 = { class: "description" };
+const _hoisted_13 = ["href"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_segment = resolveComponent("segment");
   return openBlock(), createElementBlock("main", _hoisted_1, [
@@ -1044,77 +1054,96 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => [
-        _cache[0] || (_cache[0] = createBaseVNode("p", null, "Here are some of the notes I have made. (In start date chronological order)", -1)),
-        createBaseVNode("table", _hoisted_2, [
-          createBaseVNode("thead", null, [
-            createBaseVNode("tr", null, [
-              (openBlock(), createElementBlock(Fragment, null, renderList(["Title", "LaTeX Class used", "PDF file", "TEX file", "Other files"], (head) => {
-                return createBaseVNode("th", null, toDisplayString(head), 1);
-              }), 64))
-            ])
-          ]),
-          createBaseVNode("tbody", null, [
-            (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.notesData, (note) => {
-              return openBlock(), createElementBlock("tr", null, [
-                createBaseVNode("th", null, toDisplayString(note.title), 1),
-                createBaseVNode("td", null, toDisplayString(note.class), 1),
-                createBaseVNode("td", null, [
-                  createBaseVNode("a", {
-                    href: note.pdfLink ? note.pdfLink : "",
-                    target: "_blank"
-                  }, toDisplayString(note.pdfLink ? "PDF" : ""), 9, _hoisted_3)
-                ]),
-                createBaseVNode("td", null, [
-                  createBaseVNode("a", {
-                    href: note.texLink ? note.texLink : "",
-                    target: "_blank"
-                  }, toDisplayString(note.texLink ? "TEX" : ""), 9, _hoisted_4)
-                ]),
-                createBaseVNode("td", null, [
-                  createBaseVNode("a", {
-                    href: note.others ? note.others.link : "",
-                    target: "_blank"
-                  }, toDisplayString(note.others ? note.others.name : ""), 9, _hoisted_5)
+        createBaseVNode("div", _hoisted_2, [
+          createBaseVNode("div", _hoisted_3, [
+            _cache[0] || (_cache[0] = createBaseVNode("p", null, "Here are some of the notes I have made (ordered by start date).", -1)),
+            createBaseVNode("table", _hoisted_4, [
+              createBaseVNode("thead", null, [
+                createBaseVNode("tr", null, [
+                  (openBlock(), createElementBlock(Fragment, null, renderList(["Title", "LaTeX Class used", "PDF file", "TEX file", "Other files"], (head) => {
+                    return createBaseVNode("th", null, toDisplayString(head), 1);
+                  }), 64))
                 ])
-              ]);
-            }), 256))
+              ]),
+              createBaseVNode("tbody", null, [
+                (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.notesData, (note) => {
+                  return openBlock(), createElementBlock("tr", null, [
+                    createBaseVNode("th", null, toDisplayString(note.title), 1),
+                    createBaseVNode("td", null, toDisplayString(note.class), 1),
+                    createBaseVNode("td", null, [
+                      createBaseVNode("a", {
+                        href: note.pdfLink ? note.pdfLink : "",
+                        target: "_blank"
+                      }, toDisplayString(note.pdfLink ? "PDF" : ""), 9, _hoisted_5)
+                    ]),
+                    createBaseVNode("td", null, [
+                      createBaseVNode("a", {
+                        href: note.texLink ? note.texLink : "",
+                        target: "_blank"
+                      }, toDisplayString(note.texLink ? "TEX" : ""), 9, _hoisted_6)
+                    ]),
+                    createBaseVNode("td", null, [
+                      createBaseVNode("a", {
+                        href: note.others ? note.others.link : "",
+                        target: "_blank"
+                      }, toDisplayString(note.others ? note.others.name : ""), 9, _hoisted_7)
+                    ])
+                  ]);
+                }), 256))
+              ])
+            ])
           ])
-        ])
+        ]),
+        createBaseVNode("div", _hoisted_8, [
+          createBaseVNode("div", _hoisted_9, [
+            _cache[1] || (_cache[1] = createBaseVNode("p", null, "I have made some customized LaTeX class to make my notes. You can find them below:", -1)),
+            createBaseVNode("ul", null, [
+              (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.latexClasses, (latexClass) => {
+                return openBlock(), createElementBlock("li", null, [
+                  createBaseVNode("a", {
+                    href: latexClass.link
+                  }, toDisplayString(latexClass.name), 9, _hoisted_10)
+                ]);
+              }), 256))
+            ])
+          ])
+        ]),
+        _cache[2] || (_cache[2] = createBaseVNode("div", { class: "row-item" }, [
+          createBaseVNode("div", { class: "description" }, [
+            createBaseVNode("p", null, [
+              createTextVNode("If there are typos in my notes (excluding cheat sheets), please let me know via "),
+              createBaseVNode("a", {
+                href: "https://github.com/htakm/latex-notes/issues",
+                "aria-label": "Report an issue on GitHub"
+              }, "GitHub Issues"),
+              createTextVNode(".")
+            ])
+          ])
+        ], -1))
       ]),
       _: 1
     }, 8, ["isDark"]),
     createVNode(_component_segment, {
-      title: "LaTeX Class",
+      title: "Other projects",
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => [
-        _cache[1] || (_cache[1] = createBaseVNode("p", null, "I have made some customized LaTeX class to make my notes. You can find them below:", -1)),
-        createBaseVNode("ul", null, [
-          (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.latexClasses, (latexClass) => {
-            return openBlock(), createElementBlock("li", null, [
-              createBaseVNode("a", {
-                href: latexClass.link
-              }, toDisplayString(latexClass.name), 9, _hoisted_6)
-            ]);
-          }), 256))
+        createBaseVNode("div", _hoisted_11, [
+          createBaseVNode("div", _hoisted_12, [
+            _cache[3] || (_cache[3] = createBaseVNode("p", null, "Here are some of the other projects I have participated in:", -1)),
+            createBaseVNode("ul", null, [
+              (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.otherProjects, (project) => {
+                return openBlock(), createElementBlock("li", null, [
+                  createBaseVNode("a", {
+                    href: project.link,
+                    target: "_blank"
+                  }, toDisplayString(project.name), 9, _hoisted_13)
+                ]);
+              }), 256))
+            ])
+          ])
         ])
       ]),
-      _: 1
-    }, 8, ["isDark"]),
-    createVNode(_component_segment, {
-      title: "Report Typos",
-      isDark: _ctx.isDark
-    }, {
-      default: withCtx(() => [..._cache[2] || (_cache[2] = [
-        createBaseVNode("p", null, [
-          createTextVNode("If there are typos in my notes (excluding cheat sheets), please let me know via "),
-          createBaseVNode("a", {
-            href: "https://github.com/htakm/latex-notes/issues",
-            "aria-label": "Report an issue on GitHub"
-          }, "GitHub Issues"),
-          createTextVNode(".")
-        ], -1)
-      ])]),
       _: 1
     }, 8, ["isDark"])
   ]);

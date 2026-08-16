@@ -9,88 +9,130 @@
     </segment>
 
     <segment title="Contact" class="session" v-show="isShowing === 'Contact'" :isDark="isDark">
-        <p class="mb-0">Email: <a href="mailto:yhkwokae@connect.ust.hk">yhkwokae@connect.ust.hk</a></p>
+        <div class="row-item">
+            <div class="description">
+                <p>Email: <a href="mailto:yhkwokae@connect.ust.hk">yhkwokae@connect.ust.hk</a></p>
+            </div>
+        </div>
     </segment>
 
     <segment title="Academic Info" class="session" v-show="isShowing === 'Academic'" :isDark="isDark">
-        <p class="mb-0">Current University: The Hong Kong University of Science and Technology</p>
-        <p class="mb-0">Year of Study: Year 4</p>
-        <p class="mb-0">Current Major: (COSC + AI) + DSCT</p>
-        <p class="mb-0">Target: Graduate in First Class Honors</p>
+        <div class="row-item">
+            <div class="title">
+                <h3>The Hong Kong University of Science and Technology</h3>
+            </div>
+            <div class="date text-right">
+                <small>SEP 2022 - JUL 2026</small>
+            </div>
+            <div class="subtitle">
+                <h4>(COSC + AI) + DSCT</h4>
+            </div>
+            <div class="description">
+                <p>Target: Graduate in First Class Honors</p>
+            </div>
+        </div>
     </segment>
 
     <segment title="Grades" class="session" v-show="isShowing === 'Academic'" :isDark="isDark">
-        <p class="mb-0">Current CGA: 3.754 / 4.300, Current Major CGA: 3.856</p>
-        <p class="mb-0">The following is my grade:</p>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th v-for="header in ['Term', 'Course Code', 'Course Name', 'Credits', 'Grade']" :key="header">{{ header }}</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="row in showGrades" :key="`${row.Prefix} + ${row.Code}`">
-                    <td>{{ row.Year }} {{ row.Term }}</td>
-                    <td>{{ row.Prefix }} {{ row.Code }}</td>
-                    <td>{{ row.Name }}</td>
-                    <td>{{ row.Credit }}</td>
-                    <td>{{ row.Grade }}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="row-item">
+            <div class="description">
+                <p>Current CGA: 3.754 / 4.300, Current Major CGA: 3.856</p>
+                <p>The following is my grade:</p>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th v-for="header in ['Term', 'Course Code', 'Course Name', 'Credits', 'Grade']" :key="header">{{ header }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="row in showGrades" :key="`${row.Prefix} + ${row.Code}`">
+                        <td>{{ row.Year }} {{ row.Term }}</td>
+                        <td>{{ row.Prefix }} {{ row.Code }}</td>
+                        <td>{{ row.Name }}</td>
+                        <td>{{ row.Credit }}</td>
+                        <td>{{ row.Grade }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </segment>
 
     <segment title="Experience" class="session" v-show="isShowing === 'Experience'" :isDark="isDark">
-        <div class="experience-item">
-            <div class="experience-title">
+        <div class="row-item">
+            <div class="title">
                 <h2>Programmer / Researcher Intern</h2>
+            </div>
+            <div class="date text-right">
+                <small>JUL 2025 - AUG 2025</small>
+            </div>
+            <div class="subtitle">
                 <h4>AI Future Education Limited</h4>
             </div>
-            <div class="experience-date text-right">
-                <small>July - August 2025</small>
-            </div>
-            <div class="col-12">
+            <div class="description">
                 <p>
-                    This was my first internship, where I worked as a programmer/researcher intern at AI Future Education Limited, a startup focusing on value education. 
-                    My role was more akin to a full-stack developer, as I contributed to both frontend and backend development, 
-                    including AI chatbot development.
+                    This was my first internship, where I worked as a 
+                    programmer intern at AI Future Education Limited, 
+                    a startup focusing on AI education. My role was more akin to 
+                    a full-stack developer, as I contributed to both frontend and 
+                    backend development, including AI chatbot development.
                 </p>
                 <p>
-                    I was primarily responsible for backend development, using Flask, while the frontend was built with Vue.js. 
-                    Additionally, I researched the performance of state-of-the-art small Chinese-language models and used llama-cpp-python for model inference. 
-                    The AI chatbot was developed sequentially, employing rule-based methods for knowledge-based questions and RAG-based methods for scenario-based questions, with prompt engineering at every step.
+                    I was primarily responsible for backend development using 
+                    Flask as the web application framework, while the frontend UI
+                    was built with Vue.js. In addition, I researched the 
+                    performance of state-of-the-art small Chinese-language models 
+                    and used llama-cpp-python for model inference. The AI chatbot 
+                    was developed sequentially, employing rule-based methods for 
+                    knowledge-based questions and RAG-based methods for 
+                    scenario-based questions, with prompt engineering at every 
+                    step.
                 </p>
                 <p>
-                    Towards the end of the internship, we explored AWS services, including EC2, Lambda, and SageMaker. 
-                    This internship provided invaluable experience in AI and web development in a real-world setting.
-                </p>
-            </div>
-        </div>
-        <div class="experience-item">
-            <div class="experience-title">
-                <h2>Undergraduate Teaching Assistant (COMP 1023)</h2>
-                <h4>Department of Computer Science and Engineering, HKUST</h4>
-            </div>
-            <div class="experience-date text-right">
-                <small>February - June 2025</small>
-            </div>
-            <div class="col-12">
-                <p>
-                    I successfully reapplied as a UGTA for COMP 1023 due to my outstanding academic performance. 
-                    My responsibilities included polishing assignments developed by previous UGTAs, 
-                    adding necessary testing components, and improving visualizations.
+                    Towards the end of the internship, we explored AWS services, 
+                    including EC2, Lambda, and SageMaker. This internship provided 
+                    invaluable experience in AI and web development in a 
+                    real-world setting.
                 </p>
             </div>
         </div>
-        <div class="experience-item">
-            <div class="experience-title">
+        <div class="row-item">
+            <div class="title">
                 <h2>Undergraduate Teaching Assistant (COMP 1023)</h2>
+            </div>
+            <div class="date text-right">
+                <small>FEB 2025 - JUN 2025</small>
+            </div>
+            <div class="subtitle">
                 <h4>Department of Computer Science and Engineering, HKUST</h4>
             </div>
-            <div class="experience-date text-right">
-                <small>July - August 2024</small>
+            <div class="description">
+                <p>
+                    I successfully reapplied as a UGTA for COMP 1023 due to
+                    outstanding academic performance. My responsibilities 
+                    included polishing assignments developed by previous UGTAs, 
+                    adding necessary testing components, and improving 
+                    visualizations.
+                </p>
+                <p>
+                    I am happy to have been given the opportunity to witness the development 
+                    of a new course, both at the very start and the intermediate stages. 
+                    This experience has been invaluable in understanding the intricacies of 
+                    course design and development.
+                </p>
             </div>
-            <div class="col-12">
+        </div>
+        <div class="row-item">
+            <div class="title">
+                <h2>Undergraduate Teaching Assistant (COMP 1023)</h2>
+            </div>
+            <div class="date text-right">
+                <small>JUL 2024 - AUG 2024</small>
+            </div>
+            <div class="subtitle">
+                <h4>Department of Computer Science and Engineering, HKUST</h4>
+            </div>
+            <div class="description">
                 <p>
                     After failed applications for summer TA positions in other courses, 
                     Dr. Desmond Tsoi invited me to assist in the early development of his new course, 

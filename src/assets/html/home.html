@@ -1,16 +1,19 @@
 <main class="home-page">
     <segment title="Welcome!" :isDark="isDark">
-        <p class="mb-0">I am HU. You can also call me Henry or HTAKM.</p>
-        <p class="mb-0">I am an undegraduate student of the Hong Kong University of Science and Technology.</p>
-    </segment>
-    <segment title="My Website" :isDark="isDark">
-        <p class="mb-0">
-            In this website, you can find some information about me, as well as the notes I made and some related links. 
-            You can click on the following links to find what you want.
-        </p>
-        <ul>
-            <li><router-link to="/project#notes">My Notes</router-link></li>
-            <li><a href="https://htakm.github.io/htakm_test/" target="_blank" rel="noopener">My Old Website</a></li>
-        </ul>
+        <div class="row-item">
+            <div class="description">
+                <p>
+                    I am HU. You can also call me Henry or HTAKM. I am an undegraduate student of the Hong Kong University of Science and Technology.
+                </p>
+                <p>
+                    In this website, you can find some information about me, as well as the notes I made and some related links. 
+                    You can click on the following links to find what you want.
+                </p>
+                <ul>
+                    <li><router-link to="/project#notes">My Notes</router-link></li>
+                    <li><a href="https://htakm.github.io/htakm_test/" target="_blank" rel="noopener">My Old Website</a></li>
+                </ul>
+            </div>
+        </div>
     </segment>
 </main>

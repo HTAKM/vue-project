@@ -6,8 +6,128 @@
     flex-grow: 1;
     flex-wrap: wrap;
 
-    h1 {
+    .main-body {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+    }
+
+    .heading {
         color: var(--color-heading);
+        h1 {
+            font-size: 2rem;
+            line-height: 2;
+            @media (max-width: 1024px) {
+                font-size: 1.75rem;
+            }
+            @media (max-width: 768px) {
+                font-size: 1.5rem;
+            }
+            @media (max-width: 576px) {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    .title {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 70%;
+        flex: 0 0 70%;
+        max-width: 70%;
+        margin-bottom: 1rem;
+
+        h2 {
+            font-size: 1.4rem;
+            line-height: 1.4;
+
+            @media (max-width: 1024px) {
+                font-size: 1.3rem;
+                line-height: 1.4;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 1.2rem;
+                line-height: 1.4;
+            }
+
+            @media (max-width: 576px) {
+                font-size: 1.1rem;
+                line-height: 1.3;
+            }
+        }
+    }
+    .subtitle {
+        -webkit-box-flex: 0;
+        margin-bottom: 0.5rem;
+
+        h4 {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            @media (max-width: 1024px) {
+                font-size: 1.1rem;
+                line-height: 1.4;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 1rem;
+                line-height: 1.3;
+            }
+            @media (max-width: 576px) {
+                font-size: 0.9rem;
+                line-height: 1.2;
+            }
+        }
+    }
+    .description {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+            @media (max-width: 1024px) {
+                    font-size: 0.9rem;
+                    line-height: 1.5;
+            }
+
+            @media (max-width: 768px) {
+                    font-size: 0.8rem;
+                    line-height: 1.4;
+            }
+
+            @media (max-width: 576px) {
+                    font-size: 0.7rem;
+                    line-height: 1.3;
+            }
+        }
+    }
+
+    .date {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 30%;
+        flex: 0 0 30%;
+        max-width: 30%;
+        font-size: 1rem;
+        @media (max-width: 1024px) {
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            font-size: 0.8rem;
+        }
+        @media (max-width: 576px) {
+            font-size: 0.7rem;
+        }
+    }
+    .row-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-bottom: 2rem;
     }
 
     .table {

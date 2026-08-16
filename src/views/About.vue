@@ -1,7 +1,7 @@
-<script src="@/assets/js/about.js">
+<script src="@/assets/js/views/about.js">
 </script>
 
-<template src="@/assets/html/about.html">
+<template src="@/assets/html/views/about.html">
 </template>
 
 <style scoped lang="scss">

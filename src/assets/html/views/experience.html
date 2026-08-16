@@ -1,76 +1,14 @@
-<main class="about-page">
-    <segment class="session" :isDark="isDark">
-        <div class="button-inline">
-            <button @click="changeShowing('Contact')">Contact</button>
-            <button @click="changeShowing('Academic')">Academic</button>
-            <button @click="changeShowing('Experience')">Experience</button>
-            <button @click="changeShowing('Games')">Games</button>
-        </div>
-    </segment>
-
-    <segment title="Contact" class="session" v-show="isShowing === 'Contact'" :isDark="isDark">
-        <div class="row-item">
-            <div class="description">
-                <p>Email: <a href="mailto:yhkwokae@connect.ust.hk">yhkwokae@connect.ust.hk</a></p>
-            </div>
-        </div>
-    </segment>
-
-    <segment title="Academic Info" class="session" v-show="isShowing === 'Academic'" :isDark="isDark">
+<main class="experience-page">
+    <segment title="Experience" id="experience" :isDark="isDark">
         <div class="row-item">
             <div class="title">
-                <h3>The Hong Kong University of Science and Technology</h3>
+                <h2>Software Engineer</h2>
             </div>
             <div class="date text-right">
-                <small>SEP 2022 - JUL 2026</small>
+                <small>JUL 2026 - PRESENT</small>
             </div>
             <div class="subtitle">
-                <h4>Bachelor of Science</h4>
-            </div>
-            <div class="description">
-                <p>Main major: Computer Science (with Extended Major in Artificial Intelligence)</p>
-                <p>Additional major: Data Science and Technology</p>
-                <p>Classification: First Class Honors</p>
-            </div>
-        </div>
-    </segment>
-
-    <segment title="Grades" class="session" v-show="isShowing === 'Academic'" :isDark="isDark">
-        <div class="row-item">
-            <div class="description">
-                <p>GPA: 3.772 / 4.300</p>
-                <p>Major CGA: 3.874 / 4.300</p>
-                <p>The following is my grade:</p>
-            </div>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th v-for="header in ['Term', 'Course Code', 'Course Name', 'Credits', 'Grade']" :key="header">{{ header }}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="row in showGrades" :key="`${row.Prefix} + ${row.Code}`">
-                        <td>{{ row.Year }} {{ row.Term }}</td>
-                        <td>{{ row.Prefix }} {{ row.Code }}</td>
-                        <td>{{ row.Name }}</td>
-                        <td>{{ row.Credit }}</td>
-                        <td>{{ row.Grade }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </segment>
-
-    <segment title="Experience" class="session" v-show="isShowing === 'Experience'" :isDark="isDark">
-        <div class="row-item">
-            <div class="title">
-                <h5>Software Engineer</h5>
-            </div>
-            <div class="date text-right">
-                <h6>JUL 2026 - PRESENT</h6>
-            </div>
-            <div class="subtitle">
-                <h6>Winley Technology Limited</h6>
+                <h4>Winley Technology Limited</h4>
             </div>
         </div>
         <div class="row-item">
@@ -180,30 +118,5 @@
                 </p>
             </div>
         </div>
-    </segment>
-
-    <segment title="Games Playing" class="session" v-show="isShowing === 'Games'" :isDark="isDark">
-        <p>Below are games I am currently playing (likely paused but will resume):</p>
-        <ul>
-            <li>Infinite Galaxy (DO NOT PLAY! This is a pay-to-win game, and I am a masochist playing as free-to-play.)</li>
-            <li><a href="https://store.steampowered.com/app/1399720/Antimatter_Dimensions/" target="_blank">Antimatter Dimensions</a></li>
-            <li><a href="https://keyemilco.wixsite.com/econline" target="_blank">EcoKey2</a></li>
-            <li><a href="https://store.steampowered.com/app/1546320/Your_Chronicle/" target="_blank">Your Chronicle</a></li>
-            <li><a href="https://store.steampowered.com/app/280220/Creeper_World_3_Arc_Eternal/" target="_blank">Creeper World 3: Arc Eternal</a></li>
-        </ul>
-    </segment>
-
-    <segment title="Games Played" class="session" v-show="isShowing === 'Games'" :isDark="isDark">
-        <p>Below are games I have played and enjoyed:</p>
-        <ul>
-            <li><a href="https://eco.nekogame.com/" target="_blank">Nekogame Emil Chronicle Online</a></li>
-            <li>ECO-Re (Server closed)</li>
-            <li>Lemon Team ECO (Server closed)</li>
-            <li><a href="https://synergism.cc/" target="_blank">Synergism</a></li>
-            <li><a href="https://www.talesrunner.com.hk/" target="_blank">跑 Online</a></li>
-            <li><a href="https://pixelplace.io/" target="_blank">pixelplace.io</a></li>
-            <li><a href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/" target="_blank">Portable Puzzle Collection</a></li>
-            <li>Geometry Dash</li>
-        </ul>
     </segment>
 </main>

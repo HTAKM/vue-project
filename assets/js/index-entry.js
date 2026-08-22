@@ -1,3 +1,4 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/js/Color-chunk.js","assets/js/@vue-chunk.js","assets/js/vue-router-chunk.js","assets/css/Color-asset.css"])))=>i.map(i=>d[i]);
 import { e as createElementBlock, f as createBaseVNode, t as toDisplayString, g as createVNode, j as withCtx, k as normalizeClass, l as resolveComponent, o as openBlock, m as createBlock, T as Transition, q as renderSlot, v as createTextVNode, x as withDirectives, y as vShow, F as Fragment, z as renderList, A as createApp } from "./@vue-chunk.js";
 import { c as createRouter, a as createWebHashHistory } from "./vue-router-chunk.js";
 import notesData from "https://htakm.github.io/latex-notes/js/notesData.js";
@@ -39,6 +40,80 @@ import latexClasses from "https://htakm.github.io/latex-notes/js/latexTemplateCl
     fetch(link.href, fetchOpts);
   }
 })();
+const scriptRel = "modulepreload";
+const assetsURL = function(dep) {
+  return "/vue-project/" + dep;
+};
+const seen = {};
+const __vitePreload = function preload(baseModule, deps, importerUrl) {
+  let promise = Promise.resolve();
+  if (deps && deps.length > 0) {
+    let allSettled2 = function(promises) {
+      return Promise.all(
+        promises.map(
+          (p) => Promise.resolve(p).then(
+            (value) => ({ status: "fulfilled", value }),
+            (reason) => ({ status: "rejected", reason })
+          )
+        )
+      );
+    };
+    document.getElementsByTagName("link");
+    const cspNonceMeta = document.querySelector(
+      "meta[property=csp-nonce]"
+    );
+    const cspNonce = (cspNonceMeta == null ? void 0 : cspNonceMeta.nonce) || (cspNonceMeta == null ? void 0 : cspNonceMeta.getAttribute("nonce"));
+    promise = allSettled2(
+      deps.map((dep) => {
+        dep = assetsURL(dep);
+        if (dep in seen) return;
+        seen[dep] = true;
+        const isCss = dep.endsWith(".css");
+        const cssSelector = isCss ? '[rel="stylesheet"]' : "";
+        if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) {
+          return;
+        }
+        const link = document.createElement("link");
+        link.rel = isCss ? "stylesheet" : scriptRel;
+        if (!isCss) {
+          link.as = "script";
+        }
+        link.crossOrigin = "";
+        link.href = dep;
+        if (cspNonce) {
+          link.setAttribute("nonce", cspNonce);
+        }
+        document.head.appendChild(link);
+        if (isCss) {
+          return new Promise((res, rej) => {
+            link.addEventListener("load", res);
+            link.addEventListener(
+              "error",
+              () => rej(new Error(`Unable to preload CSS for ${dep}`))
+            );
+          });
+        }
+      })
+    );
+  }
+  function handlePreloadError(err) {
+    const e = new Event("vite:preloadError", {
+      cancelable: true
+    });
+    e.payload = err;
+    window.dispatchEvent(e);
+    if (!e.defaultPrevented) {
+      throw err;
+    }
+  }
+  return promise.then((res) => {
+    for (const item of res || []) {
+      if (item.status !== "rejected") continue;
+      handlePreloadError(item.reason);
+    }
+    return baseModule().catch(handlePreloadError);
+  });
+};
 const _sfc_main$6 = {
   props: {
     head: String,
@@ -216,7 +291,7 @@ function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock(Transition, { appear: "" }, {
     default: withCtx(() => [
       createBaseVNode("div", {
-        class: normalizeClass(["segment mt-3", { dark: _ctx.isDark }])
+        class: normalizeClass(["segment", { dark: _ctx.isDark }])
       }, [
         createBaseVNode("div", _hoisted_1$4, [
           createBaseVNode("div", _hoisted_2$3, [
@@ -1068,6 +1143,7 @@ const _hoisted_12 = { class: "description" };
 const _hoisted_13 = ["href"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_segment = resolveComponent("segment");
+  const _component_router_link = resolveComponent("router-link");
   return openBlock(), createElementBlock("main", _hoisted_1, [
     createVNode(_component_segment, {
       title: "Notes",
@@ -1151,7 +1227,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       default: withCtx(() => [
         createBaseVNode("div", _hoisted_11, [
           createBaseVNode("div", _hoisted_12, [
-            _cache[3] || (_cache[3] = createBaseVNode("p", null, "Here are some of the other projects I have participated in:", -1)),
+            _cache[4] || (_cache[4] = createBaseVNode("p", null, "Here are some of the other projects I have participated in:", -1)),
             createBaseVNode("ul", null, [
               (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.otherProjects, (project) => {
                 return openBlock(), createElementBlock("li", null, [
@@ -1160,7 +1236,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                     target: "_blank"
                   }, toDisplayString(project.name), 9, _hoisted_13)
                 ]);
-              }), 256))
+              }), 256)),
+              createBaseVNode("li", null, [
+                createVNode(_component_router_link, {
+                  class: "button",
+                  to: "/project/color",
+                  "aria-label": "Color Conversion Tool"
+                }, {
+                  default: withCtx(() => [..._cache[3] || (_cache[3] = [
+                    createTextVNode(" Color Conversion Tool ", -1)
+                  ])]),
+                  _: 1
+                })
+              ])
             ])
           ])
         ])
@@ -1194,8 +1282,17 @@ const router = createRouter({
       path: "/project",
       name: "Project",
       component: Project
+    },
+    {
+      path: "/project/color",
+      name: "Color",
+      component: () => __vitePreload(() => import("./Color-chunk.js"), true ? __vite__mapDeps([0,1,2,3]) : void 0)
     }
   ]
 });
 app.use(router);
 app.mount("body");
+export {
+  Segment as S,
+  _export_sfc as _
+};

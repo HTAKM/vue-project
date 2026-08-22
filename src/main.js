@@ -8,6 +8,7 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Experience from './views/Experience.vue'
 import Project from './views/Project.vue'
+import Color from './views/Color.vue'
 
 const app = createApp(App);
 const router = createRouter({
@@ -37,7 +38,7 @@ const router = createRouter({
         {
             path: '/project/color',
             name: 'Color',
-            component: () => import('./views/Color.vue')
+            component: Color
         }
     ]
 })

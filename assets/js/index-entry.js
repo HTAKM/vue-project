@@ -1,5 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/js/Color-chunk.js","assets/js/@vue-chunk.js","assets/js/vue-router-chunk.js","assets/css/Color-asset.css"])))=>i.map(i=>d[i]);
-import { e as createElementBlock, f as createBaseVNode, t as toDisplayString, g as createVNode, j as withCtx, k as normalizeClass, l as resolveComponent, o as openBlock, m as createBlock, T as Transition, q as renderSlot, v as createTextVNode, x as withDirectives, y as vShow, F as Fragment, z as renderList, A as createApp } from "./@vue-chunk.js";
+import { e as createElementBlock, f as createBaseVNode, t as toDisplayString, g as createVNode, j as withCtx, k as normalizeClass, l as resolveComponent, o as openBlock, m as createBlock, T as Transition, q as renderSlot, v as createTextVNode, x as withDirectives, y as vShow, F as Fragment, z as renderList, A as vModelText, B as normalizeStyle, C as createApp } from "./@vue-chunk.js";
 import { c as createRouter, a as createWebHashHistory } from "./vue-router-chunk.js";
 import notesData from "https://htakm.github.io/latex-notes/js/notesData.js";
 import latexClasses from "https://htakm.github.io/latex-notes/js/latexTemplateClass.js";
@@ -40,81 +39,7 @@ import latexClasses from "https://htakm.github.io/latex-notes/js/latexTemplateCl
     fetch(link.href, fetchOpts);
   }
 })();
-const scriptRel = "modulepreload";
-const assetsURL = function(dep) {
-  return "/vue-project/" + dep;
-};
-const seen = {};
-const __vitePreload = function preload(baseModule, deps, importerUrl) {
-  let promise = Promise.resolve();
-  if (deps && deps.length > 0) {
-    let allSettled2 = function(promises) {
-      return Promise.all(
-        promises.map(
-          (p) => Promise.resolve(p).then(
-            (value) => ({ status: "fulfilled", value }),
-            (reason) => ({ status: "rejected", reason })
-          )
-        )
-      );
-    };
-    document.getElementsByTagName("link");
-    const cspNonceMeta = document.querySelector(
-      "meta[property=csp-nonce]"
-    );
-    const cspNonce = (cspNonceMeta == null ? void 0 : cspNonceMeta.nonce) || (cspNonceMeta == null ? void 0 : cspNonceMeta.getAttribute("nonce"));
-    promise = allSettled2(
-      deps.map((dep) => {
-        dep = assetsURL(dep);
-        if (dep in seen) return;
-        seen[dep] = true;
-        const isCss = dep.endsWith(".css");
-        const cssSelector = isCss ? '[rel="stylesheet"]' : "";
-        if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) {
-          return;
-        }
-        const link = document.createElement("link");
-        link.rel = isCss ? "stylesheet" : scriptRel;
-        if (!isCss) {
-          link.as = "script";
-        }
-        link.crossOrigin = "";
-        link.href = dep;
-        if (cspNonce) {
-          link.setAttribute("nonce", cspNonce);
-        }
-        document.head.appendChild(link);
-        if (isCss) {
-          return new Promise((res, rej) => {
-            link.addEventListener("load", res);
-            link.addEventListener(
-              "error",
-              () => rej(new Error(`Unable to preload CSS for ${dep}`))
-            );
-          });
-        }
-      })
-    );
-  }
-  function handlePreloadError(err) {
-    const e = new Event("vite:preloadError", {
-      cancelable: true
-    });
-    e.payload = err;
-    window.dispatchEvent(e);
-    if (!e.defaultPrevented) {
-      throw err;
-    }
-  }
-  return promise.then((res) => {
-    for (const item of res || []) {
-      if (item.status !== "rejected") continue;
-      handlePreloadError(item.reason);
-    }
-    return baseModule().catch(handlePreloadError);
-  });
-};
-const _sfc_main$6 = {
+const _sfc_main$7 = {
   props: {
     head: String,
     isDark: Boolean
@@ -131,20 +56,20 @@ const _sfc_main$6 = {
     }
   }
 };
-const _hoisted_1$6 = { class: "logo" };
-const _hoisted_2$5 = { href: "#" };
-const _hoisted_3$3 = { class: "menu-toggle-wrap" };
-const _hoisted_4$2 = { class: "menu" };
-const _hoisted_5$1 = { class: "menu" };
-function render$6(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$7 = { class: "logo" };
+const _hoisted_2$6 = { href: "#" };
+const _hoisted_3$4 = { class: "menu-toggle-wrap" };
+const _hoisted_4$3 = { class: "menu" };
+const _hoisted_5$2 = { class: "menu" };
+function render$7(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_link = resolveComponent("router-link");
   return openBlock(), createElementBlock("aside", {
     class: normalizeClass(`${_ctx.expanded ? "expanded" : ""}`)
   }, [
-    createBaseVNode("div", _hoisted_1$6, [
-      createBaseVNode("a", _hoisted_2$5, toDisplayString(_ctx.head), 1)
+    createBaseVNode("div", _hoisted_1$7, [
+      createBaseVNode("a", _hoisted_2$6, toDisplayString(_ctx.head), 1)
     ]),
-    createBaseVNode("div", _hoisted_3$3, [
+    createBaseVNode("div", _hoisted_3$4, [
       createBaseVNode("button", {
         class: "menu-toggle",
         onClick: _cache[0] || (_cache[0] = (...args) => _ctx.toggleExpanded && _ctx.toggleExpanded(...args))
@@ -153,7 +78,7 @@ function render$6(_ctx, _cache, $props, $setup, $data, $options) {
       ])])
     ]),
     _cache[10] || (_cache[10] = createBaseVNode("h3", null, "Menu", -1)),
-    createBaseVNode("div", _hoisted_4$2, [
+    createBaseVNode("div", _hoisted_4$3, [
       createVNode(_component_router_link, {
         class: "button",
         to: "/"
@@ -196,7 +121,7 @@ function render$6(_ctx, _cache, $props, $setup, $data, $options) {
       })
     ]),
     _cache[11] || (_cache[11] = createBaseVNode("div", { class: "flex" }, null, -1)),
-    createBaseVNode("div", _hoisted_5$1, [
+    createBaseVNode("div", _hoisted_5$2, [
       _ctx.isDark ? (openBlock(), createElementBlock("button", {
         key: 0,
         class: "button",
@@ -222,8 +147,8 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const Sidebar = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", render$6], ["__scopeId", "data-v-afea40ea"]]);
-const _sfc_main$5 = {
+const Sidebar = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", render$7], ["__scopeId", "data-v-afea40ea"]]);
+const _sfc_main$6 = {
   components: {
     Sidebar
   },
@@ -261,40 +186,40 @@ const _sfc_main$5 = {
     window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change", this.checkDarkMode);
   }
 };
-const _hoisted_1$5 = { id: "app" };
-const _hoisted_2$4 = { class: "main" };
-function render$5(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$6 = { id: "app" };
+const _hoisted_2$5 = { class: "main" };
+function render$6(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Sidebar = resolveComponent("Sidebar");
   const _component_RouterView = resolveComponent("RouterView");
-  return openBlock(), createElementBlock("div", _hoisted_1$5, [
+  return openBlock(), createElementBlock("div", _hoisted_1$6, [
     createVNode(_component_Sidebar, {
       head: "HU",
       class: normalizeClass({ dark: _ctx.isDarkMode }),
       isDark: _ctx.isDarkMode,
       onToggleDark: _ctx.toggleDark
     }, null, 8, ["class", "isDark", "onToggleDark"]),
-    createBaseVNode("div", _hoisted_2$4, [
+    createBaseVNode("div", _hoisted_2$5, [
       createVNode(_component_RouterView, { isDark: _ctx.isDarkMode }, null, 8, ["isDark"])
     ])
   ]);
 }
-const App = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", render$5]]);
-const _sfc_main$4 = {
+const App = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", render$6]]);
+const _sfc_main$5 = {
   props: {
     title: String,
     isDark: Boolean
   }
 };
-const _hoisted_1$4 = { class: "main-body" };
-const _hoisted_2$3 = { class: "heading" };
-function render$4(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$5 = { class: "main-body" };
+const _hoisted_2$4 = { class: "heading" };
+function render$5(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock(Transition, { appear: "" }, {
     default: withCtx(() => [
       createBaseVNode("div", {
         class: normalizeClass(["segment", { dark: _ctx.isDark }])
       }, [
-        createBaseVNode("div", _hoisted_1$4, [
-          createBaseVNode("div", _hoisted_2$3, [
+        createBaseVNode("div", _hoisted_1$5, [
+          createBaseVNode("div", _hoisted_2$4, [
             createBaseVNode("h1", null, toDisplayString(_ctx.title), 1)
           ]),
           renderSlot(_ctx.$slots, "default")
@@ -304,8 +229,8 @@ function render$4(_ctx, _cache, $props, $setup, $data, $options) {
     _: 3
   });
 }
-const Segment = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", render$4]]);
-const _sfc_main$3 = {
+const Segment = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", render$5]]);
+const _sfc_main$4 = {
   name: "Home",
   components: {
     Segment
@@ -314,20 +239,20 @@ const _sfc_main$3 = {
     isDark: Boolean
   }
 };
-const _hoisted_1$3 = { class: "home-page" };
-const _hoisted_2$2 = { class: "row-item" };
-const _hoisted_3$2 = { class: "description" };
-function render$3(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$4 = { class: "home-page" };
+const _hoisted_2$3 = { class: "row-item" };
+const _hoisted_3$3 = { class: "description" };
+function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_link = resolveComponent("router-link");
   const _component_segment = resolveComponent("segment");
-  return openBlock(), createElementBlock("main", _hoisted_1$3, [
+  return openBlock(), createElementBlock("main", _hoisted_1$4, [
     createVNode(_component_segment, {
       title: "Welcome!",
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => [
-        createBaseVNode("div", _hoisted_2$2, [
-          createBaseVNode("div", _hoisted_3$2, [
+        createBaseVNode("div", _hoisted_2$3, [
+          createBaseVNode("div", _hoisted_3$3, [
             _cache[2] || (_cache[2] = createBaseVNode("p", null, " I am HU. You can also call me Henry or HTAKM. I an currently working as a software engineer in Winley. I was a former undergraduate student at the Hong Kong University of Science and Technology, majoring in Computer Science (with Extended Major in Artificial Intelligence) and minoring in Data Science and Technology. ", -1)),
             _cache[3] || (_cache[3] = createBaseVNode("p", null, " In this website, you can find some information about me, as well as the notes I made throughout my academic journey and some related links. You can click on the following links to find what you want. ", -1)),
             createBaseVNode("ul", null, [
@@ -354,7 +279,7 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
     }, 8, ["isDark"])
   ]);
 }
-const Home = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", render$3]]);
+const Home = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", render$4]]);
 const gradeFile = [
   {
     Year: "2022/23",
@@ -780,7 +705,7 @@ const gradeFile = [
     Grade: "A+"
   }
 ];
-const _sfc_main$2 = {
+const _sfc_main$3 = {
   name: "About",
   components: {
     Segment
@@ -805,19 +730,19 @@ const _sfc_main$2 = {
     }
   }
 };
-const _hoisted_1$2 = { class: "about-page" };
-const _hoisted_2$1 = { class: "button-inline" };
-const _hoisted_3$1 = { class: "row-item" };
-const _hoisted_4$1 = { class: "table table-bordered" };
-function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$3 = { class: "about-page" };
+const _hoisted_2$2 = { class: "button-inline" };
+const _hoisted_3$2 = { class: "row-item" };
+const _hoisted_4$2 = { class: "table table-bordered" };
+function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_segment = resolveComponent("segment");
-  return openBlock(), createElementBlock("main", _hoisted_1$2, [
+  return openBlock(), createElementBlock("main", _hoisted_1$3, [
     createVNode(_component_segment, {
       class: "session",
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => [
-        createBaseVNode("div", _hoisted_2$1, [
+        createBaseVNode("div", _hoisted_2$2, [
           createBaseVNode("button", {
             onClick: _cache[0] || (_cache[0] = ($event) => _ctx.changeShowing("Contact"))
           }, "Contact"),
@@ -883,13 +808,13 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => [
-        createBaseVNode("div", _hoisted_3$1, [
+        createBaseVNode("div", _hoisted_3$2, [
           _cache[5] || (_cache[5] = createBaseVNode("div", { class: "description" }, [
             createBaseVNode("p", null, "GPA: 3.772 / 4.300"),
             createBaseVNode("p", null, "Major CGA: 3.874 / 4.300"),
             createBaseVNode("p", null, "The following is my grade:")
           ], -1)),
-          createBaseVNode("table", _hoisted_4$1, [
+          createBaseVNode("table", _hoisted_4$2, [
             createBaseVNode("thead", null, [
               createBaseVNode("tr", null, [
                 (openBlock(), createElementBlock(Fragment, null, renderList(["Term", "Course Code", "Course Name", "Credits", "Grade"], (header) => {
@@ -1005,8 +930,8 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
     ])
   ]);
 }
-const About = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", render$2]]);
-const _sfc_main$1 = {
+const About = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", render$3]]);
+const _sfc_main$2 = {
   name: "Experience",
   components: {
     Segment
@@ -1015,10 +940,10 @@ const _sfc_main$1 = {
     isDark: Boolean
   }
 };
-const _hoisted_1$1 = { class: "experience-page" };
-function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$2 = { class: "experience-page" };
+function render$2(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_segment = resolveComponent("segment");
-  return openBlock(), createElementBlock("main", _hoisted_1$1, [
+  return openBlock(), createElementBlock("main", _hoisted_1$2, [
     createVNode(_component_segment, {
       title: "Experience",
       id: "experience",
@@ -1101,7 +1026,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
     }, 8, ["isDark"])
   ]);
 }
-const Experience = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", render$1]]);
+const Experience = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", render$2]]);
 const otherProjects = [
   {
     name: "VLLM KV Cache Visualization Tool",
@@ -1112,7 +1037,7 @@ const otherProjects = [
     link: "https://github.com/HTAKM/COMP4901B_agent"
   }
 ];
-const _sfc_main = {
+const _sfc_main$1 = {
   name: "Project",
   components: {
     Segment
@@ -1128,33 +1053,33 @@ const _sfc_main = {
     };
   }
 };
-const _hoisted_1 = { class: "project-page" };
-const _hoisted_2 = { class: "row-item" };
-const _hoisted_3 = { class: "description" };
-const _hoisted_4 = { class: "table table-bordered" };
-const _hoisted_5 = ["href"];
-const _hoisted_6 = ["href"];
-const _hoisted_7 = ["href"];
-const _hoisted_8 = { class: "row-item" };
-const _hoisted_9 = { class: "description" };
-const _hoisted_10 = ["href"];
-const _hoisted_11 = { class: "row-item" };
-const _hoisted_12 = { class: "description" };
+const _hoisted_1$1 = { class: "project-page" };
+const _hoisted_2$1 = { class: "row-item" };
+const _hoisted_3$1 = { class: "description" };
+const _hoisted_4$1 = { class: "table table-bordered" };
+const _hoisted_5$1 = ["href"];
+const _hoisted_6$1 = ["href"];
+const _hoisted_7$1 = ["href"];
+const _hoisted_8$1 = { class: "row-item" };
+const _hoisted_9$1 = { class: "description" };
+const _hoisted_10$1 = ["href"];
+const _hoisted_11$1 = { class: "row-item" };
+const _hoisted_12$1 = { class: "description" };
 const _hoisted_13 = ["href"];
-function render(_ctx, _cache, $props, $setup, $data, $options) {
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_segment = resolveComponent("segment");
   const _component_router_link = resolveComponent("router-link");
-  return openBlock(), createElementBlock("main", _hoisted_1, [
+  return openBlock(), createElementBlock("main", _hoisted_1$1, [
     createVNode(_component_segment, {
       title: "Notes",
       id: "notes",
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => [
-        createBaseVNode("div", _hoisted_2, [
-          createBaseVNode("div", _hoisted_3, [
+        createBaseVNode("div", _hoisted_2$1, [
+          createBaseVNode("div", _hoisted_3$1, [
             _cache[0] || (_cache[0] = createBaseVNode("p", null, "Here are some of the notes I have made (ordered by start date).", -1)),
-            createBaseVNode("table", _hoisted_4, [
+            createBaseVNode("table", _hoisted_4$1, [
               createBaseVNode("thead", null, [
                 createBaseVNode("tr", null, [
                   (openBlock(), createElementBlock(Fragment, null, renderList(["Title", "LaTeX Class used", "PDF file", "TEX file", "Other files"], (head) => {
@@ -1171,19 +1096,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                       createBaseVNode("a", {
                         href: note.pdfLink ? note.pdfLink : "",
                         target: "_blank"
-                      }, toDisplayString(note.pdfLink ? "PDF" : ""), 9, _hoisted_5)
+                      }, toDisplayString(note.pdfLink ? "PDF" : ""), 9, _hoisted_5$1)
                     ]),
                     createBaseVNode("td", null, [
                       createBaseVNode("a", {
                         href: note.texLink ? note.texLink : "",
                         target: "_blank"
-                      }, toDisplayString(note.texLink ? "TEX" : ""), 9, _hoisted_6)
+                      }, toDisplayString(note.texLink ? "TEX" : ""), 9, _hoisted_6$1)
                     ]),
                     createBaseVNode("td", null, [
                       createBaseVNode("a", {
                         href: note.others ? note.others.link : "",
                         target: "_blank"
-                      }, toDisplayString(note.others ? note.others.name : ""), 9, _hoisted_7)
+                      }, toDisplayString(note.others ? note.others.name : ""), 9, _hoisted_7$1)
                     ])
                   ]);
                 }), 256))
@@ -1191,15 +1116,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             ])
           ])
         ]),
-        createBaseVNode("div", _hoisted_8, [
-          createBaseVNode("div", _hoisted_9, [
+        createBaseVNode("div", _hoisted_8$1, [
+          createBaseVNode("div", _hoisted_9$1, [
             _cache[1] || (_cache[1] = createBaseVNode("p", null, "I have made some customized LaTeX class to make my notes. You can find them below:", -1)),
             createBaseVNode("ul", null, [
               (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.latexClasses, (latexClass) => {
                 return openBlock(), createElementBlock("li", null, [
                   createBaseVNode("a", {
                     href: latexClass.link
-                  }, toDisplayString(latexClass.name), 9, _hoisted_10)
+                  }, toDisplayString(latexClass.name), 9, _hoisted_10$1)
                 ]);
               }), 256))
             ])
@@ -1225,8 +1150,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => [
-        createBaseVNode("div", _hoisted_11, [
-          createBaseVNode("div", _hoisted_12, [
+        createBaseVNode("div", _hoisted_11$1, [
+          createBaseVNode("div", _hoisted_12$1, [
             _cache[4] || (_cache[4] = createBaseVNode("p", null, "Here are some of the other projects I have participated in:", -1)),
             createBaseVNode("ul", null, [
               (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.otherProjects, (project) => {
@@ -1257,7 +1182,342 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, 8, ["isDark"])
   ]);
 }
-const Project = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", render]]);
+const Project = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", render$1]]);
+const _sfc_main = {
+  name: "Color",
+  components: {
+    Segment
+  },
+  props: {
+    isDark: Boolean
+  },
+  data() {
+    return {
+      rgb: {
+        r: "0",
+        g: "0",
+        b: "0"
+      },
+      hex: "#000000",
+      hexFull: "#000000",
+      hsv: {
+        h: "0",
+        s: "0",
+        v: "0"
+      }
+    };
+  },
+  computed: {
+    onUpdateRgb() {
+      this.rgb.r = this.filterInvalidChars(this.rgb.r, "int");
+      this.rgb.g = this.filterInvalidChars(this.rgb.g, "int");
+      this.rgb.b = this.filterInvalidChars(this.rgb.b, "int");
+      if (this.rgb.r == "") this.rgb.r = "0";
+      if (this.rgb.g == "") this.rgb.g = "0";
+      if (this.rgb.b == "") this.rgb.b = "0";
+      const r = Math.max(0, Math.min(255, parseInt(this.rgb.r)));
+      const g = Math.max(0, Math.min(255, parseInt(this.rgb.g)));
+      const b = Math.max(0, Math.min(255, parseInt(this.rgb.b)));
+      this.rgb.r = r.toString();
+      this.rgb.g = g.toString();
+      this.rgb.b = b.toString();
+      this.hex = this.rgbToHex(r, g, b);
+      this.hexFull = this.hex + "0".repeat(7 - this.hex.length);
+      const hsv = this.rgbToHsv(r, g, b);
+      this.hsv.h = (hsv.h * 360).toFixed(0);
+      this.hsv.s = (hsv.s * 100).toFixed(0);
+      this.hsv.v = (hsv.v * 100).toFixed(0);
+    },
+    onUpdateHex() {
+      this.hex = this.filterInvalidChars(this.hex, "hex");
+      if (this.hex.length > 6) {
+        this.hex = this.hex.substring(0, 6);
+        this.hex = "#" + this.hex;
+        return;
+      }
+      this.hex = "#" + this.hex;
+      this.hexFull = this.hex + "0".repeat(7 - this.hex.length);
+      const rgb = this.hexToRgb(this.hexFull);
+      this.rgb.r = rgb.r.toString();
+      this.rgb.g = rgb.g.toString();
+      this.rgb.b = rgb.b.toString();
+      this.hex = "#" + this.hex.substring(1);
+      const hsv = this.rgbToHsv(rgb.r, rgb.g, rgb.b);
+      this.hsv.h = (hsv.h * 360).toFixed(0);
+      this.hsv.s = (hsv.s * 100).toFixed(0);
+      this.hsv.v = (hsv.v * 100).toFixed(0);
+    },
+    onUpdateHsv() {
+      if (this.hsv.h == "") this.hsv.h = "0";
+      if (this.hsv.s == "") this.hsv.s = "0";
+      if (this.hsv.v == "") this.hsv.v = "0";
+      this.hsv.h = this.filterInvalidChars(this.hsv.h, "int");
+      this.hsv.s = this.filterInvalidChars(this.hsv.s, "int");
+      this.hsv.v = this.filterInvalidChars(this.hsv.v, "int");
+      const h = Math.max(0, Math.min(360, parseInt(this.hsv.h)));
+      const s = Math.max(0, Math.min(100, parseInt(this.hsv.s))) / 100;
+      const v = Math.max(0, Math.min(100, parseInt(this.hsv.v))) / 100;
+      this.hsv.h = h.toString();
+      this.hsv.s = (s * 100).toFixed(0).toString();
+      this.hsv.v = (v * 100).toFixed(0).toString();
+      const rgb = this.hsvToRgb(h, s, v);
+      this.rgb.r = rgb.r.toString();
+      this.rgb.g = rgb.g.toString();
+      this.rgb.b = rgb.b.toString();
+      this.hex = this.rgbToHex(rgb.r, rgb.g, rgb.b);
+      this.hexFull = this.hex + "0".repeat(7 - this.hex.length);
+    }
+  },
+  methods: {
+    isHex(c) {
+      return c >= "0" && c <= "9" || c >= "a" && c <= "f" || c >= "A" && c <= "F";
+    },
+    isInt(c) {
+      return c >= "0" && c <= "9";
+    },
+    isFloat(c) {
+      return c >= "0" && c <= "9" || c == ".";
+    },
+    removeCharAt(str, index) {
+      return str.substring(0, index) + str.substring(index + 1);
+    },
+    filterInvalidChars(str, method) {
+      let filtered = "";
+      let hasDecimal = false;
+      for (let i = 0; i < str.length; i++) {
+        if (method === "hex" && this.isHex(str[i])) {
+          filtered += str[i];
+        } else if (method === "int" && this.isInt(str[i])) {
+          filtered += str[i];
+        } else if (method === "float") {
+          if (str[i] === "." && !hasDecimal) {
+            filtered += str[i];
+            hasDecimal = true;
+          } else if (this.isInt(str[i])) {
+            filtered += str[i];
+          }
+        }
+      }
+      return filtered;
+    },
+    rgbToHex(r, g, b) {
+      return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    },
+    hexToRgb(hex) {
+      let r = parseInt(hex.substring(1, 3), 16);
+      let g = parseInt(hex.substring(3, 5), 16);
+      let b = parseInt(hex.substring(5, 7), 16);
+      return { r, g, b };
+    },
+    rgbToHsv(r, g, b) {
+      r /= 255;
+      g /= 255;
+      b /= 255;
+      let max = Math.max(r, g, b);
+      let min = Math.min(r, g, b);
+      let d = max - min;
+      let s = max == 0 ? 0 : d / max;
+      let v = max;
+      let h;
+      if (max == min) {
+        h = 0;
+      } else {
+        switch (max) {
+          case r:
+            h = (g - b) / d + (g < b ? 6 : 0);
+            break;
+          case g:
+            h = (b - r) / d + 2;
+            break;
+          case b:
+            h = (r - g) / d + 4;
+            break;
+        }
+        h /= 6;
+      }
+      return { h, s, v };
+    },
+    hsvToRgb(h, s, v) {
+      let c = v * s;
+      let x = c * (1 - Math.abs(h / 60 % 2 - 1));
+      let m = v - c;
+      let r, g, b;
+      if (h >= 0 && h < 60) {
+        r = c;
+        g = x;
+        b = 0;
+      } else if (h >= 60 && h < 120) {
+        r = x;
+        g = c;
+        b = 0;
+      } else if (h >= 120 && h < 180) {
+        r = 0;
+        g = c;
+        b = x;
+      } else if (h >= 180 && h < 240) {
+        r = 0;
+        g = x;
+        b = c;
+      } else if (h >= 240 && h < 300) {
+        r = x;
+        g = 0;
+        b = c;
+      } else {
+        r = c;
+        g = 0;
+        b = x;
+      }
+      r = Math.round((r + m) * 255);
+      g = Math.round((g + m) * 255);
+      b = Math.round((b + m) * 255);
+      return { r, g, b };
+    }
+  }
+};
+const _hoisted_1 = { class: "home-page" };
+const _hoisted_2 = { class: "row-item" };
+const _hoisted_3 = { class: "input-column" };
+const _hoisted_4 = { class: "input-column" };
+const _hoisted_5 = { class: "input-column" };
+const _hoisted_6 = { class: "input-column" };
+const _hoisted_7 = { class: "input-column" };
+const _hoisted_8 = { class: "input-column" };
+const _hoisted_9 = { class: "input-column" };
+const _hoisted_10 = { class: "input-row" };
+const _hoisted_11 = { class: "input-column" };
+const _hoisted_12 = {
+  ref: "colorCanvas",
+  width: "100",
+  height: "100"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_segment = resolveComponent("segment");
+  return openBlock(), createElementBlock("main", _hoisted_1, [
+    createVNode(_component_segment, {
+      title: "Color conversion",
+      isDark: _ctx.isDark
+    }, {
+      default: withCtx(() => [..._cache[14] || (_cache[14] = [
+        createBaseVNode("div", { class: "row-item" }, [
+          createBaseVNode("div", { class: "description" }, [
+            createBaseVNode("p", null, " This is a simple color conversion tool that can convert between different color formats, including RGB, HEX and HSV. You can input a color in any of these formats and get the equivalent values in the other formats. ")
+          ])
+        ], -1)
+      ])]),
+      _: 1
+    }, 8, ["isDark"]),
+    createVNode(_component_segment, {
+      title: "Color Picker",
+      isDark: _ctx.isDark
+    }, {
+      default: withCtx(() => [
+        createBaseVNode("div", _hoisted_2, [
+          createBaseVNode("div", {
+            class: normalizeClass(["input-row", { dark: _ctx.isDark }])
+          }, [
+            createBaseVNode("div", _hoisted_3, [
+              _cache[15] || (_cache[15] = createBaseVNode("span", { class: "input-label" }, "HEX:", -1)),
+              withDirectives(createBaseVNode("input", {
+                type: "text",
+                "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => _ctx.hex = $event),
+                onInput: _cache[1] || (_cache[1] = (...args) => _ctx.onUpdateHex && _ctx.onUpdateHex(...args))
+              }, null, 544), [
+                [vModelText, _ctx.hex]
+              ]),
+              _cache[16] || (_cache[16] = createBaseVNode("span", { class: "input-suffix" }, null, -1))
+            ])
+          ], 2),
+          createBaseVNode("div", {
+            class: normalizeClass(["input-row", { dark: _ctx.isDark }])
+          }, [
+            createBaseVNode("div", _hoisted_4, [
+              _cache[17] || (_cache[17] = createBaseVNode("span", { class: "input-label" }, "R:", -1)),
+              withDirectives(createBaseVNode("input", {
+                type: "text",
+                "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => _ctx.rgb.r = $event),
+                onInput: _cache[3] || (_cache[3] = (...args) => _ctx.onUpdateRgb && _ctx.onUpdateRgb(...args))
+              }, null, 544), [
+                [vModelText, _ctx.rgb.r]
+              ]),
+              _cache[18] || (_cache[18] = createBaseVNode("span", { class: "input-suffix" }, null, -1))
+            ]),
+            createBaseVNode("div", _hoisted_5, [
+              _cache[19] || (_cache[19] = createBaseVNode("span", { class: "input-label" }, "G:", -1)),
+              withDirectives(createBaseVNode("input", {
+                type: "text",
+                "onUpdate:modelValue": _cache[4] || (_cache[4] = ($event) => _ctx.rgb.g = $event),
+                onInput: _cache[5] || (_cache[5] = (...args) => _ctx.onUpdateRgb && _ctx.onUpdateRgb(...args))
+              }, null, 544), [
+                [vModelText, _ctx.rgb.g]
+              ]),
+              _cache[20] || (_cache[20] = createBaseVNode("span", { class: "input-suffix" }, null, -1))
+            ]),
+            createBaseVNode("div", _hoisted_6, [
+              _cache[21] || (_cache[21] = createBaseVNode("span", { class: "input-label" }, "B:", -1)),
+              withDirectives(createBaseVNode("input", {
+                type: "text",
+                "onUpdate:modelValue": _cache[6] || (_cache[6] = ($event) => _ctx.rgb.b = $event),
+                onInput: _cache[7] || (_cache[7] = (...args) => _ctx.onUpdateRgb && _ctx.onUpdateRgb(...args))
+              }, null, 544), [
+                [vModelText, _ctx.rgb.b]
+              ]),
+              _cache[22] || (_cache[22] = createBaseVNode("span", { class: "input-suffix" }, null, -1))
+            ])
+          ], 2),
+          createBaseVNode("div", {
+            class: normalizeClass(["input-row", { dark: _ctx.isDark }])
+          }, [
+            createBaseVNode("div", _hoisted_7, [
+              _cache[23] || (_cache[23] = createBaseVNode("span", { class: "input-label" }, "H:", -1)),
+              withDirectives(createBaseVNode("input", {
+                type: "text",
+                "onUpdate:modelValue": _cache[8] || (_cache[8] = ($event) => _ctx.hsv.h = $event),
+                onInput: _cache[9] || (_cache[9] = (...args) => _ctx.onUpdateHsv && _ctx.onUpdateHsv(...args))
+              }, null, 544), [
+                [vModelText, _ctx.hsv.h]
+              ]),
+              _cache[24] || (_cache[24] = createBaseVNode("span", { class: "input-suffix" }, "°", -1))
+            ]),
+            createBaseVNode("div", _hoisted_8, [
+              _cache[25] || (_cache[25] = createBaseVNode("span", { class: "input-label" }, "S:", -1)),
+              withDirectives(createBaseVNode("input", {
+                type: "text",
+                "onUpdate:modelValue": _cache[10] || (_cache[10] = ($event) => _ctx.hsv.s = $event),
+                onInput: _cache[11] || (_cache[11] = (...args) => _ctx.onUpdateHsv && _ctx.onUpdateHsv(...args))
+              }, null, 544), [
+                [vModelText, _ctx.hsv.s]
+              ]),
+              _cache[26] || (_cache[26] = createBaseVNode("span", { class: "input-suffix" }, "%", -1))
+            ]),
+            createBaseVNode("div", _hoisted_9, [
+              _cache[27] || (_cache[27] = createBaseVNode("span", { class: "input-label" }, "V:", -1)),
+              withDirectives(createBaseVNode("input", {
+                type: "text",
+                "onUpdate:modelValue": _cache[12] || (_cache[12] = ($event) => _ctx.hsv.v = $event),
+                onInput: _cache[13] || (_cache[13] = (...args) => _ctx.onUpdateHsv && _ctx.onUpdateHsv(...args))
+              }, null, 544), [
+                [vModelText, _ctx.hsv.v]
+              ]),
+              _cache[28] || (_cache[28] = createBaseVNode("span", { class: "input-suffix" }, "%", -1))
+            ])
+          ], 2),
+          createBaseVNode("div", _hoisted_10, [
+            createBaseVNode("div", _hoisted_11, [
+              createBaseVNode("div", {
+                class: "color-preview",
+                style: normalizeStyle({ backgroundColor: _ctx.hexFull })
+              }, [
+                createBaseVNode("canvas", _hoisted_12, null, 512)
+              ], 4)
+            ])
+          ])
+        ])
+      ]),
+      _: 1
+    }, 8, ["isDark"])
+  ]);
+}
+const Color = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", render], ["__scopeId", "data-v-c4a4ff8d"]]);
 const app = createApp(App);
 const router = createRouter({
   history: createWebHashHistory(),
@@ -1286,13 +1546,9 @@ const router = createRouter({
     {
       path: "/project/color",
       name: "Color",
-      component: () => __vitePreload(() => import("./Color-chunk.js"), true ? __vite__mapDeps([0,1,2,3]) : void 0)
+      component: Color
     }
   ]
 });
 app.use(router);
 app.mount("body");
-export {
-  Segment as S,
-  _export_sfc as _
-};

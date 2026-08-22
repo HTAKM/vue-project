@@ -7125,9 +7125,9 @@ function normalizeContainer(container) {
   return container;
 }
 export {
-  createApp as A,
-  vModelText as B,
-  normalizeStyle as C,
+  vModelText as A,
+  normalizeStyle as B,
+  createApp as C,
   Fragment as F,
   Transition as T,
   shallowRef as a,

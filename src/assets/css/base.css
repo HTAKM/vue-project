@@ -18,9 +18,9 @@
   --dark-soft-tab: 46, 23, 59;
   --dark-mute-tab: 60, 23, 80;
   --dark-separator: 92, 46, 118;
-  --dark-text: 219, 202, 253;
-  --dark-text-sort: 198, 170, 253;
-  --dark-text-link: 163, 255, 243;
+  --dark-text: 221, 204, 255;
+  --dark-text-sort: 208, 185, 255;
+  --dark-text-link: 179, 255, 242;
 
   --divider-light-1: rgba(var(--light-separator), 1);
   --divider-light-2: rgba(var(--light-separator), 0.8);

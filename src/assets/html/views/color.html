@@ -1,0 +1,66 @@
+<main class="home-page">
+    <segment title="Color conversion" :isDark="isDark">
+        <div class="row-item">
+            <div class="description">
+                <p>
+                    This is a simple color conversion tool that can convert between 
+                    different color formats, including RGB, HEX and HSV. You 
+                    can input a color in any of these formats and get the equivalent 
+                    values in the other formats.
+                </p>
+            </div>
+        </div>
+    </segment>
+    <segment title="Color Picker" :isDark="isDark">
+        <div class="row-item">
+            <div class="input-row" :class="{dark : isDark}">
+                <div class="input-column">
+                    <span class="input-label">HEX:</span>
+                    <input type="text" v-model="hex" @input="onUpdateHex" />
+                    <span class="input-suffix"></span>
+                </div>
+            </div>
+            <div class="input-row" :class="{dark : isDark}">
+                <div class="input-column">
+                    <span class="input-label">R:</span>
+                    <input type="text" v-model="rgb.r" @input="onUpdateRgb" />
+                    <span class="input-suffix"></span>
+                </div>
+                <div class="input-column">
+                    <span class="input-label">G:</span>
+                    <input type="text" v-model="rgb.g" @input="onUpdateRgb" />
+                    <span class="input-suffix"></span>
+                </div>
+                <div class="input-column">
+                    <span class="input-label">B:</span>
+                    <input type="text" v-model="rgb.b" @input="onUpdateRgb" />
+                    <span class="input-suffix"></span>
+                </div>
+            </div>
+            <div class="input-row" :class="{dark : isDark}">
+                <div class="input-column">
+                    <span class="input-label">H:</span>
+                    <input type="text" v-model="hsv.h" @input="onUpdateHsv" />
+                    <span class="input-suffix">°</span>
+                </div>
+                <div class="input-column">
+                    <span class="input-label">S:</span>
+                    <input type="text" v-model="hsv.s" @input="onUpdateHsv" />
+                    <span class="input-suffix">%</span>
+                </div>
+                <div class="input-column">
+                    <span class="input-label">V:</span>
+                    <input type="text" v-model="hsv.v" @input="onUpdateHsv" />
+                    <span class="input-suffix">%</span>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-column">
+                    <div class="color-preview" :style="{backgroundColor: hexFull}">
+                        <canvas ref="colorCanvas" width="100" height="100"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </segment>
+</main>

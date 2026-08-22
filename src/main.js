@@ -34,6 +34,11 @@ const router = createRouter({
             name: 'Project',
             component: Project
         },
+        {
+            path: '/project/color',
+            name: 'Color',
+            component: () => import('./views/Color.vue')
+        }
     ]
 })
 app.use(router);

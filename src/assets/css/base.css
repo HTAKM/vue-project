@@ -24,10 +24,10 @@
 
   --divider-light-1: rgba(var(--light-separator), 1);
   --divider-light-2: rgba(var(--light-separator), 0.8);
-  --divider-light-3: rgba(var(--light-separator), 0.6);
+  --divider-light-3: rgba(var(--light-separator), 1);
   --divider-dark-1: rgba(var(--dark-separator), 0.7);
   --divider-dark-2: rgba(var(--dark-separator), 0.4);
-  --divider-dark-3: rgba(var(--dark-separator), 0.1);
+  --divider-dark-3: rgba(var(--dark-separator), 0.7);
 
   --text-light-1: rgba(var(--light-text), 1);
   --text-light-2: rgba(var(--light-text-sort), 0.9);

@@ -1,0 +1,94 @@
+@use '@/assets/css/default.scss' as *;
+
+.input-row {
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    margin-bottom: 1rem;
+    
+    .input-column {
+        display: flex;
+        flex: 0 0 33%;
+        margin-right: 1rem;
+    }
+
+    .input-label .input-suffix {
+        font-size: 1.2rem;
+        @media (max-width: 1024px) {
+            font-size: 1.1rem;
+        }
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
+        @media (max-width: 576px) {
+            font-size: 0.9rem;
+        }
+    }
+
+    .input-label {
+        margin-right: 0.5rem;
+        align-self: center;
+    }
+
+    .input-suffix {
+        margin-left: 0.5rem;
+        align-self: center;
+    }
+
+    input {
+        padding: 0.5rem;
+        max-width: 50%;
+        border-color: var(--color-border);
+        border-width: 0.15rem;
+        border-radius: 0.3rem;
+        border-style: solid;
+        color: var(--color-text);
+        background-color: var(--color-background-soft);
+        @extend %default-border;
+    }
+
+    input:hover {
+        border-color: var(--color-border-hover);
+    }
+
+    input[type="text"] {
+        flex-grow: 1;
+        font-size: 1.2rem;
+        @media (max-width: 1024px) {
+            font-size: 1.1rem;
+        }
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
+        @media (max-width: 576px) {
+            font-size: 0.9rem;
+        }
+    }
+
+    .color-preview {
+        border: 1px solid var(--color-border);
+        border-radius: 1rem;
+    }
+
+    &.dark {
+        input {
+            color: var(--color-text-dark);
+            border-color: var(--color-border-dark);
+            background-color: var(--color-background-soft-dark);
+        }
+        .color-preview {
+            border: 1px solid var(--color-border-dark);
+        }
+    }
+
+    &:not(.dark) {
+        input {
+            color: var(--color-text-light);
+            border-color: var(--color-border-light);
+            background-color: var(--color-background-soft-light);
+        }
+        .color-preview {
+            border: 1px solid var(--color-border-light);
+        }
+    }
+}

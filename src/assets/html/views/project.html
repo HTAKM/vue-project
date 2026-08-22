@@ -45,6 +45,11 @@
                     <li v-for="project in otherProjects">
                         <a :href="project.link" target="_blank">{{ project.name }}</a>
                     </li>
+                    <li>
+                        <router-link class="button" to="/project/color" aria-label="Color Conversion Tool">
+                            Color Conversion Tool
+                        </router-link>
+                    </li>
                 </ul>
             </div>
         </div>

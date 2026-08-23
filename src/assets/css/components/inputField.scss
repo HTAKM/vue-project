@@ -4,103 +4,167 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 1rem;
+    column-gap: 0.5rem;
     align-items: center;
     
     .input-column {
         display: flex;
-        min-width: 30%;
+        min-width: 100%;
         justify-content: center;
-    }
 
-    span.input-label, span.input-suffix {
-        font-size: 1rem;
-        line-height: 1.5;
-        @media (max-width: 1024px) {
-                font-size: 0.9rem;
-                line-height: 1.5;
-        }
-
-        @media (max-width: 768px) {
-            font-size: 0.8rem;
-            line-height: 1.4;
-        }
-
-        @media (max-width: 576px) {
-            font-size: 0.7rem;
-            line-height: 1.3;
-        }
-    }
-
-    .input-label {
-        margin-right: 0.5rem;
-        min-width: 10%;
-        align-self: center;
-    }
-
-    .input-suffix {
-        margin-left: 0.5rem;
-        min-width: 5%;
-        align-self: center;
-    }
-
-    input {
-        padding: 0.5rem;
-        max-width: 50%;
-        border-color: var(--color-border);
-        border-width: 0.15rem;
-        border-radius: 0.3rem;
-        border-style: solid;
-        color: var(--color-text);
-        background-color: var(--color-background-soft);
-        @extend %default-border;
-    }
-
-    input:hover {
-        border-color: var(--color-border-hover);
-    }
-
-    input[type="text"] {
-        flex-grow: 1;
-        font-size: 1.2rem;
-        @media (max-width: 1024px) {
-            font-size: 1.1rem;
-        }
-        @media (max-width: 768px) {
+        span.input-label, span.input-suffix {
             font-size: 1rem;
-        }
-        @media (max-width: 576px) {
-            font-size: 0.9rem;
-        }
-    }
+            line-height: 1.5;
+            @media (max-width: 1024px) {
+                    font-size: 0.9rem;
+                    line-height: 1.5;
+            }
 
-    .color-preview {
-        border: 1px solid var(--color-border);
-        border-radius: 1rem;
-        margin: 0 1rem;
-        canvas {
-            width: 100%;
+            @media (max-width: 768px) {
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
+
+            @media (max-width: 576px) {
+                font-size: 0.7rem;
+                line-height: 1.3;
+            }
+        }
+
+        .input-label {
+            margin-right: 0.5rem;
+            min-width: 10%;
+            align-self: center;
+        }
+
+        .input-suffix {
+            margin-left: 0.5rem;
+            min-width: 5%;
+            align-self: center;
+        }
+
+        input {
+            padding: 0.5rem;
+            max-width: 50%;
+            border: 0.15rem solid var(--color-border);
+            border-radius: 0.3rem;
+            color: var(--color-text);
+            background-color: var(--color-background-soft);
+            @extend %default-border;
+            
+            &:hover {
+                border-color: var(--color-border-hover);
+            }
+        }
+
+        input[type="text"] {
+            flex-grow: 1;
+            font-size: 1.2rem;
+            @media (max-width: 1024px) {
+                font-size: 1.1rem;
+            }
+            @media (max-width: 768px) {
+                font-size: 1rem;
+            }
+            @media (max-width: 576px) {
+                font-size: 0.9rem;
+            }
+        }
+
+        .color-preview {
+            border: 0.25rem solid var(--color-border);
+            border-radius: 1rem;
+            margin: 0 1rem;
+            canvas {
+                width: 100%;
+            }
+        }
+
+        button {
+            width: 100rem;
+            height: 2rem;
+            margin: 0 auto;
+            color: var(--color-text);
+            border: 0.25rem solid var(--color-border);
+            border-radius: 0.3rem;
+            background-color: var(--color-background-soft);
+            @extend %default-border;
+
+            p {
+                margin: 0;
+                font-size: 1rem;
+                &.force-text-color-light {
+                    color: var(--color-text-light);
+                }
+                &.force-text-color-dark {
+                    color: var(--color-text-dark);
+                }
+                @media (max-width: 1024px) {
+                    font-size: 0.9rem;
+                }
+                @media (max-width: 768px) {
+                    font-size: 0.8rem;
+                }
+                @media (max-width: 576px) {
+                    font-size: 0.7rem;
+                }
+            }
+
+            &:hover {
+                border-color: var(--color-border-hover);
+            }
         }
     }
 
     &.dark {
-        input {
-            color: var(--color-text-dark);
-            border-color: var(--color-border-dark);
-            background-color: var(--color-background-soft-dark);
-        }
-        .color-preview {
-            border: 1px solid var(--color-border-dark);
+        .input-column {
+            input {
+                color: var(--color-text-dark);
+                border-color: var(--color-border-dark);
+                background-color: var(--color-background-soft-dark);
+
+                &:hover {
+                    border-color: var(--color-border-hover-dark);
+                }
+            }
+            .color-preview {
+                border-color: var(--color-border-dark);
+            }
+            button {
+                color: var(--color-text-dark);
+                border-color: var(--color-border-dark);
+                background-color: var(--color-background-soft-dark);
+
+                &:hover {
+                    border-color: var(--color-border-hover-dark);
+                }
+            }
         }
     }
 
     &:not(.dark) {
-        input {
-            color: var(--color-text-light);
-            border-color: var(--color-border-light);
-            background-color: var(--color-background-soft-light);
-        }
-        .color-preview {
-            border: 1px solid var(--color-border-light);
+        .input-column {
+            input {
+                color: var(--color-text-light);
+                border-color: var(--color-border-light);
+                background-color: var(--color-background-soft-light);
+
+                &:hover {
+                    border-color: var(--color-border-hover-light);
+                }
+            }
+            .color-preview {
+                border-color: var(--color-border-light);
+            }
+            button {
+                color: var(--color-text-light);
+                border-color: var(--color-border-light);
+                background-color: var(--color-background-soft-light);
+
+                &:hover {
+                    border-color: var(--color-border-hover-light);
+                }
+            }
         }
     }
 }

@@ -4,7 +4,7 @@
             <div class="description">
                 <p>
                     This is a simple color conversion tool that can convert between 
-                    different color formats, including RGB, HEX and HSV. You 
+                    different color formats, including RGB, HEX, HSV and HSL. You 
                     can input a color in any of these formats and get the equivalent 
                     values in the other formats.
                 </p>
@@ -63,6 +63,79 @@
                     <span class="input-label">L:</span>
                     <input type="text" v-model="hsl.l" @input="onUpdateHsl" />
                     <span class="input-suffix">%</span>
+                </div>
+            </div>
+        </div>
+    </segment>
+    <segment title="Color Picker" :isDark="isDark">
+        <div class="row-item">
+            <div class="description">
+                <p>
+                    You may pick some colors below. The color will be converted to RGB, HEX, HSV and HSL automatically.
+                </p>
+            </div>
+        </div>
+        <div class="row-item">
+            <div class="input-row" :class="{dark : isDark}">
+                <div class="input-column">
+                    <button :style="{ backgroundColor: 'rgb(255, 255, 255)' }" @click="onColorPicked(255, 255, 255)">
+                        <p class="force-text-color-light">White</p>
+                    </button>
+                </div>
+                <div class="input-column">
+                    <button :style="{ backgroundColor: 'rgb(128, 128, 128)' }" @click="onColorPicked(128, 128, 128)">
+                        <p class="force-text-color-light">Gray</p>
+                    </button>
+                </div>
+                <div class="input-column">
+                    <button :style="{ backgroundColor: 'rgb(0, 0, 0)' }" @click="onColorPicked(0, 0, 0)">
+                        <p class="force-text-color-dark">Black</p>
+                    </button>
+                </div>
+                <div class="input-column">
+                    <button :style="{ backgroundColor: 'rgb(255, 0, 0)' }" @click="onColorPicked(255, 0, 0)">
+                        <p class="force-text-color-light">Red</p>
+                    </button>
+                </div>
+                <div class="input-column">
+                    <button :style="{ backgroundColor: 'rgb(0, 255, 0)' }" @click="onColorPicked(0, 255, 0)">
+                        <p class="force-text-color-light">Green</p>
+                    </button>
+                </div>
+                <div class="input-column">
+                    <button :style="{ backgroundColor: 'rgb(0, 0, 255)' }" @click="onColorPicked(0, 0, 255)">
+                        <p class="force-text-color-dark">Blue</p>
+                    </button>
+                </div>
+                <div class="input-column">
+                    <button :style="{ backgroundColor: 'rgb(255, 255, 0)' }" @click="onColorPicked(255, 255, 0)">
+                        <p class="force-text-color-light">Yellow</p>
+                    </button>
+                </div>
+                <div class="input-column">
+                    <button :style="{ backgroundColor: 'rgb(255, 0, 255)' }" @click="onColorPicked(255, 0, 255)">
+                        <p class="force-text-color-light">Magenta</p>
+                    </button>
+                </div>
+                <div class="input-column">
+                    <button :style="{ backgroundColor: 'rgb(0, 255, 255)' }" @click="onColorPicked(0, 255, 255)">
+                        <p class="force-text-color-light">Cyan</p>
+                    </button>
+                </div>
+                <div class="input-column">
+                    <button :style="{ backgroundColor: 'rgb(255, 165, 0)' }" @click="onColorPicked(255, 165, 0)">
+                        <p class="force-text-color-light">Orange</p>
+                    </button>
+                </div>
+                <div class="input-column">
+                    <button :style="{ backgroundColor: 'rgb(128, 0, 128)' }" @click="onColorPicked(128, 0, 128)">
+                        <p class="force-text-color-light">Purple</p>
+                    </button>
+                </div>
+                <div class="input-column">
+                    <button :style="{ backgroundColor: 'rgb(165, 42, 42)' }" @click="onColorPicked(165, 42, 42)">
+                        <p class="force-text-color-light">Brown</p>
+                    </button>
                 </div>
             </div>
         </div>

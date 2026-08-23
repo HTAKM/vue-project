@@ -30,12 +30,6 @@ export default {
         };
     },
     computed: {
-        onColorPicked(r, g, b) {
-            this.rgb.r = r.toString();
-            this.rgb.g = g.toString();
-            this.rgb.b = b.toString();
-            this.onUpdateRgb();
-        },
         onUpdateRgb() {
             this.rgb.r = this.filterInvalidChars(this.rgb.r, 'int');
             this.rgb.g = this.filterInvalidChars(this.rgb.g, 'int');
@@ -126,6 +120,12 @@ export default {
         }
     },
     methods: {
+        onColorPicked(r, g, b) {
+            this.rgb.r = r.toString();
+            this.rgb.g = g.toString();
+            this.rgb.b = b.toString();
+            this.onUpdateRgb();
+        },
         isHex(c) {
             return c >= '0' && c <= '9' || c >= 'a' && c <= 'f' || c >= 'A' && c <= 'F';
         },

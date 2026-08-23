@@ -48,3 +48,11 @@ button {
 .text-right {
     text-align: right !important;
 }
+
+.flex-to-center {
+    justify-content: center;
+}
+
+.flex-to-right {
+    justify-content: flex-end;
+}

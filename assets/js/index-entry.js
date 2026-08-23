@@ -1065,7 +1065,7 @@ const _hoisted_9$1 = { class: "description" };
 const _hoisted_10$1 = ["href"];
 const _hoisted_11$1 = { class: "row-item" };
 const _hoisted_12$1 = { class: "description" };
-const _hoisted_13 = ["href"];
+const _hoisted_13$1 = ["href"];
 function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_segment = resolveComponent("segment");
   const _component_router_link = resolveComponent("router-link");
@@ -1159,7 +1159,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
                   createBaseVNode("a", {
                     href: project.link,
                     target: "_blank"
-                  }, toDisplayString(project.name), 9, _hoisted_13)
+                  }, toDisplayString(project.name), 9, _hoisted_13$1)
                 ]);
               }), 256)),
               createBaseVNode("li", null, [
@@ -1204,6 +1204,11 @@ const _sfc_main = {
         h: "0",
         s: "0",
         v: "0"
+      },
+      hsl: {
+        // h is same as hsv.h
+        s: "0",
+        l: "0"
       }
     };
   },
@@ -1227,6 +1232,9 @@ const _sfc_main = {
       this.hsv.h = (hsv.h * 360).toFixed(0);
       this.hsv.s = (hsv.s * 100).toFixed(0);
       this.hsv.v = (hsv.v * 100).toFixed(0);
+      const hsl = this.hsvToHsl(hsv.h, hsv.s, hsv.v);
+      this.hsl.s = (hsl.s * 100).toFixed(0);
+      this.hsl.l = (hsl.l * 100).toFixed(0);
     },
     onUpdateHex() {
       this.hex = this.filterInvalidChars(this.hex, "hex");
@@ -1260,7 +1268,33 @@ const _sfc_main = {
       this.hsv.h = h.toString();
       this.hsv.s = (s * 100).toFixed(0).toString();
       this.hsv.v = (v * 100).toFixed(0).toString();
+      const hsl = this.hsvToHsl(h, s, v);
+      this.hsl.s = (hsl.s * 100).toFixed(0).toString();
+      this.hsl.l = (hsl.l * 100).toFixed(0).toString();
       const rgb = this.hsvToRgb(h, s, v);
+      this.rgb.r = rgb.r.toString();
+      this.rgb.g = rgb.g.toString();
+      this.rgb.b = rgb.b.toString();
+      this.hex = this.rgbToHex(rgb.r, rgb.g, rgb.b);
+      this.hexFull = this.hex + "0".repeat(7 - this.hex.length);
+    },
+    onUpdateHsl() {
+      if (this.hsv.h == "") this.hsv.h = "0";
+      if (this.hsl.s == "") this.hsl.s = "0";
+      if (this.hsl.l == "") this.hsl.l = "0";
+      this.hsv.h = this.filterInvalidChars(this.hsv.h, "int");
+      this.hsl.s = this.filterInvalidChars(this.hsl.s, "int");
+      this.hsl.l = this.filterInvalidChars(this.hsl.l, "int");
+      const h = Math.max(0, Math.min(360, parseInt(this.hsv.h)));
+      const s = Math.max(0, Math.min(100, parseInt(this.hsl.s))) / 100;
+      const l = Math.max(0, Math.min(100, parseInt(this.hsl.l))) / 100;
+      this.hsv.h = h.toString();
+      this.hsl.s = (s * 100).toFixed(0).toString();
+      this.hsl.l = (l * 100).toFixed(0).toString();
+      const hsv = this.hslToHsv(h, s, l);
+      this.hsv.s = (hsv.s * 100).toFixed(0).toString();
+      this.hsv.v = (hsv.v * 100).toFixed(0).toString();
+      const rgb = this.hsvToRgb(h, hsv.s, hsv.v);
       this.rgb.r = rgb.r.toString();
       this.rgb.g = rgb.g.toString();
       this.rgb.b = rgb.b.toString();
@@ -1269,6 +1303,12 @@ const _sfc_main = {
     }
   },
   methods: {
+    onColorPicked(r, g, b) {
+      this.rgb.r = r.toString();
+      this.rgb.g = g.toString();
+      this.rgb.b = b.toString();
+      this.onUpdateRgb();
+    },
     isHex(c) {
       return c >= "0" && c <= "9" || c >= "a" && c <= "f" || c >= "A" && c <= "F";
     },
@@ -1371,52 +1411,64 @@ const _sfc_main = {
       g = Math.round((g + m) * 255);
       b = Math.round((b + m) * 255);
       return { r, g, b };
+    },
+    hslToHsv(h, s, l) {
+      let v = l + s * Math.min(l, 1 - l);
+      let newS = v === 0 ? 0 : 2 * (1 - l / v);
+      return { h, s: newS, v };
+    },
+    hsvToHsl(h, s, v) {
+      let l = v * (1 - s / 2);
+      let newS = l === 0 || l === 1 ? 0 : (v - l) / Math.min(l, 1 - l);
+      return { h, s: newS, l };
     }
   }
 };
 const _hoisted_1 = { class: "home-page" };
 const _hoisted_2 = { class: "row-item" };
 const _hoisted_3 = { class: "input-column" };
-const _hoisted_4 = { class: "input-column" };
-const _hoisted_5 = { class: "input-column" };
+const _hoisted_4 = { class: "input-column flex-to-center" };
+const _hoisted_5 = { ref: "colorCanvas" };
 const _hoisted_6 = { class: "input-column" };
 const _hoisted_7 = { class: "input-column" };
 const _hoisted_8 = { class: "input-column" };
 const _hoisted_9 = { class: "input-column" };
-const _hoisted_10 = { class: "input-row" };
+const _hoisted_10 = { class: "input-column" };
 const _hoisted_11 = { class: "input-column" };
-const _hoisted_12 = {
-  ref: "colorCanvas",
-  width: "100",
-  height: "100"
-};
+const _hoisted_12 = { class: "input-column" };
+const _hoisted_13 = { class: "input-column" };
+const _hoisted_14 = { class: "row-item" };
+const _hoisted_15 = { class: "input-column" };
+const _hoisted_16 = { class: "input-column" };
+const _hoisted_17 = { class: "input-column" };
+const _hoisted_18 = { class: "input-column" };
+const _hoisted_19 = { class: "input-column" };
+const _hoisted_20 = { class: "input-column" };
+const _hoisted_21 = { class: "input-column" };
+const _hoisted_22 = { class: "input-column" };
+const _hoisted_23 = { class: "input-column" };
+const _hoisted_24 = { class: "input-column" };
+const _hoisted_25 = { class: "input-column" };
+const _hoisted_26 = { class: "input-column" };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_segment = resolveComponent("segment");
   return openBlock(), createElementBlock("main", _hoisted_1, [
     createVNode(_component_segment, {
-      title: "Color conversion",
-      isDark: _ctx.isDark
-    }, {
-      default: withCtx(() => [..._cache[14] || (_cache[14] = [
-        createBaseVNode("div", { class: "row-item" }, [
-          createBaseVNode("div", { class: "description" }, [
-            createBaseVNode("p", null, " This is a simple color conversion tool that can convert between different color formats, including RGB, HEX and HSV. You can input a color in any of these formats and get the equivalent values in the other formats. ")
-          ])
-        ], -1)
-      ])]),
-      _: 1
-    }, 8, ["isDark"]),
-    createVNode(_component_segment, {
-      title: "Color Picker",
+      title: "Color Conversion Tool",
       isDark: _ctx.isDark
     }, {
       default: withCtx(() => [
+        _cache[50] || (_cache[50] = createBaseVNode("div", { class: "row-item" }, [
+          createBaseVNode("div", { class: "description" }, [
+            createBaseVNode("p", null, " This is a simple color conversion tool that can convert between different color formats, including RGB, HEX, HSV and HSL. You can input a color in any of these formats and get the equivalent values in the other formats. ")
+          ])
+        ], -1)),
         createBaseVNode("div", _hoisted_2, [
           createBaseVNode("div", {
             class: normalizeClass(["input-row", { dark: _ctx.isDark }])
           }, [
             createBaseVNode("div", _hoisted_3, [
-              _cache[15] || (_cache[15] = createBaseVNode("span", { class: "input-label" }, "HEX:", -1)),
+              _cache[30] || (_cache[30] = createBaseVNode("span", { class: "input-label" }, "HEX:", -1)),
               withDirectives(createBaseVNode("input", {
                 type: "text",
                 "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => _ctx.hex = $event),
@@ -1424,14 +1476,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               }, null, 544), [
                 [vModelText, _ctx.hex]
               ]),
-              _cache[16] || (_cache[16] = createBaseVNode("span", { class: "input-suffix" }, null, -1))
-            ])
-          ], 2),
-          createBaseVNode("div", {
-            class: normalizeClass(["input-row", { dark: _ctx.isDark }])
-          }, [
+              _cache[31] || (_cache[31] = createBaseVNode("span", { class: "input-suffix" }, null, -1))
+            ]),
+            _cache[48] || (_cache[48] = createBaseVNode("div", { class: "input-column" }, null, -1)),
             createBaseVNode("div", _hoisted_4, [
-              _cache[17] || (_cache[17] = createBaseVNode("span", { class: "input-label" }, "R:", -1)),
+              createBaseVNode("div", {
+                class: "color-preview",
+                style: normalizeStyle({ backgroundColor: _ctx.hexFull })
+              }, [
+                createBaseVNode("canvas", _hoisted_5, null, 512)
+              ], 4)
+            ]),
+            createBaseVNode("div", _hoisted_6, [
+              _cache[32] || (_cache[32] = createBaseVNode("span", { class: "input-label" }, "R:", -1)),
               withDirectives(createBaseVNode("input", {
                 type: "text",
                 "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => _ctx.rgb.r = $event),
@@ -1439,10 +1496,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               }, null, 544), [
                 [vModelText, _ctx.rgb.r]
               ]),
-              _cache[18] || (_cache[18] = createBaseVNode("span", { class: "input-suffix" }, null, -1))
+              _cache[33] || (_cache[33] = createBaseVNode("span", { class: "input-suffix" }, null, -1))
             ]),
-            createBaseVNode("div", _hoisted_5, [
-              _cache[19] || (_cache[19] = createBaseVNode("span", { class: "input-label" }, "G:", -1)),
+            createBaseVNode("div", _hoisted_7, [
+              _cache[34] || (_cache[34] = createBaseVNode("span", { class: "input-label" }, "G:", -1)),
               withDirectives(createBaseVNode("input", {
                 type: "text",
                 "onUpdate:modelValue": _cache[4] || (_cache[4] = ($event) => _ctx.rgb.g = $event),
@@ -1450,10 +1507,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               }, null, 544), [
                 [vModelText, _ctx.rgb.g]
               ]),
-              _cache[20] || (_cache[20] = createBaseVNode("span", { class: "input-suffix" }, null, -1))
+              _cache[35] || (_cache[35] = createBaseVNode("span", { class: "input-suffix" }, null, -1))
             ]),
-            createBaseVNode("div", _hoisted_6, [
-              _cache[21] || (_cache[21] = createBaseVNode("span", { class: "input-label" }, "B:", -1)),
+            createBaseVNode("div", _hoisted_8, [
+              _cache[36] || (_cache[36] = createBaseVNode("span", { class: "input-label" }, "B:", -1)),
               withDirectives(createBaseVNode("input", {
                 type: "text",
                 "onUpdate:modelValue": _cache[6] || (_cache[6] = ($event) => _ctx.rgb.b = $event),
@@ -1461,14 +1518,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               }, null, 544), [
                 [vModelText, _ctx.rgb.b]
               ]),
-              _cache[22] || (_cache[22] = createBaseVNode("span", { class: "input-suffix" }, null, -1))
-            ])
-          ], 2),
-          createBaseVNode("div", {
-            class: normalizeClass(["input-row", { dark: _ctx.isDark }])
-          }, [
-            createBaseVNode("div", _hoisted_7, [
-              _cache[23] || (_cache[23] = createBaseVNode("span", { class: "input-label" }, "H:", -1)),
+              _cache[37] || (_cache[37] = createBaseVNode("span", { class: "input-suffix" }, null, -1))
+            ]),
+            createBaseVNode("div", _hoisted_9, [
+              _cache[38] || (_cache[38] = createBaseVNode("span", { class: "input-label" }, "H:", -1)),
               withDirectives(createBaseVNode("input", {
                 type: "text",
                 "onUpdate:modelValue": _cache[8] || (_cache[8] = ($event) => _ctx.hsv.h = $event),
@@ -1476,10 +1529,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               }, null, 544), [
                 [vModelText, _ctx.hsv.h]
               ]),
-              _cache[24] || (_cache[24] = createBaseVNode("span", { class: "input-suffix" }, "°", -1))
+              _cache[39] || (_cache[39] = createBaseVNode("span", { class: "input-suffix" }, "°", -1))
             ]),
-            createBaseVNode("div", _hoisted_8, [
-              _cache[25] || (_cache[25] = createBaseVNode("span", { class: "input-label" }, "S:", -1)),
+            createBaseVNode("div", _hoisted_10, [
+              _cache[40] || (_cache[40] = createBaseVNode("span", { class: "input-label" }, "S:", -1)),
               withDirectives(createBaseVNode("input", {
                 type: "text",
                 "onUpdate:modelValue": _cache[10] || (_cache[10] = ($event) => _ctx.hsv.s = $event),
@@ -1487,10 +1540,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               }, null, 544), [
                 [vModelText, _ctx.hsv.s]
               ]),
-              _cache[26] || (_cache[26] = createBaseVNode("span", { class: "input-suffix" }, "%", -1))
+              _cache[41] || (_cache[41] = createBaseVNode("span", { class: "input-suffix" }, "%", -1))
             ]),
-            createBaseVNode("div", _hoisted_9, [
-              _cache[27] || (_cache[27] = createBaseVNode("span", { class: "input-label" }, "V:", -1)),
+            createBaseVNode("div", _hoisted_11, [
+              _cache[42] || (_cache[42] = createBaseVNode("span", { class: "input-label" }, "V:", -1)),
               withDirectives(createBaseVNode("input", {
                 type: "text",
                 "onUpdate:modelValue": _cache[12] || (_cache[12] = ($event) => _ctx.hsv.v = $event),
@@ -1498,19 +1551,147 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
               }, null, 544), [
                 [vModelText, _ctx.hsv.v]
               ]),
-              _cache[28] || (_cache[28] = createBaseVNode("span", { class: "input-suffix" }, "%", -1))
+              _cache[43] || (_cache[43] = createBaseVNode("span", { class: "input-suffix" }, "%", -1))
+            ]),
+            _cache[49] || (_cache[49] = createBaseVNode("div", { class: "input-column" }, null, -1)),
+            createBaseVNode("div", _hoisted_12, [
+              _cache[44] || (_cache[44] = createBaseVNode("span", { class: "input-label" }, "S:", -1)),
+              withDirectives(createBaseVNode("input", {
+                type: "text",
+                "onUpdate:modelValue": _cache[14] || (_cache[14] = ($event) => _ctx.hsl.s = $event),
+                onInput: _cache[15] || (_cache[15] = (...args) => _ctx.onUpdateHsl && _ctx.onUpdateHsl(...args))
+              }, null, 544), [
+                [vModelText, _ctx.hsl.s]
+              ]),
+              _cache[45] || (_cache[45] = createBaseVNode("span", { class: "input-suffix" }, "%", -1))
+            ]),
+            createBaseVNode("div", _hoisted_13, [
+              _cache[46] || (_cache[46] = createBaseVNode("span", { class: "input-label" }, "L:", -1)),
+              withDirectives(createBaseVNode("input", {
+                type: "text",
+                "onUpdate:modelValue": _cache[16] || (_cache[16] = ($event) => _ctx.hsl.l = $event),
+                onInput: _cache[17] || (_cache[17] = (...args) => _ctx.onUpdateHsl && _ctx.onUpdateHsl(...args))
+              }, null, 544), [
+                [vModelText, _ctx.hsl.l]
+              ]),
+              _cache[47] || (_cache[47] = createBaseVNode("span", { class: "input-suffix" }, "%", -1))
             ])
-          ], 2),
-          createBaseVNode("div", _hoisted_10, [
-            createBaseVNode("div", _hoisted_11, [
-              createBaseVNode("div", {
-                class: "color-preview",
-                style: normalizeStyle({ backgroundColor: _ctx.hexFull })
-              }, [
-                createBaseVNode("canvas", _hoisted_12, null, 512)
-              ], 4)
-            ])
+          ], 2)
+        ])
+      ]),
+      _: 1
+    }, 8, ["isDark"]),
+    createVNode(_component_segment, {
+      title: "Color Picker",
+      isDark: _ctx.isDark
+    }, {
+      default: withCtx(() => [
+        _cache[63] || (_cache[63] = createBaseVNode("div", { class: "row-item" }, [
+          createBaseVNode("div", { class: "description" }, [
+            createBaseVNode("p", null, " You may pick some colors below. The color will be converted to RGB, HEX, HSV and HSL automatically. ")
           ])
+        ], -1)),
+        createBaseVNode("div", _hoisted_14, [
+          createBaseVNode("div", {
+            class: normalizeClass(["input-row", { dark: _ctx.isDark }])
+          }, [
+            createBaseVNode("div", _hoisted_15, [
+              createBaseVNode("button", {
+                style: { backgroundColor: "rgb(255, 255, 255)" },
+                onClick: _cache[18] || (_cache[18] = ($event) => _ctx.onColorPicked(255, 255, 255))
+              }, [..._cache[51] || (_cache[51] = [
+                createBaseVNode("p", { class: "force-text-color-light" }, "White", -1)
+              ])])
+            ]),
+            createBaseVNode("div", _hoisted_16, [
+              createBaseVNode("button", {
+                style: { backgroundColor: "rgb(128, 128, 128)" },
+                onClick: _cache[19] || (_cache[19] = ($event) => _ctx.onColorPicked(128, 128, 128))
+              }, [..._cache[52] || (_cache[52] = [
+                createBaseVNode("p", { class: "force-text-color-light" }, "Gray", -1)
+              ])])
+            ]),
+            createBaseVNode("div", _hoisted_17, [
+              createBaseVNode("button", {
+                style: { backgroundColor: "rgb(0, 0, 0)" },
+                onClick: _cache[20] || (_cache[20] = ($event) => _ctx.onColorPicked(0, 0, 0))
+              }, [..._cache[53] || (_cache[53] = [
+                createBaseVNode("p", { class: "force-text-color-dark" }, "Black", -1)
+              ])])
+            ]),
+            createBaseVNode("div", _hoisted_18, [
+              createBaseVNode("button", {
+                style: { backgroundColor: "rgb(255, 0, 0)" },
+                onClick: _cache[21] || (_cache[21] = ($event) => _ctx.onColorPicked(255, 0, 0))
+              }, [..._cache[54] || (_cache[54] = [
+                createBaseVNode("p", { class: "force-text-color-light" }, "Red", -1)
+              ])])
+            ]),
+            createBaseVNode("div", _hoisted_19, [
+              createBaseVNode("button", {
+                style: { backgroundColor: "rgb(0, 255, 0)" },
+                onClick: _cache[22] || (_cache[22] = ($event) => _ctx.onColorPicked(0, 255, 0))
+              }, [..._cache[55] || (_cache[55] = [
+                createBaseVNode("p", { class: "force-text-color-light" }, "Green", -1)
+              ])])
+            ]),
+            createBaseVNode("div", _hoisted_20, [
+              createBaseVNode("button", {
+                style: { backgroundColor: "rgb(0, 0, 255)" },
+                onClick: _cache[23] || (_cache[23] = ($event) => _ctx.onColorPicked(0, 0, 255))
+              }, [..._cache[56] || (_cache[56] = [
+                createBaseVNode("p", { class: "force-text-color-dark" }, "Blue", -1)
+              ])])
+            ]),
+            createBaseVNode("div", _hoisted_21, [
+              createBaseVNode("button", {
+                style: { backgroundColor: "rgb(255, 255, 0)" },
+                onClick: _cache[24] || (_cache[24] = ($event) => _ctx.onColorPicked(255, 255, 0))
+              }, [..._cache[57] || (_cache[57] = [
+                createBaseVNode("p", { class: "force-text-color-light" }, "Yellow", -1)
+              ])])
+            ]),
+            createBaseVNode("div", _hoisted_22, [
+              createBaseVNode("button", {
+                style: { backgroundColor: "rgb(255, 0, 255)" },
+                onClick: _cache[25] || (_cache[25] = ($event) => _ctx.onColorPicked(255, 0, 255))
+              }, [..._cache[58] || (_cache[58] = [
+                createBaseVNode("p", { class: "force-text-color-light" }, "Magenta", -1)
+              ])])
+            ]),
+            createBaseVNode("div", _hoisted_23, [
+              createBaseVNode("button", {
+                style: { backgroundColor: "rgb(0, 255, 255)" },
+                onClick: _cache[26] || (_cache[26] = ($event) => _ctx.onColorPicked(0, 255, 255))
+              }, [..._cache[59] || (_cache[59] = [
+                createBaseVNode("p", { class: "force-text-color-light" }, "Cyan", -1)
+              ])])
+            ]),
+            createBaseVNode("div", _hoisted_24, [
+              createBaseVNode("button", {
+                style: { backgroundColor: "rgb(255, 165, 0)" },
+                onClick: _cache[27] || (_cache[27] = ($event) => _ctx.onColorPicked(255, 165, 0))
+              }, [..._cache[60] || (_cache[60] = [
+                createBaseVNode("p", { class: "force-text-color-light" }, "Orange", -1)
+              ])])
+            ]),
+            createBaseVNode("div", _hoisted_25, [
+              createBaseVNode("button", {
+                style: { backgroundColor: "rgb(128, 0, 128)" },
+                onClick: _cache[28] || (_cache[28] = ($event) => _ctx.onColorPicked(128, 0, 128))
+              }, [..._cache[61] || (_cache[61] = [
+                createBaseVNode("p", { class: "force-text-color-light" }, "Purple", -1)
+              ])])
+            ]),
+            createBaseVNode("div", _hoisted_26, [
+              createBaseVNode("button", {
+                style: { backgroundColor: "rgb(165, 42, 42)" },
+                onClick: _cache[29] || (_cache[29] = ($event) => _ctx.onColorPicked(165, 42, 42))
+              }, [..._cache[62] || (_cache[62] = [
+                createBaseVNode("p", { class: "force-text-color-light" }, "Brown", -1)
+              ])])
+            ])
+          ], 2)
         ])
       ]),
       _: 1

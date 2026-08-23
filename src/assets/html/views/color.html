@@ -1,5 +1,5 @@
 <main class="home-page">
-    <segment title="Color conversion" :isDark="isDark">
+    <segment title="Color Conversion Tool" :isDark="isDark">
         <div class="row-item">
             <div class="description">
                 <p>
@@ -10,8 +10,6 @@
                 </p>
             </div>
         </div>
-    </segment>
-    <segment title="Color Picker" :isDark="isDark">
         <div class="row-item">
             <div class="input-row" :class="{dark : isDark}">
                 <div class="input-column">
@@ -53,6 +51,17 @@
                 <div class="input-column">
                     <span class="input-label">V:</span>
                     <input type="text" v-model="hsv.v" @input="onUpdateHsv" />
+                    <span class="input-suffix">%</span>
+                </div>
+                <div class="input-column"></div>
+                <div class="input-column">
+                    <span class="input-label">S:</span>
+                    <input type="text" v-model="hsl.s" @input="onUpdateHsl" />
+                    <span class="input-suffix">%</span>
+                </div>
+                <div class="input-column">
+                    <span class="input-label">L:</span>
+                    <input type="text" v-model="hsl.l" @input="onUpdateHsl" />
                     <span class="input-suffix">%</span>
                 </div>
             </div>

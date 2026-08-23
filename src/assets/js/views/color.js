@@ -21,10 +21,21 @@ export default {
                 h: '0',
                 s: '0',
                 v: '0'
+            },
+            hsl: {
+                // h is same as hsv.h
+                s: '0',
+                l: '0'
             }
         };
     },
     computed: {
+        onColorPicked(r, g, b) {
+            this.rgb.r = r.toString();
+            this.rgb.g = g.toString();
+            this.rgb.b = b.toString();
+            this.onUpdateRgb();
+        },
         onUpdateRgb() {
             this.rgb.r = this.filterInvalidChars(this.rgb.r, 'int');
             this.rgb.g = this.filterInvalidChars(this.rgb.g, 'int');
@@ -44,6 +55,9 @@ export default {
             this.hsv.h = (hsv.h * 360).toFixed(0);
             this.hsv.s = (hsv.s * 100).toFixed(0);
             this.hsv.v = (hsv.v * 100).toFixed(0);
+            const hsl = this.hsvToHsl(hsv.h, hsv.s, hsv.v);
+            this.hsl.s = (hsl.s * 100).toFixed(0);
+            this.hsl.l = (hsl.l * 100).toFixed(0);
         },
         onUpdateHex() {
             this.hex = this.filterInvalidChars(this.hex, 'hex');
@@ -77,6 +91,9 @@ export default {
             this.hsv.h = h.toString();
             this.hsv.s = (s * 100).toFixed(0).toString();
             this.hsv.v = (v * 100).toFixed(0).toString();
+            const hsl = this.hsvToHsl(h, s, v);
+            this.hsl.s = (hsl.s * 100).toFixed(0).toString();
+            this.hsl.l = (hsl.l * 100).toFixed(0).toString();
             const rgb = this.hsvToRgb(h, s, v);
             this.rgb.r = rgb.r.toString();
             this.rgb.g = rgb.g.toString();
@@ -84,6 +101,29 @@ export default {
             this.hex = this.rgbToHex(rgb.r, rgb.g, rgb.b);
             this.hexFull = this.hex + "0".repeat(7 - this.hex.length);
         },
+        onUpdateHsl() {
+            if (this.hsv.h == '') this.hsv.h = '0';
+            if (this.hsl.s == '') this.hsl.s = '0';
+            if (this.hsl.l == '') this.hsl.l = '0';
+            this.hsv.h = this.filterInvalidChars(this.hsv.h, 'int');
+            this.hsl.s = this.filterInvalidChars(this.hsl.s, 'int');
+            this.hsl.l = this.filterInvalidChars(this.hsl.l, 'int');
+            const h = Math.max(0, Math.min(360, parseInt(this.hsv.h)));
+            const s = Math.max(0, Math.min(100, parseInt(this.hsl.s))) / 100;
+            const l = Math.max(0, Math.min(100, parseInt(this.hsl.l))) / 100;
+            this.hsv.h = h.toString();
+            this.hsl.s = (s * 100).toFixed(0).toString();
+            this.hsl.l = (l * 100).toFixed(0).toString();
+            const hsv = this.hslToHsv(h, s, l);
+            this.hsv.s = (hsv.s * 100).toFixed(0).toString();
+            this.hsv.v = (hsv.v * 100).toFixed(0).toString();
+            const rgb = this.hsvToRgb(h, hsv.s, hsv.v);
+            this.rgb.r = rgb.r.toString();
+            this.rgb.g = rgb.g.toString();
+            this.rgb.b = rgb.b.toString();
+            this.hex = this.rgbToHex(rgb.r, rgb.g, rgb.b);
+            this.hexFull = this.hex + "0".repeat(7 - this.hex.length);
+        }
     },
     methods: {
         isHex(c) {
@@ -188,6 +228,16 @@ export default {
             g = Math.round((g + m) * 255);
             b = Math.round((b + m) * 255);
             return { r: r, g: g, b: b };
+        },
+        hslToHsv(h, s, l) {
+            let v = l + s * Math.min(l, 1 - l);
+            let newS = v === 0 ? 0 : 2 * (1 - l / v);
+            return { h: h, s: newS, v: v };
+        },
+        hsvToHsl(h, s, v) {
+            let l = v * (1 - s / 2);
+            let newS = l === 0 || l === 1 ? 0 : (v - l) / Math.min(l, 1 - l);
+            return { h: h, s: newS, l: l };
         }
     }
 }

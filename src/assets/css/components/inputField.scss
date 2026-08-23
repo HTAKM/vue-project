@@ -9,6 +9,7 @@
     .input-column {
         display: flex;
         min-width: 30%;
+        justify-content: center;
     }
 
     span.input-label, span.input-suffix {
@@ -75,7 +76,7 @@
     .color-preview {
         border: 1px solid var(--color-border);
         border-radius: 1rem;
-        margin-right: 3rem;
+        margin: 0 1rem;
         canvas {
             width: 100%;
         }
